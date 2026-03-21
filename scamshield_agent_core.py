@@ -136,7 +136,8 @@ Who is most at risk and what should people watch out for right now?"""
     def extract_text_from_image(self, base64_image: str, media_type: str = "image/jpeg") -> str:
         """Extract text from a screenshot using Groq vision model."""
         response = self.client.chat.completions.create(
-            model="llama-3.2-11b-vision-preview",
+            model="meta-llama/llama-4-scout-17b-16e-instruct",
+",
             max_tokens=1000,
             messages=[
                 {
