@@ -2,7 +2,6 @@
 ScamShield Agent Core — Groq API Version
 ==========================================
 Main AI agent logic using Groq API (llama-3.3-70b-versatile).
-Fast, free tier available, production-ready.
 """
 
 from groq import Groq
@@ -20,13 +19,15 @@ class ScamShieldAgent:
     def __init__(self):
         self.client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
         self.model = "llama-3.3-70b-versatile"
-        self.max_tokens = 1500
+        self.max_tokens = 800
         self.system_prompt = self._load_system_prompt()
 
     def _load_system_prompt(self) -> str:
         prompt_file = Path(__file__).parent / "scamshield_agent_system_prompt.txt"
         if prompt_file.exists():
-            return prompt_file.read_text(encoding="utf-8")
+            # Trim to first 6000 chars to stay under Groq TPM limit
+            full = prompt_file.read_text(encoding="utf-8")
+            return full[:6000]
         raise FileNotFoundError("System prompt file not found.")
 
     def analyze_chat(self, chat_text: str, user_name: str = "there") -> dict:
@@ -36,7 +37,7 @@ class ScamShieldAgent:
 
         prompt = f"""My name is {user_name}. Please analyze this suspicious chat and provide your full assessment:
 
-{chat_text[:8000]}"""
+{chat_text[:3000]}"""
 
         response = self.client.chat.completions.create(
             model=self.model,
@@ -49,14 +50,12 @@ class ScamShieldAgent:
 
         raw = response.choices[0].message.content.strip()
 
-        # Strip markdown fences if present
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):
                 raw = raw[4:]
         raw = raw.strip()
 
-        # Try to extract JSON block
         import re
         json_match = re.search(r'\{.*\}', raw, re.DOTALL)
         if json_match:
@@ -71,7 +70,7 @@ class ScamShieldAgent:
         """Answer a conversational question about scams."""
         response = self.client.chat.completions.create(
             model=self.model,
-            max_tokens=self.max_tokens,
+            max_tokens=500,
             messages=[
                 {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": f"My name is {user_name}. {question}"}
@@ -87,7 +86,7 @@ What questions should I ask to verify it?"""
 
         response = self.client.chat.completions.create(
             model=self.model,
-            max_tokens=self.max_tokens,
+            max_tokens=500,
             messages=[
                 {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": prompt}
@@ -106,7 +105,7 @@ Return as JSON array only: ["question1", "question2", ...]"""
 
         response = self.client.chat.completions.create(
             model=self.model,
-            max_tokens=500,
+            max_tokens=400,
             messages=[
                 {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": prompt}
@@ -126,7 +125,7 @@ Who is most at risk and what should people watch out for right now?"""
 
         response = self.client.chat.completions.create(
             model=self.model,
-            max_tokens=500,
+            max_tokens=400,
             messages=[
                 {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": prompt}
@@ -135,13 +134,10 @@ Who is most at risk and what should people watch out for right now?"""
         return response.choices[0].message.content.strip()
 
     def extract_text_from_image(self, base64_image: str, media_type: str = "image/jpeg") -> str:
-        """
-        Extract text from a screenshot or photo using Groq vision model.
-        Used for reading scam conversations from images the user uploads.
-        """
+        """Extract text from a screenshot using Groq vision model."""
         response = self.client.chat.completions.create(
             model="llama-3.2-11b-vision-instruct",
-            max_tokens=2000,
+            max_tokens=1000,
             messages=[
                 {
                     "role": "user",
@@ -157,9 +153,8 @@ Who is most at risk and what should people watch out for right now?"""
                             "text": (
                                 "Extract all the text from this image exactly as it appears. "
                                 "This is likely a screenshot of a chat conversation, SMS messages, "
-                                "or an email. Preserve the conversation structure — show who said what, "
-                                "in order. Include timestamps if visible. "
-                                "Return only the extracted text. Do not add commentary or analysis."
+                                "or an email. Preserve the conversation structure. "
+                                "Return only the extracted text. Do not add commentary."
                             )
                         }
                     ]
