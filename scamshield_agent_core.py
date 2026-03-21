@@ -17,11 +17,11 @@ class ScamShieldAgent:
     for scam patterns using Groq API with full UK intelligence.
     """
 
-    def __init__(self):    
-self.client = Groq(api_key=os.environ.get("GROQ_API_KEY"))        
-        self.model = "llama-3.3-70b-versatile"                
-self.max_tokens = 1500        
-        self.system_prompt = self._load_system_prompt()        
+    def __init__(self):
+        self.client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+        self.model = "llama-3.3-70b-versatile"
+        self.max_tokens = 1500
+        self.system_prompt = self._load_system_prompt()
 
     def _load_system_prompt(self) -> str:
         prompt_file = Path(__file__).parent / "scamshield_agent_system_prompt.txt"
