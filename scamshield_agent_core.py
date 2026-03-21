@@ -18,8 +18,8 @@ class ScamShieldAgent:
     """
 
     def __init__(self):
-self.client = Groq(api_key=os.environ.get("gsk_VY5ly3fAqMIS2vyfFgh2WGdyb3FY5uPjypq1izyAgmZIeAVXtSun8"))        self.model = "llama-3.3-70b-versatile"
-        self.max_tokens = 1500
+self.client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+        self.model = "llama-3.3-70b-versatile"        self.max_tokens = 1500
         self.system_prompt = self._load_system_prompt()
 
     def _load_system_prompt(self) -> str:
