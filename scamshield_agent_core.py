@@ -1,9 +1,3 @@
-# “””
-ScamShield Agent Core — Groq API Version
-
-Main AI agent logic using Groq API (llama-3.3-70b-versatile).
-“””
-
 from groq import Groq
 import json
 import os
@@ -20,16 +14,16 @@ def __init__(self):
     self.max_tokens = 800
     self.system_prompt = self._load_system_prompt()
 
-def _load_system_prompt(self) -> str:
+def _load_system_prompt(self):
     prompt_file = Path(__file__).parent / "scamshield_agent_system_prompt.txt"
     if prompt_file.exists():
         return prompt_file.read_text(encoding="utf-8")
     raise FileNotFoundError("System prompt file not found.")
 
-def analyze_chat(self, chat_text: str, user_name: str = "there") -> dict:
+def analyze_chat(self, chat_text, user_name="there"):
     if len(chat_text.strip()) < 20:
         return {"error": "Chat too short. Please provide more conversation."}
-    prompt = f"My name is {user_name}. Please analyze this suspicious chat:\n\n{chat_text[:3000]}"
+    prompt = "My name is " + user_name + ". Please analyze this suspicious chat:\n\n" + chat_text[:3000]
     response = self.client.chat.completions.create(
         model=self.model,
         max_tokens=self.max_tokens,
@@ -52,19 +46,19 @@ def analyze_chat(self, chat_text: str, user_name: str = "there") -> dict:
     except json.JSONDecodeError:
         return {"conversational": True, "message": raw}
 
-def ask_question(self, question: str, user_name: str = "there") -> str:
+def ask_question(self, question, user_name="there"):
     response = self.client.chat.completions.create(
         model=self.model,
         max_tokens=500,
         messages=[
             {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": f"My name is {user_name}. {question}"}
+            {"role": "user", "content": "My name is " + user_name + ". " + question}
         ]
     )
     return response.choices[0].message.content.strip()
 
-def check_platform(self, platform_name: str, user_name: str = "there") -> str:
-    prompt = f'My name is {user_name}. Someone wants me to invest through "{platform_name}". Is it legitimate or a scam?'
+def check_platform(self, platform_name, user_name="there"):
+    prompt = "My name is " + user_name + ". Someone wants me to invest through " + platform_name + ". Is it legitimate or a scam?"
     response = self.client.chat.completions.create(
         model=self.model,
         max_tokens=500,
@@ -75,9 +69,9 @@ def check_platform(self, platform_name: str, user_name: str = "there") -> str:
     )
     return response.choices[0].message.content.strip()
 
-def generate_interrogation_questions(self, scam_type: str, platform: str = None, user_name: str = "there") -> list:
-    platform_str = f" Platform: {platform}." if platform else ""
-    prompt = f'My name is {user_name}. I am dealing with a {scam_type} scam.{platform_str} Give me 7 questions to catch the scammer. Return as JSON array only: ["q1","q2",...]'
+def generate_interrogation_questions(self, scam_type, platform=None, user_name="there"):
+    platform_str = " Platform: " + platform + "." if platform else ""
+    prompt = "My name is " + user_name + ". I am dealing with a " + scam_type + " scam." + platform_str + " Give me 7 questions to catch the scammer. Return as JSON array only."
     response = self.client.chat.completions.create(
         model=self.model,
         max_tokens=400,
@@ -92,18 +86,18 @@ def generate_interrogation_questions(self, scam_type: str, platform: str = None,
     except json.JSONDecodeError:
         return [raw]
 
-def get_regional_threat(self, city: str) -> str:
+def get_regional_threat(self, city):
     response = self.client.chat.completions.create(
         model=self.model,
         max_tokens=400,
         messages=[
             {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": f"What scams are most active in {city}, UK right now?"}
+            {"role": "user", "content": "What scams are most active in " + city + ", UK right now?"}
         ]
     )
     return response.choices[0].message.content.strip()
 
-def extract_text_from_image(self, base64_image: str, media_type: str = "image/jpeg") -> str:
+def extract_text_from_image(self, base64_image, media_type="image/jpeg"):
     response = self.client.chat.completions.create(
         model=self.vision_model,
         max_tokens=1000,
@@ -114,7 +108,7 @@ def extract_text_from_image(self, base64_image: str, media_type: str = "image/jp
                     {
                         "type": "image_url",
                         "image_url": {
-                            "url": f"data:{media_type};base64,{base64_image}"
+                            "url": "data:" + media_type + ";base64," + base64_image
                         }
                     },
                     {
