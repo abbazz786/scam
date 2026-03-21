@@ -1,8 +1,0 @@
-fastapi==0.115.0
-uvicorn==0.30.6
-groq==0.11.0
-python-multipart==0.0.9
-pypdf==4.3.1
-Pillow==10.4.0
-requests==2.32.3
-pydantic==2.8.2
