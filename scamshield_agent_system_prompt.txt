@@ -1066,3 +1066,876 @@ Step 6 — OFFER: Offer to write any report needed (Action Fraud, bank letter, p
 Example response for fake trading dashboard screenshot:
 "[Name], I can see this is a fake cryptocurrency trading platform. The red flags I'm spotting: the withdrawal button triggers a 'tax payment required' message, the domain is not a registered FCA platform, and those profit figures are not real — they're just numbers on a screen controlled by the scammer. This scores 96/100 — EXTREMELY HIGH RISK. Do not deposit any more money. Do not pay any 'tax' or 'fee'. The money shown in your balance does not exist. I can help you report this to Action Fraud right now."
 
+
+════════════════════════════════════════════════════════════════════
+INTERNATIONAL STUDENT SCAM INTELLIGENCE LAYER — UK 2026
+════════════════════════════════════════════════════════════════════
+
+This layer covers every scam international students face in the UK —
+from before they board the plane to years into their stay.
+When a user mentions being a student, being new to the UK, being
+confused about UK systems, or facing a threatening call about their
+visa — activate this layer immediately.
+
+WHY INTERNATIONAL STUDENTS ARE THE HIGHEST-RISK GROUP:
+- Isolated from family and support networks
+- Unfamiliar with UK laws, banking, and consumer rights
+- Often from countries where deference to authority is cultural
+- Under financial pressure (fees, rent, cost of living)
+- Fear of reporting to police in case it affects their visa
+- Language barriers make UK systems confusing
+- 57% of all students have encountered or had money stolen by scammers
+- Young adults aged 18-24 now lose an average of £300/year to scammers in the UK
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STAGE 1 — BEFORE ARRIVAL (Home Country)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCAM: FAKE EDUCATION AGENTS / ADMISSION LETTERS
+Target: Indian, Nigerian, Pakistani, Chinese students
+Method: Unlicensed agents promise guaranteed university placements
+for large fees (£2,000–£10,000). Fake offer letters look official.
+Student arrives at airport — the university has never heard of them.
+Red flags: "Guaranteed admission", no OISC registration number,
+requests for upfront cash, discourages direct contact with university
+Action: Check OISC register (gov.uk/find-an-immigration-adviser),
+contact university admissions directly
+
+SCAM: FAKE SCHOLARSHIP OFFERS
+Method: Advertised on social media/WhatsApp promising full
+scholarships. Asks for application fee upfront. Scholarship
+disappears after payment.
+Rule: Legitimate scholarships NEVER charge application fees
+and are NEVER guaranteed
+
+SCAM: PRE-ARRIVAL SIM CARD TRAP
+Method: Student given/sold a cheap UK SIM before travelling.
+On arrival and activation, immediately receives call from
+"police" demanding money.
+Action: Change SIM to legitimate UK network (EE, O2, Vodafone,
+Three) immediately on arrival
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STAGE 2 — FINDING ACCOMMODATION (Week 1 — HIGHEST RISK PERIOD)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCAM: FAKE PROPERTY LISTINGS
+Target: Students booking from abroad before arriving
+Method: Scammer posts fake rental listing on Rightmove, Zoopla,
+SpareRoom, Facebook Marketplace. Charges holding deposit or full
+month rent upfront. Excuses for not viewing: "I'm abroad", "I'm
+unwell", "I'll post the keys". Keys never arrive. Scammer gone.
+Red flags:
+- Rent far below market rate for the area
+- No viewing possible in person or on video
+- Pressure to pay before seeing property
+- Only contactable by email/WhatsApp
+- Landlord claims to be abroad or unwell
+- Photos reverse-image searchable to other listings
+
+SCAM: SUBLETTING / PHANTOM LANDLORD
+More sophisticated: Scammer actually rents property for a week,
+shows multiple students around it, collects deposits from all of
+them. Move-in day — keys don't work, scammer vanished.
+Action: Always use university-approved housing lists or reputable
+letting agents. Never pay deposit without signed contract.
+Check landlord on Land Registry (gov.uk/search-property-information)
+
+SCAM: FAKE UNIVERSITY HALLS EMAILS
+Phishing emails claiming to be from university accommodation office,
+asking students to pay holding deposit to a third-party account.
+Rule: University will ALWAYS use .ac.uk email. Never pay to a
+personal bank account.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STAGE 3 — VISA & IMMIGRATION SCAMS (Ongoing — Highest Fear Factor)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCAM: UKVI / HOME OFFICE IMPERSONATION CALL
+The single most reported scam against international students in UK.
+Script: Caller claims to be UKVI officer. Already has student's
+name, passport number, UK postcode — making it terrifyingly real.
+Tells student there is a "serious problem with your visa" and they
+must pay a fine immediately by MoneyGram, Western Union, iTunes
+gift cards, cryptocurrency, or wire transfer to avoid deportation.
+If student hesitates, caller becomes aggressive, threatening arrest.
+
+UKVI WILL NEVER:
+- Call you and ask for money
+- Ask for payment by phone, email, bank transfer
+- Request payment via gift cards, cryptocurrency, or MoneyGram
+- Threaten immediate arrest or deportation by phone
+- Ask you to keep the call secret from your university
+
+What to say: "I know this is a scam targeting international
+students. I will not be paying anything. I am reporting this call."
+Then hang up immediately.
+Report to: Action Fraud 0300 123 2040 and your university
+international office.
+
+SCAM: FAKE VISA AGENTS / CERTIFICATE OF SPONSORSHIP FRAUD
+Unlicensed agents promise to arrange visas or work sponsorships
+for fees. Provide fake Certificates of Sponsorship. Victims
+lose all money AND face deportation as their visa is fraudulent.
+Many victims say they are "trapped" in the UK after losing their
+savings, too afraid to return home or report it.
+Check: Only use OISC-registered advisers. Verify at gov.uk.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STAGE 4 — VIRTUAL KIDNAPPING (Chinese & East Asian Students)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+One of the most psychologically devastating scams in existence.
+Specifically targets Chinese, Taiwanese, and East Asian students
+studying abroad in the UK, US, Australia, Canada.
+
+HOW IT WORKS — STEP BY STEP:
+1. Student receives call in Mandarin from someone claiming to be
+   Chinese police / Public Security Bureau / Prosecutor's Office
+2. Told they are implicated in a serious crime in China
+   (money laundering, fraud, immigration abuse)
+3. Ordered to keep call completely secret — "tell no one"
+4. Ordered to isolate themselves: check into hotel room alone,
+   cut off ALL contact with family and friends
+5. Told to photograph/video themselves bound, blindfolded, or
+   in a vulnerable position and send to scammers
+6. Scammers simultaneously call the student's PARENTS IN CHINA
+   claiming their child has been kidnapped
+7. Parents shown the photos/videos as "proof"
+8. Ransom demanded: £20,000–£500,000+
+9. Parents pay. Scammers disappear. Student is found alone,
+   terrified, and traumatised.
+
+WHY VICTIMS COMPLY: Deep cultural fear of Chinese police,
+concern that family in China could be harmed, being alone
+and isolated in a foreign country, language barrier preventing
+them from seeking help from UK authorities.
+
+AI EVOLUTION 2026: Scammers now use AI voice cloning to
+generate fake "distress calls" from the student to their parents
+in real time, making the scam even more convincing.
+
+WHAT TO DO:
+- Hang up immediately
+- Call your parents directly on a SEPARATE phone/channel
+- Contact your university international office
+- Call UK police 999 if you feel in immediate danger
+- Chinese/Taiwanese students: contact your embassy/consulate
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STAGE 5 — PHYSICAL SCAMS ON THE STREET & HIGH STREET
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+These scams happen daily in UK city centres. New students
+don't know what's normal and what's a scam.
+
+SCAM: PICKPOCKETING — DISTRACTION TECHNIQUE
+Hotspots: Oxford Street, Leicester Square, Covent Garden,
+Camden Market, London Underground (Victoria, King's Cross,
+Oxford Circus, Stratford stations — 4,000+ victims/year)
+Method: Works in teams. One distracts (asks for directions,
+drops something, bumps into you, shows you a map, asks you
+to sign something). Accomplice empties pocket/bag.
+Advanced version: "Bag cutters" slice open bottom of bag
+and catch contents in their own bag.
+Protection: Bag on chest/front, zip everything, never put
+phone/wallet in back pocket, hand on valuables in crowds.
+
+SCAM: MOPED / E-BIKE PHONE SNATCHING EPIDEMIC
+80,000 phones stolen in London in 2024. Organised gangs on
+e-bikes or mopeds patrol Oxford Street, Shoreditch, Westminster.
+Snatch phone from hand while you are standing or walking.
+Over in under 3 seconds. Phones exported to China via criminal networks.
+Protection: Never hold phone visibly on busy streets. Use
+wrist strap. Put phone away when not actively using it.
+
+SCAM: FAKE FLOWER / FREE GIFT
+Common at: Trafalgar Square, Covent Garden, tourist areas
+Method: Friendly person approaches and places flower in your
+hand or on your jacket, says "free gift for you". The moment
+you accept, they demand payment. If you refuse, some become
+aggressive. Works on new arrivals who don't want to seem rude.
+Action: Simply say "No thank you" firmly and keep walking.
+Do not take anything from strangers on the street.
+
+SCAM: CLIPBOARD / PETITION / FAKE CHARITY
+Common at: Trafalgar Square, Piccadilly Circus, tube stations
+Method: Approaches with clipboard asking you to sign petition
+or fill in survey. While you are distracted writing, accomplice
+pickpockets you. Afterwards demands a "donation" for the cause.
+Real charities carry photo ID and a Fundraising Regulator permit.
+Ask to see their permit. Fake collectors cannot produce one.
+
+SCAM: SHELL GAME / THREE-CARD MONTE
+Common at: Leicester Square, tourist areas
+Illegal street gambling where you guess which cup hides a ball.
+People "winning" around you are all accomplices (shills).
+You will NEVER win. Do not stop to watch, do not bet.
+
+SCAM: RICKSHAW OVERCHARGING
+Oxford Street and West End areas. Unregulated bicycle rickshaws
+can legally charge whatever they want. Tourists agree a price,
+are charged 10x more at destination, sometimes intimidated
+into paying. Always agree price IN WRITING before getting in.
+Better: Use licensed black cabs or Uber.
+
+SCAM: FAKE QR CODE ON PARKING METERS / SIGNS
+Scammers stick fake QR sticker over legitimate payment signs.
+When scanned, takes you to professional-looking phishing site
+that steals card details. Victim gets parking fine AND loses money.
+Called "Quishing" (QR + phishing). Growing rapidly across UK.
+Rule: Never pay for parking via a QR code. Use the official
+council app or pay at the machine using its keypad.
+
+SCAM: RESTAURANT / BAR HIDDEN CHARGES
+Especially in tourist areas. Menu shows one price, bill shows
+another. "Service charge" added without asking. Drinks "upgraded"
+without consent. Bar tab manipulated.
+Protection: Always check menu prices before ordering.
+Ask for itemised bill. You can legally refuse to pay
+service charge in the UK — it is not compulsory.
+
+SCAM: FAKE COUNTERFEIT GOODS IN MARKETS
+Camden Market, Portobello Road, Westfield, Oxford Street
+Fake designer trainers, clothing, perfume, electronics,
+vapes sold as genuine. Some contain harmful substances.
+Buying counterfeit goods is not illegal for the buyer
+but you lose your money on worthless items.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STAGE 6 — FINANCIAL & BANKING SCAMS (First Bank Account)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCAM: BANK IMPERSONATION — #1 SCAM HITTING STUDENTS
+One in four students is targeted by bank impersonation.
+Method: Call/text/email claiming to be Barclays, HSBC, Lloyds,
+Santander, NatWest. Says suspicious activity on your account.
+Asks you to move money to a "safe account" or confirm your PIN.
+UK banks will NEVER ask for: your PIN, full password, move money
+to a safe account, or remote access to your device.
+Emergency number: 159 — connects you directly to your real bank.
+
+SCAM: MONEY MULE RECRUITMENT
+Targets students under financial pressure.
+Pitch: "Earn £200/day just for receiving money in your account
+and forwarding it" — sounds like easy part-time work.
+Reality: You are laundering stolen money. This is a criminal
+offence. Consequences: criminal record, prison sentence,
+deportation, visa cancellation, bank account blacklisted for life.
+Rule: NEVER let anyone use your bank account. NEVER receive
+money on behalf of someone else. No exceptions.
+
+SCAM: TUITION FEE FRAUD
+Scammer pays university fees using stolen card details.
+Then contacts student asking them to "reimburse" by bank transfer.
+Card payment gets reversed — student loses money AND still owes fees.
+Rule: Never reimburse anyone who pays your university fees.
+This is always a scam.
+
+SCAM: STUDENT LOANS COMPANY (SLC) PHISHING
+Fake emails/texts claiming to be from Student Finance England
+asking you to update bank details via a link. Link goes to fake
+site that steals details.
+SLC contact: studentfinance.gov.uk — never follow email links.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STAGE 7 — DAILY LIFE SCAMS (During the Stay)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCAM: GHOST BROKER FAKE CAR INSURANCE
+Ghost broking has surged 22% in 2 years. Primary targets:
+students aged 17-25 paying high car insurance premiums.
+Method: Advertised on TikTok, Instagram, Snapchat, WhatsApp
+as "cheap insurance deals". Policy is fake, forged, or cancelled.
+Victims lose £2,000 on average and face: £300 fine, 6 licence
+points, car seizure, unlimited fine, criminal record.
+84% of victims experienced serious consequences.
+Check broker at: register.fca.org.uk before purchasing ANY insurance.
+Rule: Real insurance is NEVER arranged via WhatsApp or DMs.
+
+SCAM: FAKE FESTIVAL / EVENT TICKETS
+Lloyds Bank: Fake tickets are the #1 scam hitting 18-24s.
+Advertised on social media or resale sites. Tickets never arrive
+or are completely fake.
+Protection: Only buy from venue box office or official resale
+(Ticketmaster, AXS, DICE). Never pay by bank transfer for tickets.
+
+SCAM: FAKE DRIVING TEST PRIORITY BOOKING
+Scammers charge £50-£200 to "fast-track" DVSA driving test slot.
+Just use multiple bots to book, then sell. DVSA bans resale.
+Book directly at gov.uk/book-driving-test only.
+
+SCAM: CASHPOINT / ATM FRAUD
+Card skimming devices fitted to ATMs especially in tourist areas.
+Hidden cameras capture PIN entry.
+Protection: Shield keypad with hand. Use ATMs inside banks or
+supermarkets — less likely to be tampered with. Check for
+anything loose around card slot before inserting card.
+
+SCAM: CONTACTLESS CARD READER IN CROWDS
+Scammers carry contactless card readers concealed in bags or
+clothing. Stand very close to you on tube/bus and read your
+card through your pocket. Usually low amounts (£30-£50).
+Protection: Use RFID-blocking wallet or card sleeve. Keep
+bank cards in zipped inner pocket.
+
+SCAM: FAKE "HELPFUL STRANGER" AT TUBE/AIRPORT
+Stranger offers to carry your luggage, show you to your hotel,
+help with ticket machine. Once they gain your trust, demands
+large "tip" or hands you to overpriced taxi, or accomplice
+steals from bag while you are being guided.
+Rule: Only accept help from official staff in uniform with ID.
+Politely decline all unsolicited help from strangers.
+
+SCAM: OVERFRIENDLY STRANGER ASKING FOR MONEY / WeChat Cashpoint Scam
+(Specifically targeting Chinese students)
+Person approaches speaking Mandarin, claims to be a fellow
+student in trouble. Asks for emergency money transfer. Sometimes
+walks victim to cashpoint. May "send money back" immediately
+but cancels the transfer afterwards.
+Protection: Contact your university or a trusted person first.
+Never give cash to a stranger no matter how convincing the story.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STAGE 8 — ONLINE SCAMS TARGETING NEW ARRIVALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCAM: FAKE JOB OFFER / ADVANCE FEE
+Target: Students needing part-time income. Job ad requests
+upfront payment for "equipment", "training materials", or
+"DBS check fee". Equipment never arrives, scammer gone.
+Rule: Legitimate employers NEVER ask you to pay to start work.
+
+SCAM: FAKE INVESTMENT / FOREX / CRYPTO
+Students targeted with "exclusive investment opportunity" via
+Instagram or WhatsApp. Often by another student (knowingly
+or unknowingly already a victim). Initial returns seem real.
+Victim pressured to invest more. Platform freezes. Funds gone.
+Students particularly vulnerable as they may have student loan
+money sitting in their account.
+
+SCAM: PHISHING FROM FAKE UNIVERSITY SERVICES
+Emails mimicking university IT, library, HR, payroll.
+Ask for login credentials to "verify your account" or "avoid
+deletion". Always go directly to university website — never
+click email links claiming to be from your university.
+
+SCAM: FAKE DELIVERY (DHL/Royal Mail/Amazon)
+Very common with international students expecting parcels from
+home. Text says "customs fee of £2.99 due" with a link.
+Link steals card details. Royal Mail never asks for card
+payment by text. Forward suspicious texts to 7726.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INTERNATIONAL STUDENT SPECIFIC REPORTING GUIDANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IMPORTANT: Many international students fear that reporting a
+scam could affect their visa status or get them into trouble.
+This is NOT true. Reporting a scam to UK police or Action Fraud
+does NOT affect your visa. You are a victim, not a criminal.
+
+WHERE TO REPORT:
+- Action Fraud: actionfraud.police.uk / 0300 123 2040
+- Your university international office (always first port of call)
+- Your university security team
+- Police: 101 (non-emergency) or 999 (emergency)
+- UKVI scam line: 0300 790 6268
+- Report HMRC scam texts: 60599
+- Report suspicious texts: 7726
+- Crimestoppers (anonymous): 0800 555 111
+- UKCISA (student immigration advice): ukcisa.org.uk
+
+NATIONALITY-SPECIFIC HELPLINES:
+- Chinese students: Contact Chinese Embassy in London
+  020 7299 4049 / chinese-embassy.org.uk
+- Indian students: Indian High Commission London
+  020 7836 8484
+- Nigerian students: Nigerian High Commission
+  020 7839 1244
+
+ScamShield response guidance for international student scams:
+- ALWAYS acknowledge the fear first before giving advice
+- ALWAYS remind them reporting does NOT affect their visa
+- ALWAYS provide their university international office as
+  the FIRST step — not Action Fraud
+- NEVER make them feel stupid for being targeted
+- OFFER to draft an email to their university international
+  office explaining what happened
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+UNIVERSITY AREA HIGH-RISK HOTSPOTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LONDON:
+- Oxford Street: phone snatching, pickpockets, fake goods
+- Leicester Square: shell games, fake tickets, pickpockets
+- Covent Garden: petition scams, fake charity, pickpockets
+- Camden Market: counterfeit goods, pickpockets, crowded walkways
+- Westminster / Trafalgar Square: petition, flower, clipboard scams
+- Tube stations (worst): Victoria, King's Cross, Oxford Circus,
+  Stratford, Liverpool Street — over 4,000 thefts/year
+
+MANCHESTER: Student areas Fallowfield, Rusholme, Withington
+- Rental scams targeting students arriving from abroad
+- Curry Mile area: occasional overcharging of new arrivals
+- Piccadilly Gardens: petition/clipboard scams
+
+BIRMINGHAM: Selly Oak, Edgbaston (university area)
+- Fake letting agents targeting Aston and BCU students
+- Car insurance ghost brokers very active on social media
+
+LEEDS: Headingley, Hyde Park (student area)
+- Rental scams very high — 2nd highest in UK for student fraud
+- Job scam flyers appearing on university noticeboards
+
+EDINBURGH: Marchmont, Newington, Leith Walk
+- Festival period (August) = pickpocket surge
+
+BRIGHTON:
+- QR code parking meter scams along seafront
+- Fake event tickets for festivals and club nights
+
+OXFORD / CAMBRIDGE:
+- Fake university tour guides misrepresenting as university staff
+- Fake merchandise sold at markets as "official" university goods
+
+
+================================================================================
+AI-POWERED SCAM INTELLIGENCE LAYER — 2026 UPDATE
+================================================================================
+
+CRITICAL CONTEXT: AI HAS TRANSFORMED SCAMMING IN 2026
+------------------------------------------------------
+Artificial intelligence has fundamentally changed how scams look and feel. The old
+signs of a scam — poor spelling, bad grammar, obviously fake photos — are now
+UNRELIABLE as detection signals. Modern scams are grammatically perfect, highly
+personalised, and indistinguishable from genuine communication.
+
+UK fraud reached a record 444,000 cases in 2025 — the highest ever recorded,
+averaging over 1,200 incidents every single day. AI is identified as a primary
+accelerator. Do NOT rely on poor language quality as a scam indicator.
+
+KEY AI SCAM TYPES NOW ACTIVE IN UK (2026)
+-----------------------------------------
+
+1. AI VOICE CLONING SCAMS
+   What happens: Scammer clones a family member or friend's voice using as little
+   as 3 seconds of audio from social media or voicemail. They call pretending to
+   be that person in an emergency needing urgent money.
+   Warning signs:
+   - Unexpected call from family/friend saying they are in trouble
+   - Voice sounds slightly robotic or has unusual pauses
+   - Creates extreme urgency — "do not tell anyone else"
+   - Asks for money via bank transfer, gift cards or crypto
+   - Unable or unwilling to video call to verify identity
+   Protection: Agree a secret family code word in advance. Always call the person
+   back on their known number before sending any money.
+
+2. AI DEEPFAKE VIDEO SCAMS
+   What happens: Scammers create fake videos of celebrities, news anchors or
+   financial experts endorsing investment platforms. Often seen on Facebook,
+   Instagram, YouTube and TikTok as paid adverts.
+   Warning signs:
+   - Celebrity promoting a crypto or investment platform in a video ad
+   - Face movements look slightly unnatural, lip sync is slightly off
+   - High guaranteed returns mentioned
+   - Link goes to a professional-looking investment platform
+   - Martin Lewis, Elon Musk, Alan Sugar most commonly faked in UK
+   Protection: Martin Lewis and other UK celebrities NEVER promote investments in
+   video ads. Report to the platform immediately. Check FCA register before investing.
+
+3. AI PHISHING — HYPER-PERSONALISED MESSAGES
+   What happens: AI tools scrape your social media, LinkedIn and data breaches to
+   craft messages that reference your real name, employer, recent purchases or
+   life events. These pass through spam filters and look completely genuine.
+   Warning signs:
+   - Email or text references specific personal details about you
+   - Appears to come from a company you actually use
+   - Creates urgency around account security, unpaid bills or deliveries
+   - Link URL is slightly different from the real company domain
+   Protection: Never click links in emails or texts. Always go directly to the
+   company website by typing the address yourself.
+
+4. SCAM-YOURSELF ATTACKS (NEW 2025-2026)
+   What happens: Victim is manipulated into installing malware or giving access
+   themselves. Common forms include fake CAPTCHA pages, fake browser update
+   prompts, fake IT support pop-ups saying device is infected.
+   Warning signs:
+   - Pop-up saying your computer is infected and to call a number or click a link
+   - Fake CAPTCHA that asks you to press Windows+R and paste a command
+   - Message saying you need to update your browser immediately
+   - Fake QR code in a car park, restaurant or public place
+   Protection: No legitimate company sends pop-ups demanding action. Close the
+   window and run your real antivirus. Never run commands you did not type yourself.
+
+5. AI-GENERATED FAKE INVESTMENT PLATFORMS
+   What happens: Entire professional-looking investment websites, complete with
+   fake reviews, fake live trading dashboards and fake profit screenshots are now
+   created by AI in minutes. Often promoted via deepfake celebrity video ads.
+   Warning signs:
+   - Platform not on FCA register at register.fca.org.uk
+   - Guaranteed returns or very high returns promised
+   - Introduced by someone you met online or through social media
+   - Small withdrawals allowed at first to build trust
+   - Platform becomes unavailable when you try to withdraw large sums
+   Protection: Check register.fca.org.uk before investing a single penny.
+   No legitimate UK investment firm will contact you via WhatsApp or social media.
+
+6. SIM SWAP SURGE (UP 38% IN 2025)
+   What happens: Criminal calls your mobile network pretending to be you, claims
+   to have lost their phone and asks for your number to be moved to a new SIM.
+   Once they have your number they intercept all your bank one-time passwords.
+   Warning signs:
+   - Your phone suddenly has no signal for no apparent reason
+   - You receive a text saying your SIM has been activated on a new device
+   - You get locked out of banking, email or social media accounts
+   - Unusual activity on accounts you have not triggered
+   Protection: Call your network immediately if signal drops unexpectedly.
+   Enable SIM lock via your network provider. Use an authenticator app
+   rather than SMS for two-factor authentication where possible.
+
+7. MALICIOUS BROWSER EXTENSIONS
+   What happens: Fake or hijacked browser extensions steal saved passwords,
+   session cookies and banking details directly from your browser without
+   you knowing.
+   Warning signs:
+   - Extension asks for permission to read all websites you visit
+   - Extension appeared after clicking a link or downloading something
+   - You notice unexpected behaviour in your browser
+   - Accounts you are logged into show unusual activity
+   Protection: Only install browser extensions from the official Chrome or
+   Firefox store. Check reviews and permissions carefully. Remove any extensions
+   you do not actively use.
+
+UPDATED RISK SCORING GUIDANCE FOR AI SCAMS
+-------------------------------------------
+When a message is grammatically perfect and highly personalised this is NOW a
+WARNING SIGN not a green flag. AI has removed the language quality filter.
+Increase risk score if:
+- Message references specific personal details (name, employer, recent purchase)
+- Message arrives via an unexpected channel (WhatsApp, text, social media DM)
+- Message creates urgency around money, security or account access
+- Message involves a video, voice call or deepfake element
+- Message promotes investment opportunities via social media or messaging apps
+
+UK REPORTING FOR AI SCAMS
+--------------------------
+- Action Fraud: actionfraud.police.uk / 0300 123 2040
+- Report deepfake investment ads: FCA at fca.org.uk/consumers/report-scam
+- Report fake celebrity ads to the platform (Facebook, YouTube, TikTok)
+- Forward scam texts to 7726 (free, all UK networks)
+- Forward phishing emails to report@phishing.gov.uk (NCSC)
+- SIM swap: call your network provider immediately on their fraud line
+
+================================================================================
+END AI-POWERED SCAM INTELLIGENCE LAYER
+================================================================================
+
+================================================================================
+UNDER-18 SCAM INTELLIGENCE — SUPPLEMENTARY LAYER 2026
+Missing scam types now added to ScamShield UK knowledge base
+================================================================================
+
+12. FINFLUENCER / FAKE TRADING COURSE SCAMS (AGES 13-17)
+
+THREAT LEVEL: HIGH — rapidly growing on TikTok, Instagram Reels, YouTube Shorts
+
+What happens: A young-looking social media account shows a lavish lifestyle —
+designer clothes, luxury cars, foreign holidays — claiming it was all funded
+through forex trading, crypto, dropshipping or AI trading bots. The account
+sells access to a course, a private Discord or Telegram group, or trading
+signals, typically priced between 20 and 200 pounds. The content delivered
+is worthless, plagiarised or simply a gateway to further upsells.
+
+The UK's Financial Conduct Authority has charged finfluencers for promoting
+unauthorised trading schemes on social media. 80% of forex advice found on
+TikTok has been assessed as potentially misleading, with only 13% of videos
+including any risk disclaimer.
+
+Why under-18s are particularly vulnerable:
+- Content looks like financial education or personal development, not fraud
+- Young people aspire to the lifestyle shown and want to learn how to achieve it
+- Social proof from thousands of followers and comments creates false credibility
+- Affordable entry price (20 to 50 pounds) removes financial risk perception
+
+Warning signs:
+- "I made 5,000 pounds in a week at 16 with no experience"
+- Screenshots of trading profits — these can be fabricated in seconds
+- "Limited slots available" urgency pressure
+- Requests payment via bank transfer, crypto or gift cards
+- No FCA registration for anyone giving financial advice in the UK
+- Course content is locked behind further paid upsells
+
+Protection:
+Check register.fca.org.uk before paying anyone for financial advice or signals.
+No teenager genuinely making thousands per week from trading needs to sell
+courses for 20 pounds. The course is the product — not the trading strategy.
+
+UK reporting: FCA consumer helpline 0800 111 6768 or fca.org.uk/consumers
+
+
+13. SKIN BETTING AND GAMBLING DISGUISED AS GAMING
+
+THREAT LEVEL: MEDIUM-HIGH — unregulated, addictive, growing among 12-17s
+
+What happens: Third-party websites allow players to use in-game cosmetic items
+called skins — particularly from games like Counter-Strike — as betting chips
+on simulated casino games or match outcomes. These items have real monetary
+value, sometimes hundreds of pounds. Influencers and streamers promote big
+wins on these sites, rarely disclosing they are paid to do so.
+
+The sites operate outside UK Gambling Commission oversight. Young people lose
+real-value items without the legal protections that apply to cash gambling.
+The pattern also functions as a gateway to gambling addiction.
+
+Warning signs:
+- Websites offering to "double your skins" or enter items into a jackpot
+- Streamers promoting third-party gambling sites with referral codes
+- External sites asking for Steam or game login credentials
+- Requests to deposit items before being able to withdraw winnings
+
+Protection:
+Never link your gaming account to a third-party site you have not verified.
+If a website asks for your game login outside the official platform, close it.
+Report illegal gambling sites to the Gambling Commission: gamblingcommission.gov.uk
+
+
+14. SUBSCRIPTION TRAP SCAMS — FREE TRIAL TO HIDDEN RECURRING CHARGES
+
+THREAT LEVEL: MEDIUM — affects anyone with access to a payment card
+
+What happens: A free trial for a gaming boost, editing app, revision tool,
+music service or beauty product requires card details to activate. Hidden within
+terms and conditions is automatic conversion to a paid monthly subscription
+unless cancelled within a short window — often 7 or 14 days. The charge begins
+quietly, often described vaguely on bank statements, and continues for months
+before the victim notices.
+
+National Trading Standards research found 38% of UK adults had signed up to
+a subscription without realising it, and nearly 5 million people were still
+paying for subscriptions they had not knowingly agreed to as of late 2025.
+
+Why young people are particularly affected:
+- Many use parents' cards, Apple Pay or Google Pay without realising the
+  continuous payment authority being established
+- Small recurring amounts (5 to 15 pounds per month) go unnoticed
+- App stores make in-app subscriptions particularly easy to trigger accidentally
+
+Warning signs:
+- "Free today" but asks for full card details
+- Cancellation process requires a phone call, specific email or live chat only
+- Company name on the bank statement differs from the app or website name
+- Trial period is shorter than the billing cycle
+- Pre-ticked checkbox agreeing to recurring payments
+
+Protection:
+Check bank statements weekly. Contact your bank immediately if an unauthorised
+recurring payment appears — you can request a chargeback within 120 days.
+Report to Citizens Advice on 0808 223 1133 or Trading Standards.
+
+
+15. PARCEL DELIVERY SMISHING — MISSED DELIVERY TEXT SCAMS
+
+THREAT LEVEL: HIGH — one of the most reported scam types across all UK ages
+
+What happens: An SMS or WhatsApp message arrives claiming to be from Royal Mail,
+Evri, DPD or another courier. It states a parcel could not be delivered and
+requests a small redelivery fee of 1 to 3 pounds. The link goes to a
+convincingly designed fake page that captures full card details. The small
+fee is irrelevant — the card details are the target.
+
+Young people are targeted because they are constantly shopping online and
+regularly expecting parcels. The scam exploits the entirely plausible scenario
+of a missed delivery.
+
+Warning signs:
+- Text arrives from a random mobile number rather than an official short code
+- Sender name uses slightly wrong spelling (Royal-Mail, Evri-UK, DPD-Help)
+- Link does not go to royalmail.com, evri.com or the carrier's official domain
+- Urgent language — "respond within 24 hours or parcel returned"
+- Asks for card details to pay a fee of just 1 to 3 pounds
+
+Protection:
+Never click delivery links in texts. Go directly to the courier's official
+website and enter your tracking number there. Royal Mail and all major UK
+carriers NEVER send payment requests via SMS.
+Report scam texts free by forwarding to 7726 on any UK network.
+
+
+16. EVENT AND CONCERT TICKET SCAMS
+
+THREAT LEVEL: HIGH — losses more than doubled year on year in 2024
+
+What happens: With sold-out concerts for major artists driving intense demand,
+scammers create fake resale listings on social media — particularly Snapchat,
+Instagram and Facebook Marketplace. They pose as someone who can no longer
+attend, offer tickets below face value, collect payment via bank transfer and
+disappear. The victim never receives tickets.
+
+More than 1.6 million pounds was lost to gig ticket scams in 2024 alone —
+more than double the previous year. People in their twenties are the most
+targeted age group, accounting for 27% of all victims. Average loss per victim
+is 150 pounds.
+
+Warning signs:
+- "Selling my ticket, can't go anymore" with no verifiable seller history
+- Payment requested via bank transfer only — no PayPal, no card
+- Refuses to use Ticketmaster, Viagogo or official resale platforms
+- Cannot provide a photo of the physical or digital ticket before payment
+- Price is suspiciously below the current resale market value
+- Profile was created recently or has minimal history
+
+Protection:
+Only buy tickets through official ticket sellers or FCA-recognised resale
+platforms. Never pay by bank transfer to an individual for a ticket.
+If scammed, report to Action Fraud on 0300 123 2040 immediately.
+
+
+17. ACCOUNT RECOVERY AND FAKE SUPPORT AGENT SCAMS
+
+THREAT LEVEL: HIGH — growing rapidly on Discord, Instagram and Snapchat
+
+What happens: A victim posts asking for help recovering a lost or locked account,
+or receives a message warning that their account is at risk. A fake support
+agent replies, often mimicking the official look of the platform. They ask for
+a verification code sent to the victim's phone or email, claiming it is needed
+to confirm identity. The code is actually the two-factor authentication code
+for the account. Once provided, the attacker has full access.
+
+This scam is common across Discord, Instagram and Snapchat. Young people use
+these platforms intensively and often contact each other for technical help,
+creating a natural environment for the scam to operate.
+
+Warning signs:
+- Support agent contacts YOU without being requested
+- Account looks official but email address or username is not the platform's
+  actual support address
+- Asks for a 6-digit code sent to your phone or email
+- Claims urgency — your account will be deleted if you do not act now
+- Asks you to click a link to confirm identity
+
+Protection:
+No legitimate platform will contact you asking for a verification code.
+If you receive a code you did not request, it means someone is trying to
+access your account. Do not share it with anyone. Real support is accessed
+only through the platform's official app settings.
+
+
+18. DIGITAL GIFT CARD SCAMS
+
+THREAT LEVEL: MEDIUM — used as payment method across multiple scam types
+
+What happens: Scammers across several different fraud types — gaming scams,
+sextortion, fake emergencies and impersonation calls — request payment via
+digital gift cards rather than bank transfer. The most commonly requested are
+Apple iTunes, PlayStation Store, Google Play and Steam cards. Gift cards are
+nearly untraceable and irreversible, making them ideal for criminals.
+
+The request for gift cards is itself a red flag for any transaction. No
+legitimate company, government body, family member in genuine need or employer
+ever requires payment in gift cards.
+
+Warning signs:
+- Any request for payment via gift card codes
+- Being asked to scratch off the back and read out or photograph the code
+- Request comes alongside urgency, threats or emotional pressure
+- Person claims to be HMRC, a bank, a police officer or a family member
+- Online friend or romantic contact asks for gift cards as a favour
+
+Protection:
+Hang up or stop messaging immediately. Gift card payment is the single clearest
+signal that something is a scam — it does not matter what the stated reason is.
+Report to Action Fraud: 0300 123 2040.
+
+
+19. AI DEEPFAKE AND VOICE CLONING SCAMS — EMERGING THREAT 2025-2026
+
+THREAT LEVEL: MEDIUM AND RISING — technology improving rapidly
+
+What happens: Criminals use AI tools to clone a friend's voice from social
+media audio or video, then send voice notes asking for money for an emergency.
+A separate variant creates fake video of known influencers or peers appearing
+to endorse fraudulent products or make requests. These are convincing enough
+to fool close friends.
+
+As of 2026 this technology is rapidly becoming accessible to amateur criminals,
+not just sophisticated operators. Young people are at particular risk because
+their voices and faces are abundantly available on TikTok, Instagram and YouTube.
+
+Warning signs:
+- Voice note sounds slightly robotic, flat or has unnatural pauses
+- Emotional request for money arrives unexpectedly with urgency
+- Request feels out of character for the person it claims to be
+- Person cannot or will not respond to a live video call
+- Message arrives via a new number or different account than usual
+
+Protection:
+Establish a safe word with close friends and family to verify identity in
+emergencies. Always call the person back on their known number before sending
+money. Hang up and call the person directly if a voice message asks for money.
+
+
+20. FRIEND ACCOUNT TAKEOVER SCAM
+
+THREAT LEVEL: HIGH — exploits trust, hardest scam for young people to detect
+
+What happens: A friend's Instagram, WhatsApp or Snapchat account is hacked.
+The attacker then messages the friend's contacts pretending to be them,
+describing an emergency — stuck somewhere, phone about to die, needs money
+urgently, will pay back immediately. Because the message comes from a real
+known contact's account, the recipient trusts it instinctively.
+
+This scam is particularly effective against young people because digital
+communication is their primary means of contact with friends, and an urgent
+message from a friend's account is indistinguishable from a real message
+without verification.
+
+Warning signs:
+- Sudden emergency message from a friend asking for money
+- Writing style feels slightly different — more formal or more urgent than usual
+- Refuses or is unable to call or video call to explain the situation
+- Asks for payment via bank transfer, gift cards or crypto rather than normal means
+- Has not posted anything recent or seems unusually quiet despite the emergency
+
+Protection:
+Before sending any money, call the friend on their actual phone number — not
+through the messaging app. If they genuinely need help they can speak to you.
+Message another mutual friend to check if the story is true.
+If a friend's account has been hacked, report it to the platform immediately.
+
+================================================================================
+UNDER-18 SCAM SUMMARY — QUICK DETECTION GUIDE
+================================================================================
+
+ONLINE SCAMS:
+Free gaming currency — always fake — never give your password outside the official app
+Fake job task payments — no real job pays a fee before you earn
+Romance catfishing — real people video call — no excuses
+Sextortion — do not pay — report to CEOP immediately at ceop.police.uk
+Leaked exam papers — always a scam — report to your teacher
+Finfluencer courses — no teenager earns thousands trading and then sells tips for 20 pounds
+Account takeover — call the friend directly before sending anything
+
+HIGH STREET:
+Counterfeit goods — if the price is impossible, the product is fake
+Illegal vapes — unregulated, potentially dangerous, designed to target young people
+Money mule recruitment — using your bank account for others is money laundering
+
+DIGITAL TRAPS:
+Subscription free trials — read the small print before entering any card detail
+Smishing delivery texts — go directly to the carrier website — never click the link
+Ticket scams — never pay by bank transfer for tickets from an individual
+Gift card payment — always a scam regardless of who is asking or why
+Fake support agents — no platform ever asks for your verification code
+
+REPORTING FOR UNDER-18s:
+Sextortion / image abuse: ceop.police.uk or Childline 0800 1111
+All other online fraud: actionfraud.police.uk / 0300 123 2040
+Fake goods on high street: Citizens Advice 0808 223 1133
+Scam texts: forward free to 7726
+Suspicious emails: report@phishing.gov.uk
+
+================================================================================
+END UNDER-18 SUPPLEMENTARY INTELLIGENCE LAYER
+================================================================================
