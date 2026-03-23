@@ -101,6 +101,14 @@ def ask_question(request: QuestionRequest):
     return {"answer": answer, "user": request.user_name}
 
 
+@app.post("/investigate")
+def investigate_target(request: QuestionRequest):
+    if not request.question:
+        raise HTTPException(status_code=400, detail="Target required")
+    answer = agent.investigate(target=request.question)
+    return {"answer": answer}
+
+
 @app.post("/check-platform")
 def check_platform(request: PlatformCheckRequest):
     if not request.platform_name:
