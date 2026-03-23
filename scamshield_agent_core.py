@@ -32,7 +32,7 @@ class ScamShieldAgent:
     def analyze_chat(self, chat_text, user_name="there"):
         if len(chat_text.strip()) < 20:
             return {"error": "Chat too short. Please provide more conversation."}
-        prompt = "My name is " + user_name + ". Please analyze this suspicious chat:\n\n" + chat_text[:2000]
+        prompt = "Analyze this suspicious message and return JSON only:\n\n" + chat_text[:2000]
         response = self.client.chat.completions.create(
             model=self.model,
             max_tokens=self.max_tokens,
@@ -51,9 +51,42 @@ class ScamShieldAgent:
         if json_match:
             raw = json_match.group(0)
         try:
-            return json.loads(raw)
+            ai = json.loads(raw)
         except json.JSONDecodeError:
             return {"conversational": True, "message": raw}
+
+        # Map AI response to display format
+        score = int(ai.get("riskScore", 50))
+        verdict = ai.get("verdict", "UNVERIFIED")
+        risk_level = "DANGER" if score >= 70 else "WARNING" if score >= 40 else "SAFE"
+
+        flags = []
+        for f in ai.get("redFlags", []):
+            flags.append({"title": f, "description": "", "severity": "high" if score >= 70 else "medium", "quote": ""})
+
+        advice = []
+        rec = ai.get("recommendation", "")
+        if rec:
+            advice = [s.strip() for s in rec.replace("\n", ".").split(".") if len(s.strip()) > 10][:4]
+
+        report_to = ai.get("reportTo", "Report Fraud: reporting.reportfraud.police.uk")
+        reporting_links = [{"name": "Report Fraud — City of London Police", "url": "https://reporting.reportfraud.police.uk/", "reason": report_to, "priority": "high"}]
+        if score >= 70:
+            reporting_links.append({"name": "Call 159 — Bank Fraud Hotline", "url": "https://www.stopscamsuk.org.uk/159", "reason": "Contact your bank immediately if money was involved", "priority": "high"})
+
+        return {
+            "verdict": verdict,
+            "riskScore": score,
+            "riskLevel": risk_level,
+            "scamType": verdict,
+            "personalizedSummary": ai.get("summary", ""),
+            "flags": flags,
+            "interrogationQuestions": [],
+            "advice": advice,
+            "reportingLinks": reporting_links,
+            "victimSupportMessage": "You are not alone. Thousands of people are targeted by scams every day in the UK." if score >= 70 else "",
+            "offerToDraft": ""
+        }
 
     def ask_question(self, question, user_name="there"):
         response = self.client.chat.completions.create(
