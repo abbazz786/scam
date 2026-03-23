@@ -88,6 +88,22 @@ class ScamShieldAgent:
             "offerToDraft": ""
         }
 
+    def investigate(self, target):
+        prompt = f"""Analyse this target for UK fraud. Return ONLY valid JSON, nothing else before or after the JSON.
+
+Target: {target}
+
+Required JSON format:
+{{"verdict":"SCAM or SUSPICIOUS or UNVERIFIED or LEGITIMATE","riskScore":50,"summary":"What this target is in 2 sentences","redFlags":["flag1"],"greenFlags":["signal1"],"evidenceFound":["point1"],"ukReports":["pattern1"],"recommendation":"What to do","reportTo":"Relevant UK authority and URL"}}"""
+        response = self.client.chat.completions.create(
+            model=self.model,
+            max_tokens=500,
+            messages=[
+                {"role": "user", "content": prompt}
+            ]
+        )
+        return response.choices[0].message.content.strip()
+
     def ask_question(self, question, user_name="there"):
         response = self.client.chat.completions.create(
             model=self.model,
