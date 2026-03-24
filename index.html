@@ -1,0 +1,2632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 40'%3E%3Cpath d='M18 2L4 8v12c0 10 6.5 17.5 14 19 7.5-1.5 14-9 14-19V8L18 2z' fill='%23003078'/%3E%3Cpath d='M18 6L7 11v9.5c0 8 5 14 11 15.5 6-1.5 11-7.5 11-15.5V11L18 6z' fill='%23FFD600'/%3E%3Cpath d='M18 10L9 14v7c0 6 4 11 9 12.5 5-1.5 9-6.5 9-12.5v-7L18 10z' fill='%23003078'/%3E%3Cpath d='M13 21l3.5 3.5 7-7' stroke='%23FFD600' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#003078">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ScamShield">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>ScamShield UK — Free AI Scam Detector | scamshield.org.uk</title>
+  <meta name="description" content="Free AI-powered scam detection for UK consumers. Paste a message, upload a screenshot, or investigate any number. Instant intelligence report. No account needed.">
+  <meta name="keywords" content="scam detector UK, fraud check, ScamShield, scam report, UK fraud, WhatsApp scam">
+  <link rel="canonical" href="https://scamshield.org.uk">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#003078">
+  <meta property="og:title" content="ScamShield UK — Free AI Scam Detector">
+  <meta property="og:description" content="Paste any suspicious message and get an instant intelligence report. Free forever. No account needed.">
+  <meta property="og:url" content="https://scamshield.org.uk">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://scamshield.org.uk/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@scamshielduk">
+  <meta name="twitter:title" content="ScamShield UK — Free AI Scam Detector">
+  <meta name="twitter:description" content="Paste any suspicious message and get an instant intelligence report. Free forever. No account needed. Protecting UK families from scams.">
+  <meta name="twitter:image" content="https://scamshield.org.uk/og-image.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── BRAND TOKENS ── */
+    :root {
+      --blue-dk: #003078;
+      --blue:    #1d70b8;
+      --blue-lt: #d2e2f1;
+      --green:   #00703c;
+      --green-lt:#e3f3ec;
+      --red:     #d4351c;
+      --red-lt:  #fde8e4;
+      --yellow:  #ffdd00;
+      --orange:  #f47738;
+      --black:   #0b0c0c;
+      --grey1:   #1d1d1b;
+      --grey2:   #505a5f;
+      --grey3:   #b1b4b6;
+      --grey4:   #f3f2f1;
+      --grey5:   #f8f8f8;
+      --white:   #ffffff;
+      --radius:  4px;
+      --radius-lg: 8px;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html, body {
+      height: 100%;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: var(--black);
+      background: var(--grey5);
+      overflow: hidden;
+    }
+
+    /* ════════════════════════════
+       TOPBAR — fixed, single row
+    ════════════════════════════ */
+    /* ── Premium HD upgrades ── */
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 52px;
+      background: var(--blue-dk);
+      border-bottom: 3px solid var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      z-index: 50;
+      gap: 8px;
+    }
+
+    .brand { display:flex; align-items:center; gap:10px; min-width:0; }
+    .brand-icon { width:30px; height:30px; flex-shrink:0; }
+    .brand-name {
+      font-size: 18px; font-weight:700;
+      color: var(--white); white-space:nowrap;
+      line-height:1;
+    }
+    .brand-name em { color:var(--yellow); font-style:normal; }
+    .brand-uk { font-size:10px; opacity:.6; font-weight:400; margin-left:3px; }
+    .brand-tag { display:none; } /* hidden on mobile */
+
+    .topbar-right { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+
+    .engine-badge {
+      display:flex; align-items:center; gap:5px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,.05);
+      border-radius:var(--radius);
+      padding:3px 8px;
+      font-size:10px; font-weight:600;
+      color:rgba(255,255,255,.1); white-space:nowrap;
+    }
+    .engine-dot {
+      width:5px; height:5px;
+      background:rgba(255,255,255,.1); border-radius:50%;
+    }
+    @keyframes appTipGlow {
+      0%,100% { background:rgba(255,255,255,.07); box-shadow:0 0 0 0 rgba(255,214,0,0); }
+      50% { background:rgba(255,214,0,.1); box-shadow:0 0 8px 2px rgba(255,214,0,.2); }
+    }
+    @keyframes appTipSlide {
+      0% { opacity:0; transform:translateY(6px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+    @keyframes pillBounce {
+      0%,100% { transform:scale(1); }
+      40% { transform:scale(1.35); }
+      60% { transform:scale(1.2); }
+    }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
+
+    .name-wrap {
+      display:flex; align-items:center; gap:6px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:var(--radius);
+      padding:4px 10px;
+    }
+    .name-wrap:focus-within { border-color:var(--yellow); }
+    .name-wrap input {
+      border:none; outline:none; background:transparent;
+      font-family:'DM Sans',sans-serif;
+      font-size:13px; color:var(--white); width:90px;
+    }
+    .name-wrap input::placeholder { color:rgba(255,255,255,.4); }
+    .name-label { font-size:10px; color:rgba(255,255,255,.5); font-weight:500; }
+
+    /* ════════════════════════════
+       APP SHELL — below topbar
+    ════════════════════════════ */
+    .app {
+      position: fixed;
+      top: 52px; left:0; right:0; bottom:0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ════════════════════════════
+       CHAT PANEL — full screen mobile
+    ════════════════════════════ */
+    .chat-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    /* Messages scroll area */
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chat-messages::-webkit-scrollbar { width:3px; }
+    .chat-messages::-webkit-scrollbar-thumb { background:var(--grey3); border-radius:2px; }
+
+    /* Welcome card */
+    .welcome-card {
+      background: var(--blue-dk);
+      border-left: 4px solid var(--yellow);
+      border-radius: var(--radius-lg);
+      padding: 12px 14px;
+      color: var(--white);
+    }
+    .welcome-card h3 { font-size:14px; font-weight:700; margin-bottom:4px; }
+    .welcome-card p  { font-size:11px; opacity:.85; line-height:1.5; margin-bottom:10px; }
+    .scam-pills { display:flex; flex-wrap:wrap; gap:4px; }
+    .scam-pill {
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.18);box-shadow:0 1px 3px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.08);
+      color:rgba(255,255,255,.9);
+      font-size:10px; font-weight:600;
+      padding:2px 7px; border-radius:2px;
+    }
+
+    /* Agent messages */
+    .agent-msg { display:flex; gap:8px; align-items:flex-start; animation:fadeUp .25s ease both; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
+    .agent-avatar {
+      width:28px; height:28px; border-radius:var(--radius);
+      background:var(--blue-dk);
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0;
+    }
+    .agent-bubble {
+      background:var(--grey4);
+      border-left:3px solid var(--blue);
+      border-radius:0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
+      padding:8px 11px;
+      font-size:13px; line-height:1.55;
+      color:var(--grey1); max-width:84%;
+    }
+    .agent-name { font-size:9px; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:.6px; margin-bottom:3px; }
+
+    /* User messages */
+    .user-msg { display:flex; justify-content:flex-end; animation:fadeUp .2s ease both; }
+    .user-bubble {
+      background:var(--blue);
+      color:var(--white);
+      border-radius:var(--radius-lg) var(--radius-lg) var(--radius) var(--radius-lg);
+      padding:8px 13px;
+      font-size:12px; line-height:1.5;
+      max-width:82%; white-space:pre-line; font-weight:500;
+    }
+
+    /* Typing dots */
+    .typing-row { display:none; align-items:flex-start; gap:8px; }
+    .typing-row.visible { display:flex; }
+    .typing-dots {
+      background:var(--grey4); border-left:3px solid var(--blue);
+      border-radius:0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
+      padding:10px 14px; display:flex; gap:4px;
+    }
+    .typing-dots span {
+      width:6px; height:6px; background:var(--blue); border-radius:50%;
+      animation:bounce .9s ease-in-out infinite;
+    }
+    .typing-dots span:nth-child(2){animation-delay:.15s}
+    .typing-dots span:nth-child(3){animation-delay:.3s}
+    @keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
+
+    /* ════════════════════════════
+       INPUT AREA — fixed bottom
+    ════════════════════════════ */
+    .input-area {
+      flex-shrink: 0;
+      background: var(--white);
+      border-top: 1px solid #dde0e3;
+      padding: 8px 12px;
+      padding-bottom: calc(8px + env(safe-area-inset-bottom));
+    }
+
+    .tabs { display:flex; gap:2px; margin-bottom:8px; background:var(--grey4); padding:3px; border-radius:var(--radius); }
+    .tab {
+      flex:1; border:none; background:transparent;
+      color:var(--grey2); cursor:pointer;
+      font-family:'DM Sans',sans-serif;
+      font-size:12px; font-weight:600;
+      padding:5px 4px; border-radius:var(--radius); transition:all .15s;
+    }
+    .tab.active { background:var(--white); color:var(--blue-dk); box-shadow:0 1px 3px rgba(0,0,0,.1); }
+
+    .tab-content { display:none; }
+    .tab-content.active { display:block; }
+
+    .chat-textarea {
+      width:100%; min-height:64px; max-height:110px;
+      border:2px solid var(--grey3); border-radius:var(--radius);
+      padding:9px 11px;
+      font-family:'DM Sans',sans-serif;
+      font-size:16px; /* MUST be 16px+ to prevent iOS zoom */
+      line-height:1.45; color:var(--black);
+      resize:none; outline:none; transition:border-color .15s;
+    }
+    .chat-textarea:focus { border-color:var(--blue); }
+    .chat-textarea::placeholder { color:var(--grey3); font-size:13px; }
+
+    .upload-zone {
+      border:2px dashed var(--grey3); border-radius:var(--radius);
+      padding:18px; text-align:center; cursor:pointer;
+      background:var(--grey5); transition:all .15s;
+    }
+    .upload-zone:hover { border-color:var(--blue); background:var(--blue-lt); }
+    .upload-icon { font-size:22px; display:block; margin-bottom:5px; }
+    .upload-text { font-size:13px; font-weight:600; color:var(--grey1); }
+    .upload-sub  { font-size:11px; color:var(--grey2); margin-top:2px; }
+    .image-preview { display:none; margin-top:7px; }
+    .image-preview img { max-width:100%; max-height:70px; border-radius:var(--radius); border:1px solid var(--grey3); }
+    .ocr-status { font-size:12px; color:var(--blue); font-weight:600; margin-top:4px; }
+    input[type="file"] { display:none; }
+
+    .input-footer { display:flex; justify-content:space-between; align-items:center; margin-top:7px; }
+    .char-count { font-size:11px; color:var(--grey2); }
+
+    .send-btn {
+      background:var(--blue-dk); color:var(--white);
+      border:none; border-radius:var(--radius);
+      padding:9px 18px;
+      font-family:'DM Sans',sans-serif; font-size:13px; font-weight:700;
+      cursor:pointer; transition:background .15s, transform .1s;
+      box-shadow:0 2px 0 #001a4e;
+    }
+    .send-btn:hover:not(:disabled) { background:var(--blue); }
+    .send-btn:active:not(:disabled) { transform:translateY(1px); box-shadow:0 1px 0 #001a4e; }
+    .send-btn:disabled { opacity:.45; cursor:not-allowed; }
+
+    .error-box {
+      display:none; margin-top:7px;
+      padding:7px 11px;
+      background:var(--red-lt); border-left:4px solid var(--red);
+      border-radius:var(--radius);
+      font-size:12px; font-weight:600; color:var(--red);
+    }
+    .error-box.visible { display:block; animation:fadeUp .2s ease; }
+
+    /* ════════════════════════════
+       RESULTS — BOTTOM SHEET (mobile)
+    ════════════════════════════ */
+    .sheet-overlay {
+      display:none;
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.45);
+      z-index:98;
+      opacity:0; transition:opacity .3s ease;
+    }
+    .sheet-overlay.visible { opacity:1; }
+
+    .results-panel {
+      position: fixed;
+      left:0; right:0; bottom:0;
+      height: 75dvh;
+      background: var(--white);
+      border-radius: 14px 14px 0 0;
+      border-top: 3px solid var(--blue);
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: transform .35s cubic-bezier(.32,.72,0,1);
+      overflow: hidden;
+    }
+    .results-panel.open { transform: translateY(0); }
+
+    /* Drag handle */
+    .sheet-handle {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 6px;
+      flex-shrink: 0;
+    }
+    .sheet-handle-bar {
+      width:36px; height:4px;
+      background:var(--grey3); border-radius:2px;
+    }
+
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px 8px;
+      flex-shrink: 0;
+      border-bottom: 1px solid #eaecee;
+    }
+    .sheet-title {
+      font-size:12px; font-weight:700;
+      text-transform:uppercase; letter-spacing:.7px;
+      color:var(--grey2);
+    }
+    .sheet-close {
+      background:none; border:none;
+      font-size:12px; font-weight:700;
+      color:var(--blue); cursor:pointer;
+      font-family:'DM Sans',sans-serif;
+      padding:4px 8px; border-radius:var(--radius);
+    }
+    .sheet-close:hover { background:var(--grey4); }
+
+    .results-area {
+      flex:1; overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      padding:12px;
+      padding-bottom:calc(16px + env(safe-area-inset-bottom));
+    }
+    .results-area::-webkit-scrollbar { width:3px; }
+    .results-area::-webkit-scrollbar-thumb { background:var(--grey3); border-radius:2px; }
+
+    /* ════════════════════════════
+       RESULT CARDS
+    ════════════════════════════ */
+    .result-card {
+      background:var(--white);
+      border:1px solid #dde0e3;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      margin-bottom:10px;
+      animation:fadeUp .3s ease both;
+    }
+
+    .risk-meter {
+      padding:14px 16px;
+      display:flex; align-items:center; gap:14px;
+      border-bottom:1px solid #eaecee;
+    }
+    .risk-circle {
+      width:64px; height:64px; border-radius:50%;
+      border:3px solid; flex-shrink:0;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+    }
+    .risk-circle-num { font-size:24px; font-weight:700; line-height:1; font-family:'DM Mono',monospace; }
+    .risk-circle-label { font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; opacity:.7; }
+    .risk-right { flex:1; min-width:0; }
+    .risk-spoken { font-size:14px; font-weight:700; margin-bottom:6px; line-height:1.3; }
+    .risk-bar-bg { height:5px; background:#eaecee; border-radius:3px; overflow:hidden; margin-bottom:6px; }
+    .risk-bar-fill { height:100%; width:0; border-radius:3px; transition:width .7s cubic-bezier(.4,0,.2,1); }
+    .scam-type-badge {
+      display:inline-block; font-size:9px; font-weight:700;
+      padding:2px 7px; border-radius:var(--radius);
+      background:var(--blue-lt); color:var(--blue-dk);
+      letter-spacing:.3px; text-transform:uppercase;
+    }
+
+    .summary-box {
+      padding:12px 16px;
+      background:var(--grey5); border-bottom:1px solid #eaecee;
+      font-size:12px; line-height:1.65; color:var(--grey1);
+    }
+    .sec-head {
+      font-size:10px; font-weight:700; text-transform:uppercase;
+      letter-spacing:.8px; color:var(--grey2);
+      padding:12px 16px 7px; border-top:1px solid #eaecee;
+    }
+
+    .flag-card { display:flex; gap:10px; padding:9px 16px; border-bottom:1px solid #f0f1f2; align-items:flex-start; }
+    .flag-card:last-child { border-bottom:none; }
+    .flag-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; margin-top:3px; }
+    .flag-dot.high   { background:var(--red); }
+    .flag-dot.medium { background:var(--orange); }
+    .flag-dot.low    { background:var(--green); }
+    .flag-card.high   { background:#fffaf9; }
+    .flag-card.medium { background:#fff9f5; }
+    .flag-title { font-size:12px; font-weight:700; color:var(--grey1); margin-bottom:2px; }
+    .flag-desc  { font-size:11px; color:var(--grey2); line-height:1.5; }
+    .flag-quote { font-size:11px; color:var(--grey2); font-style:italic; margin-top:3px; padding:3px 7px; background:var(--grey4); border-left:2px solid var(--grey3); border-radius:0 2px 2px 0; }
+
+    .question-card { display:flex; align-items:center; gap:10px; padding:9px 16px; border-bottom:1px solid #f0f1f2; cursor:pointer; transition:background .15s; }
+    .question-card:hover { background:var(--grey5); }
+    .q-num { width:20px; height:20px; background:var(--blue); color:var(--white); border-radius:var(--radius); font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .q-text { font-size:12px; color:var(--grey1); flex:1; line-height:1.45; }
+    .copy-hint { font-size:10px; color:var(--blue); font-weight:700; flex-shrink:0; }
+
+    .advice-card { display:flex; gap:10px; align-items:flex-start; padding:9px 16px; border-bottom:1px solid #f0f1f2; }
+    .advice-num { width:20px; height:20px; background:var(--green); color:var(--white); border-radius:var(--radius); font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .advice-text { font-size:12px; color:var(--grey1); line-height:1.55; flex:1; }
+
+    .report-section { padding-bottom:4px; }
+    .report-title { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.8px; color:var(--grey2); padding:12px 16px 7px; border-top:1px solid #eaecee; }
+    .report-link { display:flex; align-items:center; justify-content:space-between; padding:9px 16px; border-bottom:1px solid #f0f1f2; text-decoration:none; transition:background .15s; }
+    .report-link:hover { background:var(--grey5); }
+    .report-link-name { font-size:12px; font-weight:700; color:var(--blue); text-decoration:underline; }
+    .report-link-reason { font-size:11px; color:var(--grey2); margin-top:1px; }
+    .report-link.high-priority .report-link-name { color:var(--red); }
+    .report-arrow { font-size:14px; color:var(--grey3); flex-shrink:0; }
+
+    .draft-btn { display:block; width:calc(100% - 32px); margin:10px 16px; padding:10px; background:var(--blue-dk); color:var(--white); border:none; border-radius:var(--radius); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:700; cursor:pointer; text-align:center; transition:background .15s; box-shadow:0 2px 0 #001a4e; }
+    .draft-btn:hover { background:var(--blue); }
+
+    .companion-msg { margin:0 16px 14px; padding:11px 13px; background:#e8f0fd; border-left:4px solid var(--blue); border-radius:0 var(--radius-lg) var(--radius-lg) 0; font-size:12px; line-height:1.6; color:var(--blue-dk); }
+
+    /* Empty state */
+    .empty-state { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; min-height:200px; text-align:center; color:var(--grey2); padding:30px 20px; }
+    .empty-shield { width:52px; height:52px; margin-bottom:14px; opacity:.2; }
+    .empty-state h3 { font-size:14px; font-weight:700; color:var(--grey2); margin-bottom:6px; }
+    .empty-state p { font-size:12px; line-height:1.55; max-width:260px; }
+
+    /* Toast */
+    .toast {
+      position:fixed; bottom:20px; left:50%;
+      transform:translateX(-50%) translateY(60px);
+      background:var(--black); color:var(--white);
+      padding:9px 18px; border-radius:var(--radius);
+      font-size:12px; font-weight:600;
+      opacity:0; transition:all .25s ease; z-index:200;
+      border-left:3px solid var(--yellow);
+    }
+    .toast.visible { opacity:1; transform:translateX(-50%) translateY(0); }
+
+    /* ════════════════════════════
+       DESKTOP — side-by-side
+    ════════════════════════════ */
+
+    /* ── CLICKABLE PILLS ── */
+    .scam-pill.clickable { cursor:pointer; transition:background .15s,transform .1s; }
+    .scam-pill.clickable:hover { background:rgba(255,255,255,.25); transform:translateY(-1px); }
+    .scam-pill.clickable:active { transform:scale(.96); }
+
+    /* ── LEARN DRAWER ── */
+    .learn-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:200; opacity:0; transition:opacity .3s ease; }
+    .learn-overlay.visible { opacity:1; }
+    .learn-drawer {
+      position:fixed; left:0; right:0; bottom:0;
+      height:90dvh; background:var(--white);
+      border-radius:16px 16px 0 0; border-top:3px solid var(--yellow);
+      z-index:201; display:flex; flex-direction:column;
+      transform:translateY(100%); transition:transform .35s cubic-bezier(.32,.72,0,1);
+      overflow:hidden;
+    }
+    .learn-drawer.open { transform:translateY(0); }
+    .learn-handle { display:flex; justify-content:center; padding:10px 0 4px; flex-shrink:0; }
+    .learn-handle-bar { width:36px; height:4px; background:var(--grey3); border-radius:2px; }
+    .learn-header { display:flex; align-items:center; justify-content:space-between; padding:6px 16px 10px; border-bottom:1px solid #eaecee; flex-shrink:0; }
+    .learn-title { font-size:15px; font-weight:700; color:var(--black); }
+    .learn-back { display:none; background:none; border:none; font-size:12px; font-weight:700; color:var(--blue); cursor:pointer; font-family:'DM Sans',sans-serif; padding:4px 8px; border-radius:var(--radius); }
+    .learn-back:hover { background:var(--grey4); }
+    .learn-close { background:none; border:none; font-size:18px; color:var(--grey2); cursor:pointer; padding:0 4px; line-height:1; }
+    .learn-body { flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:12px; }
+    .learn-body::-webkit-scrollbar { width:3px; }
+    .learn-body::-webkit-scrollbar-thumb { background:var(--grey3); border-radius:2px; }
+
+    .learn-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    .learn-card { background:var(--grey5); border:1px solid #dde0e3; border-radius:var(--radius-lg); padding:14px 12px; cursor:pointer; transition:all .15s; display:flex; flex-direction:column; gap:4px; }
+    .learn-card:hover { background:var(--blue-lt); border-color:var(--blue); transform:translateY(-1px); }
+    .learn-card:active { transform:scale(.97); }
+    .learn-card-icon { font-size:22px; line-height:1; }
+    .learn-card-name { font-size:13px; font-weight:700; color:var(--black); line-height:1.2; }
+    .learn-card-desc { font-size:11px; color:var(--grey2); line-height:1.4; }
+    .learn-card-risk { display:inline-block; font-size:9px; font-weight:700; padding:2px 6px; border-radius:var(--radius); margin-top:3px; align-self:flex-start; }
+    .risk-critical { background:#fde8e4; color:#d4351c; }
+    .risk-high { background:#fef3ec; color:#f47738; }
+    .risk-medium { background:#faeeda; color:#854F0B; }
+
+    .learn-detail { display:none; }
+    .learn-detail.active { display:block; }
+    .learn-home { display:block; }
+    .learn-home.hidden { display:none; }
+
+    .detail-hero { background:var(--blue-dk); border-radius:var(--radius-lg); padding:16px; margin-bottom:12px; color:var(--white); }
+    .detail-icon { font-size:28px; margin-bottom:6px; }
+    .detail-name { font-size:17px; font-weight:700; margin-bottom:4px; }
+    .detail-blurb { font-size:12px; opacity:.85; line-height:1.5; }
+    .detail-section { background:var(--white); border:1px solid #dde0e3; border-radius:var(--radius-lg); overflow:hidden; margin-bottom:10px; }
+    .detail-section-head { background:var(--grey5); padding:9px 14px; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.7px; color:var(--grey2); border-bottom:1px solid #eaecee; }
+    .detail-row { display:flex; align-items:flex-start; gap:10px; padding:9px 14px; border-bottom:1px solid #f0f1f2; font-size:12px; color:var(--grey1); line-height:1.5; }
+    .detail-row:last-child { border-bottom:none; }
+    .detail-dot { font-size:9px; margin-top:3px; flex-shrink:0; }
+    /* ── Report Preparation Panel ── */
+    .prep-report-btn { display:block; width:100%; padding:12px; margin-top:10px; background:#003078; color:#FFD600; border:none; border-radius:var(--radius); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:700; cursor:pointer; text-align:center; letter-spacing:.3px; }
+    .prep-report-btn:hover { background:#1d4f8c; }
+    .report-prep-panel { background:#f8f9fa; border:1px solid #dee2e6; border-radius:8px; margin-top:10px; overflow:hidden; }
+    .report-prep-header { background:#003078; color:#fff; padding:10px 14px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px; }
+    .report-authority { border-bottom:1px solid #dee2e6; }
+    .report-authority:last-child { border-bottom:none; }
+    .authority-header { padding:10px 14px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:#fff; }
+    .authority-header:hover { background:#f0f4ff; }
+    .authority-name { font-size:12px; font-weight:700; color:#003078; }
+    .authority-tag { font-size:10px; color:#fff; background:#003078; border-radius:3px; padding:2px 6px; }
+    .authority-tag.required { background:#d4351c; }
+    .authority-body { padding:10px 14px 14px; background:#fafbff; display:none; }
+    .authority-body.open { display:block; }
+    .report-field { margin-bottom:10px; }
+    .report-field label { font-size:10px; font-weight:700; color:#546E7A; text-transform:uppercase; letter-spacing:.5px; display:block; margin-bottom:3px; }
+    .report-field-content { background:#fff; border:1px solid #cdd5df; border-radius:5px; padding:8px 10px; font-size:11px; color:#222; line-height:1.6; white-space:pre-wrap; word-break:break-word; }
+    .copy-field-btn { margin-top:4px; font-size:10px; font-weight:700; color:#003078; background:none; border:1px solid #003078; border-radius:4px; padding:3px 10px; cursor:pointer; }
+    .copy-field-btn:hover { background:#003078; color:#fff; }
+    .copy-field-btn.copied { background:#00703c; border-color:#00703c; color:#fff; }
+    .authority-link { display:block; margin-top:8px; background:#003078; color:#FFD600; text-align:center; padding:8px; border-radius:5px; font-size:12px; font-weight:700; text-decoration:none; }
+    .authority-link:hover { background:#1d4f8c; }
+    .report-btn { display:block; width:100%; padding:11px; margin-top:4px; background:var(--blue-dk); color:var(--white); border:none; border-radius:var(--radius); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:700; cursor:pointer; text-align:center; box-shadow:0 2px 0 #001a4e; transition:background .15s; }
+    .report-btn:hover { background:var(--blue); }
+
+    @media (min-width: 768px) {
+      .learn-drawer { left:auto; width:440px; right:0; height:100%; border-radius:0; border-top:none; border-left:3px solid var(--yellow); }
+      .learn-handle { display:none; }
+      .learn-grid { grid-template-columns:repeat(2,1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .topbar { height:56px; padding:0 24px; }
+      .brand-icon { width:34px; height:34px; }
+      .brand-name { font-size:20px; }
+      .brand-tag { display:block; font-size:11px; color:var(--blue-lt); }
+      .name-wrap input { width:130px; }
+
+      .app { flex-direction: row; }
+
+      /* Chat panel — left 42% */
+      .chat-panel {
+        width: 42%;
+        min-width: 320px;
+        border-right: 1px solid #dde0e3;
+        flex-shrink: 0;
+      }
+      .chat-messages { padding:16px; }
+      .welcome-card { padding:16px; }
+      .welcome-card h3 { font-size:15px; margin-bottom:5px; }
+      .welcome-card p { font-size:12px; margin-bottom:12px; }
+      .scam-pill { font-size:10px; padding:3px 8px; }
+      .chat-textarea { font-size:14px; min-height:80px; max-height:140px; }
+      .chat-textarea::placeholder { font-size:13px; }
+      .input-area { padding:12px 16px 14px; }
+      .tab { font-size:12px; padding:6px 4px; }
+
+      /* Results panel — right fills remaining, NOT a sheet */
+      .sheet-overlay { display:none !important; }
+      .results-panel {
+        position: static !important;
+        transform: none !important;
+        flex: 1;
+        height: auto;
+        border-radius: 0;
+        border-top: none;
+        border-left: none;
+        background: var(--grey5);
+        z-index: auto;
+        transition: none;
+      }
+      .sheet-handle { display:none; }
+      .sheet-header { border-bottom:1px solid #eaecee; padding:12px 18px 10px; }
+      .sheet-title { font-size:11px; }
+      .sheet-close { display:none; }
+      .results-area { padding:16px; }
+
+      /* Risk circle bigger on desktop */
+      .risk-circle { width:72px; height:72px; }
+      .risk-circle-num { font-size:26px; }
+      .risk-meter { padding:18px 20px; gap:18px; }
+      .summary-box { padding:14px 20px; font-size:13px; }
+      .sec-head { padding:14px 20px 8px; font-size:11px; }
+      .flag-card { padding:10px 20px; }
+      .flag-title { font-size:12px; }
+      .flag-desc  { font-size:12px; }
+      .question-card { padding:10px 20px; }
+      .q-text { font-size:12px; }
+      .advice-card { padding:10px 20px; }
+      .advice-text { font-size:12px; }
+      .report-link { padding:10px 20px; }
+      .report-link-name { font-size:12px; }
+      .report-link-reason { font-size:11px; }
+      .draft-btn { width:calc(100% - 40px); margin:12px 20px; font-size:13px; }
+      .companion-msg { margin:0 20px 16px; font-size:13px; }
+      .result-card { margin-bottom:12px; }
+      .empty-state { min-height:300px; padding:40px; }
+      .empty-shield { width:64px; height:64px; }
+      .empty-state h3 { font-size:16px; }
+      .empty-state p { font-size:13px; max-width:320px; }
+    }
+    /* ── LOCAL ALERT BANNER ── */
+    .alert-banner {
+      display: none;
+      margin: 8px 12px 0;
+      background: var(--blue-dk);
+      border-left: 4px solid var(--yellow);
+      border-radius: var(--radius-lg);
+      padding: 10px 12px;
+      cursor: pointer;
+      animation: fadeUp .3s ease both;
+    }
+    .alert-banner.visible { display: flex; align-items: flex-start; gap: 10px; }
+    .alert-banner-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .alert-banner-text { flex: 1; }
+    .alert-banner-title { font-size: 12px; font-weight: 700; color: var(--yellow); margin-bottom: 2px; }
+    .alert-banner-body  { font-size: 11px; color: rgba(255,255,255,.85); line-height: 1.45; }
+    .alert-banner-close { font-size: 14px; color: rgba(255,255,255,.5); cursor: pointer; flex-shrink: 0; background: none; border: none; padding: 0; }
+    .alert-banner-close:hover { color: var(--white); }
+
+    /* ── NEARBY SCAMS SHEET ── */
+    .nearby-sheet {
+      position: fixed; left: 0; right: 0; bottom: 0;
+      height: 85dvh; background: var(--white);
+      border-radius: 16px 16px 0 0;
+      border-top: 3px solid var(--yellow);
+      z-index: 201; display: flex; flex-direction: column;
+      transform: translateY(100%);
+      transition: transform .35s cubic-bezier(.32,.72,0,1);
+      overflow: hidden;
+    }
+    .nearby-sheet.open { transform: translateY(0); }
+    .nearby-handle { display:flex; justify-content:center; padding:10px 0 4px; flex-shrink:0; }
+    .nearby-handle-bar { width:36px; height:4px; background:var(--grey3); border-radius:2px; }
+    .nearby-header { display:flex; align-items:center; justify-content:space-between; padding:4px 16px 10px; border-bottom:1px solid #eaecee; flex-shrink:0; }
+    .nearby-title { font-size:14px; font-weight:700; color:var(--black); }
+    .nearby-close { background:none; border:none; font-size:18px; color:var(--grey2); cursor:pointer; padding:0 4px; }
+    .nearby-body { flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:12px; }
+    .nearby-body::-webkit-scrollbar { width:3px; }
+
+    .nearby-stat-row { display:flex; gap:8px; margin-bottom:12px; }
+    .nearby-stat { flex:1; background:var(--grey5); border:1px solid #dde0e3; border-radius:var(--radius-lg); padding:10px 12px; text-align:center; }
+    .nearby-stat-num { font-size:22px; font-weight:700; color:var(--blue-dk); font-family:'DM Mono',monospace; }
+    .nearby-stat-label { font-size:10px; color:var(--grey2); margin-top:2px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
+
+    .nearby-crime-card { background:var(--white); border:1px solid #dde0e3; border-radius:var(--radius-lg); overflow:hidden; margin-bottom:10px; }
+    .nearby-crime-head { display:flex; align-items:center; gap:10px; padding:10px 14px; background:var(--grey5); border-bottom:1px solid #eaecee; cursor:pointer; user-select:none; transition:background .15s; }
+    .nearby-crime-head:hover { background:#e8edf5; }
+    .nearby-crime-head.expandable { cursor:pointer; }
+    .nearby-crime-icon { font-size:16px; }
+    .nearby-crime-type { font-size:12px; font-weight:700; color:var(--black); flex:1; }
+    .nearby-crime-count { font-size:11px; font-weight:700; color:var(--blue); background:var(--blue-lt); padding:2px 7px; border-radius:20px; }
+    .nearby-crime-arrow { font-size:12px; color:var(--grey2); transition:transform .25s; flex-shrink:0; margin-left:4px; }
+    .nearby-crime-arrow.open { transform:rotate(180deg); }
+    .nearby-crime-row { padding:8px 14px; border-bottom:1px solid #f0f1f2; font-size:11px; color:var(--grey2); line-height:1.45; display:flex; gap:8px; align-items:flex-start; }
+    .nearby-crime-row:last-child { border-bottom:none; }
+    .nearby-crime-dot { font-size:8px; margin-top:3px; flex-shrink:0; }
+    .nearby-crime-body { display:none; }
+    .nearby-crime-body.open { display:block; }
+    .nearby-incident { padding:7px 14px; border-bottom:1px solid #f5f6f7; font-size:10.5px; color:var(--grey2); display:flex; gap:8px; align-items:flex-start; }
+    .nearby-incident:last-child { border-bottom:none; }
+    .nearby-incident-pin { width:6px; height:6px; border-radius:50%; background:var(--blue); flex-shrink:0; margin-top:4px; }
+    .nearby-incident-loc { font-size:10px; color:var(--grey3); margin-top:2px; }
+    .nearby-no-incidents { padding:10px 14px; font-size:11px; color:var(--grey3); font-style:italic; }
+    .nearby-more-btn { display:flex; align-items:center; gap:8px; padding:10px 14px; background:#f0f4ff; border:none; width:100%; text-align:left; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; color:var(--blue); border-top:1px solid #dde0e3; transition:background .15s; }
+    .nearby-more-btn:hover { background:#e4eaff; }
+    .nearby-more-btn .more-spinner { width:13px; height:13px; border:2px solid #c7d2fe; border-top-color:var(--blue); border-radius:50%; animation:spin .7s linear infinite; display:none; flex-shrink:0; }
+    .nearby-more-btn.loading .more-spinner { display:inline-block; }
+    .nearby-more-btn.loading .more-text { opacity:.6; }
+    .nearby-ai-summary { margin:0; padding:12px 14px; background:#f8faff; border-top:1px solid #dde6ff; font-size:11px; color:var(--grey1); line-height:1.65; }
+    .nearby-ai-summary .summary-badge { display:inline-flex; align-items:center; gap:4px; background:#e8f0fd; color:var(--blue); font-size:10px; font-weight:700; padding:2px 7px; border-radius:20px; margin-bottom:8px; }
+    .nearby-ai-summary ul { margin:6px 0 0 0; padding-left:16px; }
+    .nearby-ai-summary li { margin-bottom:4px; }
+
+    .nearby-tip { background:#e8f0fd; border-left:4px solid var(--blue); border-radius:0 var(--radius-lg) var(--radius-lg) 0; padding:10px 13px; margin-bottom:10px; font-size:12px; color:var(--blue-dk); line-height:1.55; }
+    .nearby-loading { text-align:center; padding:40px 20px; color:var(--grey2); font-size:13px; }
+    .nearby-spinner { width:28px; height:28px; border:3px solid #eaecee; border-top-color:var(--blue); border-radius:50%; animation:spin .7s linear infinite; margin:0 auto 12px; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    @media (min-width: 768px) {
+      .nearby-sheet { left:auto; width:440px; right:0; height:100%; border-radius:0; border-top:none; border-left:3px solid var(--yellow); }
+      .nearby-handle { display:none; }
+      .alert-banner { margin:8px 16px 0; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ScamShield UK",
+    "url": "https://scamshield.org.uk",
+    "description": "Free AI-powered scam detection tool for UK consumers. Paste suspicious messages, upload screenshots, investigate phone numbers and get instant intelligence reports.",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "ScamShield UK",
+      "url": "https://scamshield.org.uk"
+    },
+    "featureList": [
+      "AI scam message detection",
+      "Screenshot OCR analysis",
+      "Phone number investigation",
+      "Official UK report preparation",
+      "Local crime alerts",
+      "No account required",
+      "Free forever"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "UK Consumers"
+    },
+    "inLanguage": "en-GB",
+    "isAccessibleForFree": true,
+    "keywords": "scam detector UK, fraud check, ScamShield, scam report, UK fraud protection"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ScamShield UK",
+    "url": "https://scamshield.org.uk",
+    "logo": "https://scamshield.org.uk/og-image.png",
+    "description": "Free AI-powered scam detection service protecting UK consumers from fraud.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    "knowsAbout": [
+      "Scam detection",
+      "Fraud prevention",
+      "UK consumer protection",
+      "Phishing detection",
+      "Online fraud"
+    ],
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does ScamShield UK detect scams?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ScamShield UK uses AI-powered analysis with 50+ coded fraud patterns to instantly detect scams. Paste any suspicious message from WhatsApp, email, or text and receive an intelligence report in seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is ScamShield UK free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, ScamShield UK is completely free. No account is needed, no personal data is stored, and the service will remain free forever."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I report a scam in the UK?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can report scams to Action Fraud (the UK's national fraud reporting centre), the FCA for financial scams, ICO for data breaches, Ofcom for nuisance calls, and CEOP for child exploitation. ScamShield UK helps prepare official reports for all these agencies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can ScamShield UK check phone numbers and websites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, use the Investigate tab to check suspicious phone numbers, email addresses, URLs, and company names. ScamShield UK provides a detailed threat intelligence report for each investigation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ScamShield UK store my messages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. ScamShield UK does not store any messages or personal data. All analysis happens in real time and nothing is saved. We use essential cookies only with no tracking or advertising."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google Analytics GA4 — replace G-24T0CCY5EM with your Measurement ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24T0CCY5EM"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-24T0CCY5EM',{
+      anonymize_ip:true,
+      cookie_flags:'SameSite=None;Secure'
+    });
+    // Track key events
+    function trackEvent(action,category,label){
+      if(typeof gtag!=='undefined'){
+        gtag('event',action,{event_category:category,event_label:label});
+      }
+    }
+  </script>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="brand">
+    <svg class="brand-icon" viewBox="0 0 36 40" fill="none">
+      <path d="M18 2L3 8v12c0 9.9 6.4 19.1 15 21.9C26.6 39.1 33 29.9 33 20V8L18 2z" fill="#ffdd00"/>
+      <path d="M18 5L5.5 10.5V20c0 8.5 5.5 16.4 12.5 18.8C25 36.4 30.5 28.5 30.5 20v-9.5L18 5z" fill="#003078"/>
+      <path d="M12 20l4 4 8-8" stroke="#ffdd00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <h1 class="brand-name" style="margin:0;font-size:inherit;">Scam<em>Shield</em><span class="brand-uk" style="opacity:1;font-size:11px;font-weight:700;color:#FFD600;">.org.uk</span></h1>
+      <div class="brand-tag">Your personal scam detector</div>
+    </div>
+  </div>
+  <div class="topbar-right">
+
+    <div style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:5px 10px;cursor:default;" title="Your messages are analysed in real time and never stored.">
+      <span style="font-size:12px;">🔒</span>
+      <div style="line-height:1.2;">
+        <div style="font-size:10px;font-weight:700;color:#FFD600;">Your chats are never saved</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.55);">100% private · no account needed</div>
+      </div>
+    </div>
+    <input type="hidden" id="userName" value="there"/>
+  </div>
+</div>
+
+<!-- Cookie Banner -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#003078;color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -2px 12px rgba(0,0,0,.3);flex-wrap:wrap;">
+  <div style="font-size:12px;line-height:1.5;flex:1;min-width:200px;">
+    🍪 We use essential cookies only to keep ScamShield working. No tracking, no advertising, no personal data stored.
+    <a href="https://scamshield.org.uk/privacy" style="color:#FFD600;margin-left:6px;font-weight:700;">Privacy Policy</a>
+  </div>
+  <div style="display:flex;gap:8px;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="background:#FFD600;color:#003078;border:none;border-radius:6px;padding:7px 18px;font-size:12px;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="acceptCookies()" style="background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:7px 14px;font-size:12px;cursor:pointer;">Decline non-essential</button>
+  </div>
+</div>
+
+<!-- APP SHELL -->
+<div class="app" style="top:52px">
+
+  <!-- CHAT PANEL -->
+  <div class="chat-panel">
+    <div class="chat-messages" id="chatMessages">
+      <!-- Local scam alert banner — appears after location granted -->
+      <div class="alert-banner" id="alertBanner" onclick="ui.openNearby()">
+        <div class="alert-banner-icon">📍</div>
+        <div class="alert-banner-text">
+          <div class="alert-banner-title" id="alertTitle">Checking nearby scams...</div>
+          <div class="alert-banner-body" id="alertBody">Tap to see what's been reported in your area</div>
+        </div>
+        <button class="alert-banner-close" onclick="event.stopPropagation();ui.dismissAlert()" title="Dismiss">✕</button>
+      </div>
+      <div class="welcome-card">
+        <h2 style="font-size:inherit;margin:inherit;">ScamShield Intelligence Centre</h2>
+        <p>Paste any suspicious message — WhatsApp, email, or text — and I'll check it in seconds. Plain English, no jargon.</p>
+        <div class="scam-pills">
+          <span class="scam-pill clickable" onclick="ui.openLearn('pig-butchering')"><span style="animation:pillBounce .5s ease 0.0s infinite;display:inline-block;">🐷</span> Pig Butchering</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('romance')"><span style="animation:pillBounce .5s ease 1.2s infinite;display:inline-block;">💕</span> Romance Scams</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('whatsapp-otp')"><span style="animation:pillBounce .5s ease 2.4s infinite;display:inline-block;">📱</span> WhatsApp OTP</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('hmrc')"><span style="animation:pillBounce .5s ease 3.5999999999999996s infinite;display:inline-block;">🏛️</span> Fake HMRC</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('delivery')"><span style="animation:pillBounce .5s ease 4.8s infinite;display:inline-block;">📦</span> Delivery Scam</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('sim-swap')"><span style="animation:pillBounce .5s ease 6.0s infinite;display:inline-block;">📲</span> SIM Swap</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('crypto')"><span style="animation:pillBounce .5s ease 7.199999999999999s infinite;display:inline-block;">💰</span> Crypto Fraud</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('job-scam')"><span style="animation:pillBounce .5s ease 8.4s infinite;display:inline-block;">💼</span> Fake Job</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('bank-impersonation')"><span style="animation:pillBounce .5s ease 9.6s infinite;display:inline-block;">🧓</span> Elder Fraud</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('delivery')"><span style="animation:pillBounce .5s ease 10.799999999999999s infinite;display:inline-block;">🏠</span> Doorstep Scam</span>
+          <span class="scam-pill clickable" onclick="ui.openLearn('crypto')"><span style="animation:pillBounce .5s ease 12.0s infinite;display:inline-block;">🎮</span> Gaming Scam</span>
+          <span class="scam-pill clickable" onclick="ui.openLearnHome()">✨ 30+ more →</span>
+        </div>
+        <div style="margin-top:10px;padding:8px 12px;background:rgba(255,255,255,.07);border-radius:6px;border-left:3px solid #FFD600;font-size:11px;color:rgba(255,255,255,.75);line-height:1.8;animation:appTipGlow 3s ease-in-out infinite, appTipSlide .6s ease both;animation-delay:0s,1.5s;opacity:0;">
+          <span style="font-size:13px;">📱</span>
+          <strong style="color:#FFD600;"> Save ScamShield as an app — instant access anytime:</strong><br>
+          <span style="opacity:.85;">🍎 iPhone: Safari → <span style="color:#FFD600;">Share</span> → <span style="color:#FFD600;">Add to Home Screen</span></span><br>
+          <span style="opacity:.85;">🤖 Android: Chrome → <span style="color:#FFD600;">Menu ⋮</span> → <span style="color:#FFD600;">Add to Home Screen</span></span>
+        </div>
+      </div>
+      <div class="typing-row" id="typingIndicator">
+        <div class="agent-avatar">
+          <svg width="14" height="16" viewBox="0 0 36 40" fill="none"><path d="M18 2L3 8v12c0 9.9 6.4 19.1 15 21.9C26.6 39.1 33 29.9 33 20V8L18 2z" fill="#ffdd00"/><path d="M18 5L5.5 10.5V20c0 8.5 5.5 16.4 12.5 18.8C25 36.4 30.5 28.5 30.5 20v-9.5L18 5z" fill="#003078"/><path d="M12 20l4 4 8-8" stroke="#ffdd00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="typing-dots"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="tabs">
+        <button class="tab active" onclick="ui.switchTab('paste')">Paste text</button>
+        <button class="tab" onclick="ui.switchTab('upload')">Upload photo</button>
+        <button class="tab" onclick="ui.switchTab('ask')">Ask me</button>
+        <button class="tab" onclick="ui.switchTab('investigate')" style="background:linear-gradient(135deg,#003078,#0077cc);color:#FFD600;font-weight:700;border-radius:6px;">&#x1F916; Investigate</button>
+      </div>
+      <div class="tab-content active" id="tab-paste">
+        <textarea class="chat-textarea" id="pasteInput" placeholder="Paste a suspicious WhatsApp, email, or text here..."></textarea>
+      </div>
+      <div class="tab-content" id="tab-upload">
+        <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+          <span class="upload-icon">📎</span>
+          <div class="upload-text">Upload screenshot or PDF</div>
+          <div class="upload-sub">PNG, JPG, WEBP — screenshots &nbsp;|&nbsp; PDF — forwarded scam emails</div>
+        </div>
+        <div class="image-preview" id="imagePreviewArea">
+          <img id="imagePreview"/>
+          <p class="ocr-status" id="ocrStatus">Reading...</p>
+        </div>
+        <input type="file" id="fileInput" accept=".txt,.png,.jpg,.jpeg,.webp,.gif,.bmp,.pdf"/>
+      </div>
+      <div class="tab-content" id="tab-ask">
+        <textarea class="chat-textarea" id="askInput" placeholder="Ask me anything — e.g. 'Is this a SIM swap?'"></textarea>
+      </div>
+      <div class="tab-content" id="tab-investigate">
+        <div style="padding:8px 0 4px;">
+          <div style="font-size:12px;font-weight:700;color:#003078;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">&#x1F916; AI Agent — Deep Investigation</div>
+          <div style="font-size:11px;color:#546E7A;margin-bottom:10px;line-height:1.5;">Paste a website URL, phone number, email address, social media profile or company name. The agent will investigate and return a full intelligence report.</div>
+          <input type="text" id="investigateInput" placeholder="e.g. https://quickprofit-trading.com or +44 7700 900123 or @cryptoguru2026"
+            style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid #003078;border-radius:8px;font-size:13px;outline:none;font-family:inherit;margin-bottom:8px;"
+            onkeydown="if(event.key==='Enter')ui.runInvestigation()"/>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <button onclick="document.getElementById('investigateInput').value='https://';document.getElementById('investigateInput').focus()" style="font-size:10px;padding:4px 10px;border:1px solid #003078;border-radius:20px;background:white;color:#003078;cursor:pointer;">&#x1F310; Website URL</button>
+            <button onclick="document.getElementById('investigateInput').value='+44 ';document.getElementById('investigateInput').focus()" style="font-size:10px;padding:4px 10px;border:1px solid #003078;border-radius:20px;background:white;color:#003078;cursor:pointer;">&#x1F4F1; Phone number</button>
+            <button onclick="document.getElementById('investigateInput').value='@';document.getElementById('investigateInput').focus()" style="font-size:10px;padding:4px 10px;border:1px solid #003078;border-radius:20px;background:white;color:#003078;cursor:pointer;">&#x1F464; Social profile</button>
+            <button onclick="document.getElementById('investigateInput').value='';document.getElementById('investigateInput').focus()" style="font-size:10px;padding:4px 10px;border:1px solid #003078;border-radius:20px;background:white;color:#003078;cursor:pointer;">&#x1F3E2; Company/Person</button>
+          </div>
+          <button onclick="ui.runInvestigation()" style="width:100%;margin-top:12px;padding:12px;background:linear-gradient(135deg,#001f5b,#003078,#0055cc);color:#FFD600;font-weight:700;font-size:14px;border:none;border-radius:8px;cursor:pointer;">&#x1F916; Investigate &rarr;</button>
+        </div>
+      </div>
+      <div class="input-footer">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="char-count" id="charInfo">0 characters</span>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZ2upZLI8mJT7FThfRpWtLUKKFt68SqfijxxoOFJpe3TlwRQ/viewform" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;color:#FFD600;background:#003078;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;text-decoration:none;white-space:nowrap;box-shadow:0 2px 8px rgba(0,48,120,.25);transition:background .15s,transform .1s;" onmouseover="this.style.background='#002060';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#003078';this.style.transform='translateY(0)'">💬 Feedback</a>
+        </div>
+        <button class="send-btn" id="sendBtn" onclick="ui.handleSend()">Check it</button>
+      </div>
+      <div class="error-box" id="errorBox"></div>
+    </div>
+  </div>
+
+  <!-- RESULTS PANEL (bottom sheet on mobile, side panel on desktop) -->
+  <div class="results-panel" id="resultsPanel">
+    <div class="sheet-handle"><div class="sheet-handle-bar"></div></div>
+    <div class="sheet-header">
+      <span class="sheet-title">Intelligence Report</span>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button id="dismissResult" onclick="ui.resetHome()" style="display:none;background:rgba(0,48,120,.08);border:1px solid rgba(0,48,120,.15);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:600;color:#003078;cursor:pointer;">✕ Dismiss</button>
+        <button class="sheet-close" onclick="ui.closeSheet()">Close ✕</button>
+      </div>
+    </div>
+    <div class="results-area" id="resultsArea">
+      <div class="empty-state" id="emptyState">
+        <svg class="empty-shield" viewBox="0 0 36 40" fill="none">
+          <path d="M18 2L3 8v12c0 9.9 6.4 19.1 15 21.9C26.6 39.1 33 29.9 33 20V8L18 2z" fill="#b1b4b6"/>
+          <path d="M18 5L5.5 10.5V20c0 8.5 5.5 16.4 12.5 18.8C25 36.4 30.5 28.5 30.5 20v-9.5L18 5z" fill="#f3f2f1"/>
+          <path d="M12 20l4 4 8-8" stroke="#b1b4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Awaiting intelligence submission</h3>
+        <p>Paste a suspicious message and ScamShield will generate a full threat intelligence report in seconds.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Sheet overlay -->
+<div class="sheet-overlay" id="sheetOverlay" onclick="ui.closeSheet()"></div>
+
+<!-- ══════════ LEARN DRAWER ══════════ -->
+<!-- ══════════ NEARBY SCAMS SHEET ══════════ -->
+<div class="learn-overlay" id="nearbyOverlay" onclick="ui.closeNearby()"></div>
+<div class="nearby-sheet" id="nearbySheet">
+  <div class="nearby-handle"><div class="nearby-handle-bar"></div></div>
+  <div class="nearby-header">
+    <span class="nearby-title" id="nearbyTitle">Scams near you</span>
+    <button class="nearby-close" onclick="ui.closeNearby()">✕</button>
+  </div>
+  <div class="nearby-body" id="nearbyBody">
+    <div class="nearby-loading"><div class="nearby-spinner"></div>Loading local data...</div>
+  </div>
+</div>
+
+<div class="learn-overlay" id="learnOverlay" onclick="ui.closeLearn()"></div>
+<div class="learn-drawer" id="learnDrawer">
+  <div class="learn-handle"><div class="learn-handle-bar"></div></div>
+  <div class="learn-header">
+    <button class="learn-back" id="learnBack" onclick="ui.learnShowHome()">← Back</button>
+    <span class="learn-title" id="learnTitle">Scam types</span>
+    <button class="learn-close" onclick="ui.closeLearn()">✕</button>
+  </div>
+  <div class="learn-body" id="learnBody">
+    <!-- Home grid — injected by JS -->
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SVG_ICON = `<svg width="14" height="16" viewBox="0 0 36 40" fill="none"><path d="M18 2L3 8v12c0 9.9 6.4 19.1 15 21.9C26.6 39.1 33 29.9 33 20V8L18 2z" fill="#ffdd00"/><path d="M18 5L5.5 10.5V20c0 8.5 5.5 16.4 12.5 18.8C25 36.4 30.5 28.5 30.5 20v-9.5L18 5z" fill="#003078"/><path d="M12 20l4 4 8-8" stroke="#ffdd00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+// ── Keep Render backend warm — ping every 10 minutes ──
+const BACKEND = 'https://scam-1xfe.onrender.com';
+let _backendWarm = false;
+
+async function warmBackend() {
+  try {
+    await fetch(`${BACKEND}/`, {method:'GET', signal:AbortSignal.timeout(10000)});
+    _backendWarm = true;
+  } catch(e) { /* silent */ }
+}
+// Ping immediately on load, then every 10 minutes
+warmBackend();
+setInterval(warmBackend, 10 * 60 * 1000);
+
+// Fetch with auto-retry on wake-up (Render cold start can take 30s)
+async function fetchWithWakeup(url, opts, retries=2) {
+  for(let i=0; i<=retries; i++) {
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 55000); // 55s timeout
+      const r = await fetch(url, {...opts, signal: controller.signal});
+      clearTimeout(timer);
+      return r;
+    } catch(e) {
+      if(i === retries) throw new Error('Server took too long to respond. Please try again in a moment.');
+      // Show waking up message on first retry
+      if(i === 0) {
+        const btn = document.getElementById('sendBtn');
+        const orig = btn?.textContent;
+        if(btn) btn.textContent = 'Waking up server...';
+        await new Promise(res => setTimeout(res, 3000));
+        if(btn && orig) btn.textContent = orig;
+      }
+    }
+  }
+}
+
+class APIIntegration {
+  constructor(u=BACKEND){this.u=u;}
+
+  async analyzeChat(t,n='there'){
+    const r=await fetchWithWakeup(`${this.u}/analyze-chat`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_text:t,user_name:n})});
+    if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.detail||`Error ${r.status}`);}
+    const d=await r.json();
+    if(d.riskScore!==undefined)return d;
+    if(d.conversational)return d;
+    const raw=typeof d==='string'?d:(d.message||JSON.stringify(d));
+    const clean=raw.replace(/```json|```/g,'').trim();
+    try{return JSON.parse(clean);}catch{return{conversational:true,message:raw};}
+  }
+
+  async askQuestion(q,n='there'){
+    const r=await fetchWithWakeup(`${this.u}/ask`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,user_name:n})});
+    if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.detail||`Error ${r.status}`);}
+    return(await r.json()).answer;
+  }
+
+  async extractImageText(b,m='image/jpeg'){
+    const r=await fetchWithWakeup(`${this.u}/extract-image-text`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({image_data:b,media_type:m})});
+    if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.detail||`OCR error ${r.status}`);}
+    return(await r.json()).text;
+  }
+
+  async extractPdfText(b){
+    const r=await fetchWithWakeup(`${this.u}/extract-pdf-text`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pdf_data:b})});
+    if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.detail||`PDF error ${r.status}`);}
+    return(await r.json()).text;
+  }
+}
+
+class RedFlagDetector {
+  constructor(){this.p={...this.core(),...this.ext()};}
+  core(){return{
+    wrongNumber:{regex:/wrong number|wrong person|sorry to bother|mistake|accidentally/i,severity:'medium',title:'Wrong Number Opening',description:'Classic pig butchering entry — designed to seem accidental'},
+    tooPerfect:{regex:/bentley|ferrari|penthouse|private jet|financial analyst|CEO/i,severity:'medium',title:'Too-Perfect Lifestyle',description:'Scammers build aspirational personas to create trust'},
+    cryptoInvest:{regex:/crypto|bitcoin|trading|invest|profit|returns|platform|DeFi/i,severity:'high',title:'Investment/Crypto Mention',description:'Potential pivot to investment fraud'},
+    asksCapital:{regex:/how much (can you|do you|would you) (invest|have|put in)|capital|funds available/i,severity:'high',title:'Asking About Your Money',description:'Scammer assessing how much they can take'},
+    avoidsVideo:{regex:/maybe later|not now|camera broken|not ready for video|audio only/i,severity:'high',title:'Avoiding Video Call',description:'Real people video call easily — avoidance suggests fake persona'},
+    emotionalBond:{regex:/trust you|feel connected|soulmate|destiny|special connection/i,severity:'medium',title:'Fast Emotional Bonding',description:'Rapid bonding is manufactured'},
+    mentorAunt:{regex:/aunt taught|uncle showed|mentor|learned from family/i,severity:'high',title:'"Aunt/Mentor" Script',description:'Classic pig butchering credibility tactic'},
+    hmrcThreat:{regex:/HMRC|tax debt|owe tax|unpaid tax/i,severity:'high',title:'HMRC Reference',description:'HMRC never demands immediate payment by phone or text'},
+    urgency:{regex:/urgent|immediately|right now|today only|limited time|act fast/i,severity:'medium',title:'Urgency Pressure',description:'Creating urgency prevents careful thinking'},
+    giftCard:{regex:/gift card|iTunes card|Amazon card|Google Play card|voucher code/i,severity:'high',title:'Gift Card Request',description:'No legitimate organisation asks for gift card payment'},
+    otpRequest:{regex:/verification code|6.digit code|forward.*(code|number)|accidentally sent.*code/i,severity:'high',title:'OTP Code Request',description:'NEVER share verification codes — this is the #1 WhatsApp hijack scam'},
+    fakeRecovery:{regex:/recover.*funds|get.*money back|high court|escrow.*fee|processing fee/i,severity:'high',title:'Fake Recovery Claim',description:'Genuine agencies never charge upfront fees'},
+  };}
+  ext(){return{
+    fakeDriverSupport:{regex:/uber.*support|deliveroo.*support|account.*deactivat/i,severity:'high',title:'Fake Platform Support',description:'Uber/Deliveroo NEVER call asking for passwords'},
+    apkInstall:{regex:/download.*apk|install.*app.*link|\.apk|sideload/i,severity:'high',title:'APK Install Request',description:'Never install APK files from links — banking malware'},
+  };}
+  quickScan(text){
+    const f=[];
+    Object.entries(this.p).forEach(([,p])=>{if(p.regex.test(text))f.push(p);});
+    return f.sort((a,b)=>({high:0,medium:1,low:2}[a.severity]-{high:0,medium:1,low:2}[b.severity]));
+  }
+  extractPlatform(t){
+    const k=['UniSat','Binance','Coinbase','Kraken','eToro','OKX','Bybit'];
+    for(const p of k){if(new RegExp(p,'i').test(t))return p;}
+    const m=t.match(/(?:platform|app|exchange) (?:called |named )?([A-Z][a-zA-Z]+)/i);
+    return m&&m[1].length>3?m[1]:null;
+  }
+  inferAgeGroup(t){
+    if(/fortnite|roblox|discord|tiktok/i.test(t))return'teen';
+    if(/pension|retired|grandchild/i.test(t))return'elderly';
+    return'unknown';
+  }
+}
+
+class ScamShieldAgent {
+  constructor(cfg={}){
+    this.userName=cfg.userName||'there';
+    this.detector=new RedFlagDetector();
+    this.api=new APIIntegration(cfg.backendUrl||'https://scam-1xfe.onrender.com');
+    this.currentAnalysis=null;
+  }
+  setUserName(n){this.userName=n;}
+  async analyzeChat(t){
+    const p=await this.api.analyzeChat(t,this.userName);
+    p.localFlags=this.detector.quickScan(t);
+    p.platformDetected=p.platformDetected||this.detector.extractPlatform(t);
+    p.ageGroupInferred=p.ageGroupInferred||this.detector.inferAgeGroup(t);
+    this.currentAnalysis=p;
+    return p;
+  }
+  async askQuestion(q){return this.api.askQuestion(q,this.userName);}
+  riskColor(l){return{DANGER:'#d4351c',WARNING:'#f47738',SAFE:'#00703c'}[l]||'#505a5f';}
+  riskSpoken(s,l){
+    if(l==='DANGER')return`Threat Level ${s}/100 — ACTIVE FRAUD DETECTED`;
+    if(l==='WARNING')return`Threat Level ${s}/100 — SUSPICIOUS ACTIVITY`;
+    return`Threat Level ${s}/100 — NO THREAT IDENTIFIED`;
+  }
+}
+
+class UIController {
+  constructor(cfg={}){
+    this.agent=new ScamShieldAgent(cfg);
+    this.tab='paste';
+    this.loading=false;
+    this.init();
+  }
+  init(){
+    document.getElementById('userName')?.addEventListener('input',e=>this.agent.setUserName(e.target.value.trim()||'there'));
+    ['pasteInput','askInput'].forEach(id=>document.getElementById(id)?.addEventListener('input',()=>this.updateCount()));
+    document.getElementById('fileInput')?.addEventListener('change',e=>this.handleFile(e));
+  }
+  isMobile(){return window.innerWidth<768;}
+  resetHome(){
+    // Switch to paste tab
+    this.switchTab('paste');
+    // Clear inputs
+    const pi=document.getElementById('pasteInput');
+    const ai=document.getElementById('askInput');
+    const ii=document.getElementById('investigateInput');
+    if(pi) pi.value='';
+    if(ai) ai.value='';
+    if(ii) ii.value='';
+    // Remove only SCAMSHIELD chat bubbles — keep welcome card intact
+    const chat=document.getElementById('chatMessages');
+    if(chat){
+      const msgs=chat.querySelectorAll('.user-msg,.agent-msg,.companion-msg');
+      msgs.forEach(m=>m.remove());
+    }
+    // Reset results area to empty state
+    const ra=document.getElementById('resultsArea');
+    if(ra) ra.innerHTML=`
+      <div class="empty-state" id="emptyState">
+        <svg class="empty-shield" viewBox="0 0 36 40" fill="none">
+          <path d="M18 2L3 8v12c0 9.9 6.4 19.1 15 21.9C26.6 39.1 33 29.9 33 20V8L18 2z" fill="#b1b4b6"/>
+          <path d="M18 5L5.5 10.5V20c0 8.5 5.5 16.4 12.5 18.8C25 36.4 30.5 28.5 30.5 20v-9.5L18 5z" fill="#f3f2f1"/>
+          <path d="M12 20l4 4 8-8" stroke="#b1b4b6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Awaiting intelligence submission</h3>
+        <p>Paste a suspicious message and ScamShield will generate a full threat intelligence report in seconds.</p>
+      </div>`;
+    // Hide dismiss button
+    const db=document.getElementById('dismissResult');
+    if(db) db.style.display='none';
+    // Clear any prep report panels inside resultsArea
+    document.querySelectorAll('.report-prep-panel').forEach(el=>el.remove());
+    // Close mobile sheet
+    this.closeSheet();
+    // Reset character count
+    this.updateCount();
+    // Scroll top
+    window.scrollTo(0,0);
+  }
+
+    updateCount(){
+    const v=this.tab==='paste'?document.getElementById('pasteInput')?.value||'':document.getElementById('askInput')?.value||'';
+    document.getElementById('charInfo').textContent=`${v.length.toLocaleString()} characters`;
+  }
+  switchTab(t){
+    this.tab=t;
+    document.querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('active',['paste','upload','ask','investigate'][i]===t));
+    document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+    document.getElementById(`tab-${t}`)?.classList.add('active');
+    document.getElementById('sendBtn').textContent=t==='ask'?'Ask me':t==='investigate'?'Investigate \u2192':'Check it';
+    const footer=document.querySelector('.input-footer');
+    if(footer) footer.style.display=t==='investigate'?'none':'flex';
+    this.updateCount();
+  }
+  openSheet(){
+    if(!this.isMobile())return;
+    const p=document.getElementById('resultsPanel');
+    const o=document.getElementById('sheetOverlay');
+    p?.classList.add('open');
+    if(o){o.style.display='block';setTimeout(()=>o.classList.add('visible'),10);}
+    document.body.style.overflow='hidden';
+  }
+  closeSheet(){
+    const p=document.getElementById('resultsPanel');
+    const o=document.getElementById('sheetOverlay');
+    p?.classList.remove('open');
+    if(o){o.classList.remove('visible');setTimeout(()=>o.style.display='none',300);}
+    document.body.style.overflow='';
+  }
+  async handleFile(e){
+    const file=e.target.files?.[0];if(!file)return;
+    e.target.value='';
+    const prev=document.getElementById('imagePreviewArea');
+    const status=document.getElementById('ocrStatus');
+
+    // ── PDF ──
+    if(file.type==='application/pdf'||file.name.toLowerCase().endsWith('.pdf')){
+      prev.style.display='block';
+      document.getElementById('imagePreview').style.display='none';
+      status.textContent='Reading PDF...';
+      status.style.color='var(--blue)';
+      const reader=new FileReader();
+      reader.onload=async ev=>{
+        try{
+          // base64 without the data:application/pdf;base64, prefix
+          const b64=ev.target.result.split(',')[1];
+          const text=await this.agent.api.extractPdfText(b64);
+          document.getElementById('pasteInput').value=text;
+          status.textContent='PDF read! Analysing now...';
+          this.switchTab('paste');this.updateCount();
+          setTimeout(()=>{prev.style.display='none';document.getElementById('imagePreview').style.display='';},800);
+          setTimeout(()=>this.handleSend(true),900);
+        }catch(err){
+          status.textContent=`Could not read PDF: ${err.message}`;
+          status.style.color='#d4351c';
+        }
+      };
+      reader.readAsDataURL(file);
+
+    // ── IMAGE ──
+    }else if(file.type.startsWith('image/')){
+      const img=document.getElementById('imagePreview');
+      img.style.display='';
+      prev.style.display='block';
+      img.src=URL.createObjectURL(file);
+      status.textContent='Reading image...';
+      status.style.color='var(--blue)';
+      const reader=new FileReader();
+      reader.onload=async ev=>{
+        try{
+          const text=await this.agent.api.extractImageText(ev.target.result.split(',')[1],file.type);
+          document.getElementById('pasteInput').value=text;
+          status.textContent='Got it! Analysing now...';
+          this.switchTab('paste');this.updateCount();
+          prev.style.display='none';
+          setTimeout(()=>this.handleSend(true),600);
+        }catch(err){status.textContent=`Could not read: ${err.message}`;status.style.color='#d4351c';}
+      };
+      reader.readAsDataURL(file);
+
+    // ── TEXT FILE ──
+    }else{
+      const reader=new FileReader();
+      reader.onload=ev=>{
+        document.getElementById('pasteInput').value=ev.target.result;
+        this.switchTab('paste');this.updateCount();
+        this.showToast('File loaded');
+      };
+      reader.readAsText(file);
+    }
+  }
+  async runInvestigation(){
+    let target=(document.getElementById('investigateInput')?.value||'').trim();
+    // Fix duplicate +44 prefix
+    target = target.replace(/^\+44\s*\+44/,'+44').replace(/^\+44\s*0/,'+44');
+    if(!target){alert('Please enter a URL, phone number, email or name to investigate.');return;}
+    this.addChatMsg(target,true);
+    this.addChatMsg('Agent activated — investigating target. This may take 20-30 seconds...');
+    const card=document.getElementById('resultsArea');
+    if(card){card.innerHTML='<div style="padding:24px;text-align:center;"><div style="font-size:32px;margin-bottom:10px;">&#x1F916;</div><div style="font-size:13px;font-weight:700;color:#003078;margin-bottom:8px;">Agent investigating...</div><div style="font-size:11px;color:#546E7A;line-height:1.5;">Searching databases, checking registrations, analysing patterns.</div></div>';}
+    this.openSheet();
+    try{
+      const result=await this.runAgentInvestigation(target);
+      this.displayInvestigationResult(result,target);
+      const _db3=document.getElementById('dismissResult');if(_db3)_db3.style.display='inline-flex';
+      this.addChatMsg('Investigation complete. Full intelligence report generated.');
+    if(typeof trackEvent!=='undefined')trackEvent('investigation_complete','investigate',target.slice(0,30));
+    }catch(e){
+      this.addChatMsg('Sorry, the agent encountered an error. Please try again.');
+      const errCard=document.getElementById('resultsArea'); if(errCard)errCard.innerHTML='<div style="padding:20px;color:#d4351c;font-size:12px;">Agent error. Please try again.</div>';
+    }
+  }
+  async runAgentInvestigation(target){
+    let tt='unknown';
+    if(/^https?:\/\/|^www\./i.test(target))tt='website';
+    else if(/^[+0-9][0-9 \-().]{6,}$/.test(target))tt='phone';
+    else if(target.startsWith('@'))tt='social_profile';
+    else if(target.includes('@')&&target.includes('.'))tt='email';
+    else tt='company_or_person';
+    // Route through Groq backend — free, no API key needed in frontend
+    const prompt=`INVESTIGATION REQUEST. Target: "${target}" (Type: ${tt}). Analyse for UK fraud/scam patterns. Return ONLY this exact JSON with no other text before or after:
+{"verdict":"SCAM or SUSPICIOUS or UNVERIFIED or LEGITIMATE","riskScore":0-100,"summary":"2-3 sentences on what this is","redFlags":["flag1","flag2"],"greenFlags":["signal1"],"evidenceFound":["point1","point2"],
+  "ukReports": ["UK-specific warning or pattern match"],
+  "recommendation": "What the user should do right now",
+  "reportTo": "Which UK authority and contact details"
+}`;
+
+    const resp = await fetchWithWakeup(`${BACKEND}/investigate`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({question: target, user_name:'ScamShield Agent'})
+    });
+    const data = await resp.json();
+    const text = data.answer || data.message || '';
+    // Try to extract and parse JSON from response
+    let parsed = null;
+    const jm = text.match(/\{[\s\S]*\}/);
+    if(jm){
+      try{parsed=JSON.parse(jm[0]);}catch(e){
+        // Try cleaning common issues
+        try{
+          const clean=jm[0].replace(/[\u0000-\u001F\u007F-\u009F]/g,' ').replace(/,\s*}/g,'}').replace(/,\s*]/g,']');
+          parsed=JSON.parse(clean);
+        }catch(e2){}
+      }
+    }
+    if(parsed) return parsed;
+    // Fallback — extract fields manually from text
+    const scoreMatch=text.match(/"riskScore"\s*:\s*(\d+)/);
+    const verdictMatch=text.match(/"verdict"\s*:\s*"([^"]+)"/);
+    const summaryMatch=text.match(/"summary"\s*:\s*"([^"]+)"/);
+    if(scoreMatch||verdictMatch){
+      return{
+        verdict:verdictMatch?verdictMatch[1]:'UNVERIFIED',
+        riskScore:scoreMatch?parseInt(scoreMatch[1]):50,
+        summary:summaryMatch?summaryMatch[1]:text.slice(0,200),
+        redFlags:[],greenFlags:[],evidenceFound:[],ukReports:[],
+        recommendation:'Review the details above carefully.',
+        reportTo:'Report Fraud: reporting.reportfraud.police.uk'
+      };
+    }
+    return{verdict:'UNVERIFIED',riskScore:50,summary:text.slice(0,400)||'Investigation complete.',redFlags:[],greenFlags:[],evidenceFound:[],ukReports:[],recommendation:'Contact Report Fraud if concerned.',reportTo:'reporting.reportfraud.police.uk'};
+  }
+  displayInvestigationResult(r,target){
+    this._lastInvestigationResult = r;
+    this._lastInvestigationTarget = target;
+    const card=document.getElementById('resultsArea');
+    if(!card)return;
+    const col=r.riskScore>=75?'#d4351c':r.riskScore>=40?'#f47738':'#00703c';
+    const bg=r.riskScore>=75?'#fde8e4':r.riskScore>=40?'#fef3ec':'#e3f3ec';
+    const icon=r.verdict==='SCAM'?'&#x26A0;&#xFE0F;':r.verdict==='SUSPICIOUS'?'&#x1F7E0;':r.verdict==='LEGITIMATE'?'&#x2705;':'&#x1F50D;';
+    let h=`<div style="background:${bg};border-left:4px solid ${col};padding:14px 16px;margin-bottom:12px;border-radius:0 8px 8px 0;">
+      <div style="font-size:11px;font-weight:700;color:${col};text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">&#x1F916; Agent Intelligence Report</div>
+      <div style="font-size:20px;font-weight:700;color:${col};">${icon} ${this.esc(r.verdict)} &mdash; Threat Level ${r.riskScore}/100</div>
+      <div style="font-size:11px;color:#546E7A;margin-top:4px;word-break:break-all;">${this.esc(target)}</div></div>`;
+    h+=`<div style="padding:10px 14px 6px;font-size:13px;color:#222;line-height:1.6;">${this.esc(r.summary||'')}</div>`;
+    if(r.redFlags&&r.redFlags.length){h+=`<div class="sec-head">&#x1F6A8; Intelligence Flags &mdash; ${r.redFlags.length} detected</div><ul style="margin:0;padding:0 16px 10px 28px;">`;r.redFlags.forEach(f=>{h+=`<li style="font-size:12px;color:#333;margin-bottom:4px;">${this.esc(f)}</li>`;});h+=`</ul>`;}
+    if(r.evidenceFound&&r.evidenceFound.length){h+=`<div class="sec-head">&#x1F50D; Evidence Found Online</div><ul style="margin:0;padding:0 16px 10px 28px;">`;r.evidenceFound.forEach(e=>{h+=`<li style="font-size:12px;color:#333;margin-bottom:4px;">${this.esc(e)}</li>`;});h+=`</ul>`;}
+    if(r.ukReports&&r.ukReports.length){h+=`<div class="sec-head">&#x1F1EC;&#x1F1E7; UK Fraud Reports</div><ul style="margin:0;padding:0 16px 10px 28px;">`;r.ukReports.forEach(u=>{h+=`<li style="font-size:12px;color:#333;margin-bottom:4px;">${this.esc(u)}</li>`;});h+=`</ul>`;}
+    if(r.greenFlags&&r.greenFlags.length){h+=`<div class="sec-head">&#x2705; Positive Signals</div><ul style="margin:0;padding:0 16px 10px 28px;">`;r.greenFlags.forEach(g=>{h+=`<li style="font-size:12px;color:#333;margin-bottom:4px;">${this.esc(g)}</li>`;});h+=`</ul>`;}
+    h+=`<div class="sec-head">&#x2705; Protective Action Plan</div><div style="padding:10px 14px;font-size:12px;color:#222;line-height:1.6;">${this.esc(r.recommendation||'')}</div>`;
+    h+=`<div class="report-section"><div class="report-title">&#x1F4CB; Official UK Reporting Channels</div><div style="padding:8px 14px 12px;font-size:12px;color:#222;">${this.esc(r.reportTo||'Report Fraud: 0300 123 2040')}</div></div>`;
+    h+=`<button class="prep-report-btn" onclick="ui.showReportPrep(${JSON.stringify(r).replace(/`/g,'\`')}, '${target.replace(/'/g,"\'")}')">&#x1F4DD; Prepare My Official Report →</button>`;
+    card.innerHTML=h;
+    this.openSheet();
+  }
+  showReportPrepFromPaste(){
+    const d = this._lastPasteResult;
+    if(!d) return;
+    // Build a proper target description from the data
+    // Clean target — no duplicate "SCAM scam", sensible length
+    const rawType = (d.scamType||'').replace(/^SCAM$/i,'Bank/fraud scam');
+    const shortSummary = (d.personalizedSummary||'').split('.')[0].slice(0,80);
+    const target = rawType && rawType !== 'UNVERIFIED'
+      ? rawType + (shortSummary ? ' — ' + shortSummary : '')
+      : shortSummary || 'Suspicious message';
+    // Build proper r object matching what showReportPrep expects
+    const r = {
+      riskScore: d.riskScore,
+      verdict: d.verdict || d.scamType || 'SCAM',
+      summary: d.personalizedSummary || '',
+      redFlags: (d.flags||[]).map(f=>f.title).filter(Boolean),
+      evidenceFound: [],
+      ukReports: [],
+      recommendation: (d.advice||[]).join('. '),
+      reportTo: (d.reportingLinks||[]).map(l=>l.name+': '+l.url).join(' | ')
+    };
+    this.showReportPrep(r, target);
+  }
+  showReportPrep(r, target){
+    const area = document.getElementById('resultsArea');
+    if(!area) return;
+
+    // Detect scam type to show relevant authorities
+    const txt = target + ' ' + (r.summary||'') + ' ' + (r.redFlags||[]).join(' ');
+    const isFinancial  = /invest|crypto|trading|FCA|stocks|fund|pension|forex|bitcoin|wallet|broker/i.test(txt);
+    const isHMRC       = /HMRC|tax refund|self.?assessment|inland revenue/i.test(txt);
+    const isUnder18    = /teen|minor|child|young person|school|CEOP|grooming|under.?18/i.test(txt);
+    const isPhishing   = /phish|fake website|spoof|clone|email scam|fake.*gov|fake.*bank/i.test(txt);
+    const isNuisance   = /nuisance|spam text|cold call|marketing call|unsolicited/i.test(txt);
+    const isCompany    = /ltd|limited company|companies house|fake firm|fake company|registered company/i.test(txt);
+    const isDataLeak   = /data breach|personal data|GDPR|data sold|data leak/i.test(txt);
+    const isBankTransfer = /bank transfer|sent money|transferred|paid|wire|payment/i.test(txt);
+
+    const today = new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'});
+    const what = `I am reporting a suspected scam/fraud.\n\nTarget investigated: ${target}\nScamShield UK Risk Score: ${r.riskScore}/100 — ${r.verdict}\nDate of report: ${today}\n\nSummary: ${r.summary||''}`;
+    const redFlagsText = (r.redFlags||[]).map((f,i)=>`${i+1}. ${f}`).join('\n');
+    const evidence     = (r.evidenceFound||[]).map((e,i)=>`${i+1}. ${e}`).join('\n');
+    const ukReports    = (r.ukReports||[]).map((u,i)=>`${i+1}. ${u}`).join('\n');
+    const fullReport   = `SCAM REPORT — ${today}\n${'='.repeat(40)}\n\nWHAT HAPPENED:\n${what}\n\nRED FLAGS:\n${redFlagsText||'See summary'}\n\nEVIDENCE:\n${evidence||'See summary'}\n\nUK FRAUD PATTERNS MATCHED:\n${ukReports||'See summary'}\n\nRECOMMENDED ACTION:\n${r.recommendation||''}\n\nGenerated by ScamShield.UK`;
+
+    // ── ALL 10 UK OFFICIAL AGENCIES ───────────────────────────────────────────
+    const authorities = [
+
+      // 1. REPORT FRAUD — always shown, everyone
+      {
+        show: true,
+        name: '🚨 Report Fraud — City of London Police',
+        tag: 'ALWAYS REPORT HERE FIRST', required: true,
+        url: 'https://reporting.reportfraud.police.uk/',
+        phone: '0300 123 2040 (Mon–Fri 8am–8pm)',
+        note: 'UK national fraud reporting hub. Replaced Action Fraud Dec 2025. Report online 24/7. You will receive a crime reference number.',
+        fields: [
+          { label: 'What happened — paste into "Tell us what happened" box', text: what },
+          { label: 'Suspicious details — paste into description field', text: `Red flags identified:\n${redFlagsText||'See above'}\n\nEvidence:\n${evidence||'See above'}` },
+          { label: '📋 Full report for your own records', text: fullReport }
+        ]
+      },
+
+      // 2. BANK — always shown if money involved
+      {
+        show: true,
+        name: '🏦 Your Bank — Call 159',
+        tag: isBankTransfer ? 'URGENT — CALL NOW' : 'If money was sent', required: true,
+        url: 'https://www.stopscamsuk.org.uk/159',
+        phone: '159 — Stop Scams UK hotline (all major UK banks)',
+        note: '159 is the universal UK bank fraud hotline. Works for Barclays, HSBC, Lloyds, NatWest, Nationwide, Santander, TSB and more. Call IMMEDIATELY if money was transferred — banks may be able to reverse it.',
+        fields: [
+          { label: 'Script — what to say when you call 159', text: `I need to report a fraud on my account.\n\nI believe I have been scammed by: ${target}\nDate of contact: [ADD DATE]\nAmount transferred (if any): [ADD AMOUNT — £]\nHow I paid: [bank transfer / card / other]\n\nPlease:\n1. Flag my account for fraud\n2. Attempt to reverse any transactions if possible\n3. Issue me a crime reference number\n4. Block this payee: ${target}` }
+        ]
+      },
+
+      // 3. FCA — financial/investment/crypto scams
+      {
+        show: isFinancial,
+        name: '📊 FCA — Financial Conduct Authority',
+        tag: 'Investment / Crypto / Financial scams',
+        required: false,
+        url: 'https://www.fca.org.uk/consumers/report-scam',
+        phone: '0800 111 6768 (freephone)',
+        note: 'Report if the scam involved investments, crypto, trading platforms, pensions, fake financial firms or anything FCA-regulated. They maintain the Warning List of known scam firms.',
+        fields: [
+          { label: 'Firm or person name to report', text: target },
+          { label: 'Description — paste into the FCA report form', text: `I wish to report a suspected fraudulent financial firm or scam.\n\nFirm/contact details: ${target}\nWhat they offered: [DESCRIBE — investment/crypto/trading etc]\nAmount I paid (if any): [£ AMOUNT]\n\nRed flags:\n${redFlagsText||'See summary'}\n\nScamShield UK risk assessment: ${r.riskScore}/100 — ${r.verdict}\nDate: ${today}` }
+        ]
+      },
+
+      // 4. HMRC — tax scams
+      {
+        show: isHMRC,
+        name: '🏛️ HMRC — Tax Scam Reporting',
+        tag: 'HMRC impersonation',
+        required: false,
+        url: 'https://www.gov.uk/find-hmrc-contacts/report-suspicious-hmrc-emails-texts-social-media-accounts-and-phone-calls',
+        phone: 'Forward texts to: 60599 (free)',
+        note: 'Forward suspicious texts to 60599. Forward suspicious emails to phishing@hmrc.gov.uk. Report suspicious calls using the online form above.',
+        fields: [
+          { label: 'Email address to forward scam to', text: 'phishing@hmrc.gov.uk' },
+          { label: 'Email subject line to use', text: `Suspicious HMRC scam report — ${target} — ${today}` },
+          { label: 'Email body — copy and send to phishing@hmrc.gov.uk', text: `Dear HMRC Security Team,\n\nI am reporting a suspected HMRC impersonation scam.\n\nSuspicious contact: ${target}\nDate I was contacted: [ADD DATE]\nType of scam (call/text/email): [ADD TYPE]\n\nWhat happened: ${r.summary||''}\n\nRed flags: ${redFlagsText||'See above'}\n\nGenerated by ScamShield.UK on ${today}\n\nKind regards,\n[YOUR NAME]` }
+        ]
+      },
+
+      // 5. NCSC — phishing websites / scam emails
+      {
+        show: isPhishing || target.includes('http') || target.includes('.com') || target.includes('.uk'),
+        name: '🔐 NCSC — National Cyber Security Centre',
+        tag: 'Fake websites / phishing emails',
+        required: false,
+        url: 'https://www.ncsc.gov.uk/section/about-this-website/report-scam-website',
+        phone: 'Forward scam emails to: report@phishing.gov.uk',
+        note: 'NCSC can take down fake websites within hours. Report suspicious websites using the form above. Forward scam emails directly to report@phishing.gov.uk — takes 30 seconds.',
+        fields: [
+          { label: 'Website URL to report (paste into NCSC form)', text: target },
+          { label: 'Forward scam email to this address', text: 'report@phishing.gov.uk' },
+          { label: 'Email subject when forwarding scam', text: `Suspected phishing/scam — ${target} — ${today}` }
+        ]
+      },
+
+      // 6. ICO — spam texts, nuisance calls, data breaches
+      {
+        show: isNuisance || isDataLeak,
+        name: '📋 ICO — Information Commissioner Office',
+        tag: 'Spam texts / Nuisance calls / Data breaches',
+        required: false,
+        url: 'https://ico.org.uk/make-a-complaint/nuisance-calls-and-messages/spam-texts-and-nuisance-calls/',
+        phone: '0303 123 1113',
+        note: 'Report unsolicited marketing texts, spam calls, and data protection violations. ICO can fine companies up to £17.5 million. Direct link goes straight to their reporting form.',
+        fields: [
+          { label: 'What to include in the ICO report form', text: `Type of contact received: [spam text / nuisance call / email]\nPhone number or sender: ${target}\nDate and time received: [ADD DATE/TIME]\nContent of message: [DESCRIBE WHAT THEY SAID]\n\nThis contact was flagged by ScamShield.UK on ${today} with risk score ${r.riskScore}/100.` }
+        ]
+      },
+
+      // 7. CEOP — under 18 / online abuse
+      {
+        show: isUnder18,
+        name: '👶 CEOP — Child Exploitation & Online Protection',
+        tag: 'Under 18 / Online abuse / Grooming',
+        required: false,
+        url: 'https://www.ceop.police.uk/Safety-Centre/',
+        phone: null,
+        note: 'Report to CEOP if anyone under 18 is involved in online abuse, grooming, or sextortion. CEOP officers respond directly — this is a serious child safety service.',
+        fields: [
+          { label: 'What to include in your CEOP report', text: `Nature of suspicious contact: ${target}\n\nWhat happened: ${r.summary||''}\n\nAge of young person: [ADD AGE]\nPlatform used: [WhatsApp / Instagram / Snapchat / other]\nDates of contact: [ADD DATES]\n\nEvidence available: screenshots, phone numbers, usernames\n\nRed flags: ${redFlagsText||'See above'}` }
+        ]
+      },
+
+      // 8. Companies House — fake companies
+      {
+        show: isCompany,
+        name: '🏢 Companies House',
+        tag: 'Fake / fraudulent companies',
+        required: false,
+        url: 'https://www.gov.uk/complain-company',
+        phone: '0303 1234 500',
+        note: 'Report fake companies, fraudulent Ltd registrations, and company impersonation. Email fraud@companieshouse.gov.uk with full details. Also report phishing emails to phishing@companieshouse.gov.uk.',
+        fields: [
+          { label: 'Email address to report fake company', text: 'fraud@companieshouse.gov.uk' },
+          { label: 'Email body — copy and send', text: `Dear Companies House Fraud Team,\n\nI am reporting a suspected fraudulent company.\n\nCompany/contact details: ${target}\nNature of fraud: ${r.summary||''}\n\nRed flags identified:\n${redFlagsText||'See above'}\n\nScamShield UK risk score: ${r.riskScore}/100 — ${r.verdict}\nDate: ${today}\n\nPlease investigate and take appropriate action.\n\nKind regards,\n[YOUR NAME]\n[YOUR CONTACT DETAILS]` }
+        ]
+      },
+
+      // 9. Ofcom — number spoofing, scam calls
+      {
+        show: /phone|call|text|sms|number|\+44|07/i.test(target),
+        name: '📡 Ofcom',
+        tag: 'Number spoofing / Scam calls',
+        required: false,
+        url: 'https://www.ofcom.org.uk/complaints',
+        phone: 'Forward scam texts to: 7726 (free, all networks)',
+        note: 'Forward scam texts to 7726 (spells SPAM) — free on all UK networks. Ofcom can force networks to block scam numbers. Also reports number spoofing to telecoms providers.',
+        fields: [
+          { label: 'Forward scam text to this number', text: '7726' },
+          { label: 'What to include when reporting to Ofcom', text: `I am reporting a suspected scam phone number/text sender.\n\nSuspicious number: ${target}\nType of contact: [call / text / WhatsApp]\nDate and time: [ADD DATE/TIME]\nContent: [WHAT DID THEY SAY?]\n\nThis number was flagged by ScamShield.UK with risk score ${r.riskScore}/100.` }
+        ]
+      },
+
+      // 10. PSR — bank transfer fraud reimbursement
+      {
+        show: isBankTransfer,
+        name: '💳 PSR — Payment Systems Regulator',
+        tag: 'Bank transfer fraud — get money back',
+        required: false,
+        url: 'https://www.psr.org.uk/consumer-information/authorised-push-payment-app-fraud/',
+        phone: 'Call your bank first on 159',
+        note: 'Since October 2024 UK banks MUST reimburse APP (bank transfer) fraud victims up to £85,000. If your bank refuses to refund, escalate to the PSR and Financial Ombudsman Service.',
+        fields: [
+          { label: 'What to tell your bank (call 159 first)', text: `I am a victim of Authorised Push Payment (APP) fraud.
+
+I was tricked into transferring money to a scammer.
+Scammer contact/account: ${target}
+Amount transferred: [£ AMOUNT]
+Date of transfer: [ADD DATE]
+
+Under PSR regulations effective October 2024, I am requesting a full reimbursement of this fraudulent payment.
+
+Please:
+1. Attempt to recover the payment from the recipient bank
+2. Confirm my reimbursement under the mandatory APP fraud rules
+3. Provide me with a crime reference number` },
+          { label: 'If bank refuses — escalate to Financial Ombudsman', text: 'https://www.financial-ombudsman.org.uk/consumers/complaints-can-help/fraud-scams' }
+        ]
+      },
+
+      // 11. Platform report — always shown
+      {
+        show: true,
+        name: '📱 Report to the Platform',
+        tag: 'Always do this',
+        required: false,
+        url: null,
+        phone: null,
+        note: 'Report the scammer directly on WhatsApp, Instagram, Facebook, Telegram etc. to get them removed fast. Most platforms act within 24 hours on fraud reports.',
+        fields: [
+          { label: 'What to say when reporting the account', text: `I am reporting this account for fraud and scam activity.\n\nThis contact attempted to scam me using these tactics:\n${redFlagsText||r.summary||''}\n\nSuspicious contact details: ${target}\n\nPlease remove this account immediately and investigate.` }
+        ]
+      }
+
+    ].filter(a => a.show);
+
+    let html = `<div style="padding:12px 14px 6px;"><button onclick="ui.backToReport()" style="background:none;border:none;color:#003078;font-size:12px;font-weight:700;cursor:pointer;padding:0;">← Back to report</button></div>`;
+    html += `<div class="report-prep-panel"><div class="report-prep-header">📝 Your Pre-Filled Official Report — just copy &amp; paste into each form</div>`;
+
+    authorities.forEach((auth, ai) => {
+      html += `<div class="report-authority">
+        <div class="authority-header" onclick="ui.toggleAuthority(${ai})">
+          <div>
+            <div class="authority-name">${auth.name}</div>
+            <div style="font-size:10px;color:#546E7A;margin-top:2px;">${auth.note}</div>
+          </div>
+          <span class="authority-tag ${auth.required?'required':''}">${auth.tag}</span>
+        </div>
+        <div class="authority-body" id="auth-body-${ai}">`;
+
+      auth.fields.forEach((field, fi) => {
+        const fieldId = `field-${ai}-${fi}`;
+        html += `<div class="report-field">
+          <label>${field.label}</label>
+          <div class="report-field-content" id="${fieldId}">${field.text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+          <button class="copy-field-btn" id="btn-${fieldId}" onclick="ui.copyField('${fieldId}','btn-${fieldId}')">📋 Copy</button>
+        </div>`;
+      });
+
+      if(auth.phone){
+        html += `<div style="font-size:11px;color:#003078;font-weight:700;margin-top:6px;">📞 ${auth.phone}</div>`;
+      }
+      if(auth.url){
+        html += `<a href="${auth.url}" target="_blank" rel="noopener" class="authority-link">Open Official Report Form →</a>`;
+      }
+      html += `</div></div>`;
+    });
+
+    html += `</div>`;
+    area.innerHTML = html;
+    this.openSheet();
+    if(typeof trackEvent!=='undefined')trackEvent('report_prepared','reporting',target.slice(0,30));
+    // Auto-open first authority
+    setTimeout(()=>{ const first=document.getElementById('auth-body-0'); if(first)first.classList.add('open'); },100);
+  }
+  backToReport(){
+    // Re-run last investigation to show results again
+    if(this._lastInvestigationResult && this._lastInvestigationTarget){
+      this.displayInvestigationResult(this._lastInvestigationResult, this._lastInvestigationTarget);
+    }
+  }
+  toggleAuthority(idx){
+    const body = document.getElementById(`auth-body-${idx}`);
+    if(body) body.classList.toggle('open');
+  }
+  copyField(fieldId, btnId){
+    const el = document.getElementById(fieldId);
+    const btn = document.getElementById(btnId);
+    if(!el||!btn) return;
+    navigator.clipboard.writeText(el.innerText||el.textContent).then(()=>{
+      btn.textContent='✅ Copied!';
+      btn.classList.add('copied');
+      setTimeout(()=>{ btn.textContent='📋 Copy'; btn.classList.remove('copied'); }, 2000);
+    }).catch(()=>{
+      const range=document.createRange(); range.selectNode(el);
+      window.getSelection().removeAllRanges(); window.getSelection().addRange(range);
+      document.execCommand('copy');
+      btn.textContent='✅ Copied!'; btn.classList.add('copied');
+      setTimeout(()=>{ btn.textContent='📋 Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+  async handleSend(skip=false){
+    if(this.loading)return;
+    // Route investigate tab to agent
+    if(document.getElementById('tab-investigate')?.classList.contains('active')){this.runInvestigation();return;}
+    const isAsk=this.tab==='ask';
+    const content=isAsk?document.getElementById('askInput')?.value?.trim():document.getElementById('pasteInput')?.value?.trim();
+    if(!skip){
+      if(!content){this.showError(isAsk?'Please type a question first':'Please paste a message first');return;}
+      if(!isAsk&&content.length<30){this.showError('That looks too short — paste more of the conversation');return;}
+      if(!isAsk&&/def |import |class |function |const |var |let |<html/.test(content.slice(0,200))){this.showError('That looks like code, not a chat. Please paste a real conversation.');return;}
+    }
+    this._lastAnalysedText = content ? content.slice(0,120) : 'Suspicious message';
+    this.addUserMsg(content);
+    if(typeof trackEvent!=='undefined')trackEvent('scan_submitted',isAsk?'ask':'paste',content.slice(0,30));
+    if(isAsk)document.getElementById('askInput').value='';
+    else document.getElementById('pasteInput').value='';
+    this.updateCount();this.setLoading(true);
+    try{
+      if(isAsk){
+        const r=await this.agent.askQuestion(content);
+        this.addChatMsg(r.replace(/\n/g,'<br>'));
+        this.showTextInResults('Answer',r);
+      }else{
+        const r=await this.agent.analyzeChat(content);
+        if(r.conversational){this.addChatMsg(r.message.replace(/\n/g,'<br>'));this.showTextInResults('Analysis',r.message);}
+        else this.showResult(r);
+    const _db=document.getElementById('dismissResult');if(_db)_db.style.display='inline-flex';
+      }
+    }catch(err){
+      this.showError(err.message||'Something went wrong. Please try again.');
+      this.addChatMsg("Sorry, I couldn't get a response. Please try again — if this keeps happening, the server may be restarting (takes ~30 seconds).");
+    }
+    this.setLoading(false);
+  }
+  setLoading(v){
+    this.loading=v;
+    document.getElementById('sendBtn').disabled=v;
+    document.getElementById('typingIndicator')?.classList.toggle('visible',v);
+    if(v)this.scrollChat();
+  }
+  addUserMsg(text){
+    const d=document.createElement('div');d.className='user-msg';
+    const lines=text.split('\n').filter(l=>l.trim()).slice(0,3).join('\n');
+    const preview=text.split('\n').filter(l=>l.trim()).length>3?lines+'\n...':lines;
+    d.innerHTML=`<div class="user-bubble">${this.esc(preview||text.slice(0,160))}</div>`;
+    this.insertChat(d);
+  }
+  addChatMsg(html){
+    const d=document.createElement('div');d.className='agent-msg';
+    d.innerHTML=`<div class="agent-avatar">${SVG_ICON}</div><div class="agent-bubble"><div class="agent-name">ScamShield</div>${html}</div>`;
+    this.insertChat(d);
+  }
+  insertChat(el){
+    const c=document.getElementById('chatMessages');
+    const t=document.getElementById('typingIndicator');
+    if(c&&t)c.insertBefore(el,t);
+    this.scrollChat();
+  }
+  scrollChat(){const c=document.getElementById('chatMessages');if(c)setTimeout(()=>c.scrollTop=c.scrollHeight,100);}
+  showResult(data){
+    document.getElementById('emptyState')?.remove();
+    const col=this.agent.riskColor(data.riskLevel);
+    const spoken=this.agent.riskSpoken(data.riskScore,data.riskLevel);
+    const barId=`b${Date.now()}`;
+    const bg=data.riskLevel==='DANGER'?'#fde8e4':data.riskLevel==='WARNING'?'#fef3ec':'#e3f3ec';
+    let html=`<div class="risk-meter" style="background:${bg}">
+      <div class="risk-circle" style="border-color:${col};background:${col}18">
+        <div class="risk-circle-num" style="color:${col}">${data.riskScore}</div>
+        <div class="risk-circle-label" style="color:${col}">/ 100</div>
+      </div>
+      <div class="risk-right">
+        <div class="risk-spoken" style="color:${col}">${this.esc(spoken)}</div>
+        <div class="risk-bar-bg"><div class="risk-bar-fill" id="${barId}" style="background:${col}"></div></div>
+        ${data.scamType&&data.scamType!=='None detected'?`<span class="scam-type-badge">${this.esc(data.scamType)}</span>`:''}
+      </div></div>`;
+    html+=`<div class="summary-box">${this.esc(data.personalizedSummary||'')}</div>`;
+    if(data.flags?.length){
+      html+=`<div class="sec-head">🚨 Intelligence Flags — ${data.flags.length} indicators detected</div>`;
+      data.flags.forEach(f=>{
+        html+=`<div class="flag-card ${f.severity}"><div class="flag-dot ${f.severity}"></div><div>
+          <div class="flag-title">${this.esc(f.title)}</div>
+          <div class="flag-desc">${this.esc(f.description)}</div>
+          ${f.quote?`<div class="flag-quote">"${this.esc(f.quote)}"</div>`:''}</div></div>`;
+      });
+    }
+    if(data.interrogationQuestions?.length){
+      html+=`<div class="sec-head">🎯 Interrogation Protocol — expose the scammer</div>`;
+      data.interrogationQuestions.forEach((q,i)=>{
+        html+=`<div class="question-card" onclick="ui.copy('${q.replace(/'/g,"\\'").replace(/\n/g,' ')}')"><div class="q-num">${i+1}</div><div class="q-text">${this.esc(q)}</div><span class="copy-hint">Copy</span></div>`;
+      });
+    }
+    if(data.advice?.length){
+      html+=`<div class="sec-head">✅ Protective Action Plan</div>`;
+      data.advice.forEach((a,i)=>{html+=`<div class="advice-card"><div class="advice-num">${i+1}</div><div class="advice-text">${this.esc(a)}</div></div>`;});
+    }
+    if(data.reportingLinks?.length){
+      html+=`<div class="report-section"><div class="report-title">📋 Official UK Reporting Channels</div>`;
+      data.reportingLinks.forEach(l=>{
+        html+=`<a class="report-link ${l.priority==='high'?'high-priority':''}" href="${l.url}" target="_blank" rel="noopener"><div><div class="report-link-name">${this.esc(l.name)}</div><div class="report-link-reason">${this.esc(l.reason)}</div></div><span class="report-arrow">→</span></a>`;
+      });
+      html+='</div>';
+    }
+    if(data.offerToDraft)html+=`<button class="draft-btn" onclick="ui.askDraft('${this.esc(data.offerToDraft)}')">Write the ${this.esc(data.offerToDraft)} for me</button>`;
+    if(data.victimSupportMessage)html+=`<div class="companion-msg">${this.esc(data.victimSupportMessage)}</div>`;
+    if(data.riskScore>=40){
+      // Store result on ui object so button can access it cleanly
+      this._lastPasteResult = data;
+      this._lastPasteText = this._lastAnalysedText || 'Suspicious message';
+      html+=`<button class="prep-report-btn" onclick="ui.showReportPrepFromPaste()">📝 Prepare My Official Report →</button>`;
+    }
+    const card=document.createElement('div');card.className='result-card';card.innerHTML=html;
+    const area=document.getElementById('resultsArea');
+    area.innerHTML='';area.appendChild(card);area.scrollTop=0;
+    setTimeout(()=>{const b=document.getElementById(barId);if(b)b.style.width=`${data.riskScore}%`;},200);
+    this.openSheet();
+    this.addChatMsg(`Intelligence report generated — <strong>Threat Level ${data.riskScore}/100</strong>. ${this.isMobile()?'Full report below.':'See analysis panel →'}`);
+  }
+  showTextInResults(title,text){
+    document.getElementById('emptyState')?.remove();
+    const area=document.getElementById('resultsArea');
+    const card=document.createElement('div');card.className='result-card';
+    const fmt=text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br>');
+    card.innerHTML=`<div class="sec-head" style="border-top:none">${this.esc(title)}</div><div class="summary-box" style="line-height:1.8"><p>${fmt}</p></div>`;
+    area.innerHTML='';area.appendChild(card);area.scrollTop=0;
+    this.openSheet();
+  }
+  async askDraft(reportType){
+    const a=this.agent.currentAnalysis;
+    const prompt=`Write a complete ${reportType} for ${this.agent.userName}. Scam type: ${a?.scamType||'scam'}. Platform: ${a?.platformDetected||'unknown'}. Use [BRACKETS] for personal details to fill in.`;
+    this.addUserMsg(`Please write the ${reportType} for me`);
+    this.setLoading(true);
+    try{
+      const r=await this.agent.askQuestion(prompt);
+      document.getElementById('emptyState')?.remove();
+      const area=document.getElementById('resultsArea');
+      const card=document.createElement('div');card.className='result-card';card.style.marginTop='10px';
+      const fmt=r.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/^(TO:|FROM:|SUBJECT:|Date:|RE:)/gm,'<strong>$1</strong>').replace(/\n\n/g,'</p><p style="margin-top:8px">').replace(/\n/g,'<br>');
+      card.innerHTML=`<div class="sec-head" style="border-top:none">Your ${this.esc(reportType)}</div><div class="summary-box" style="font-size:12px;line-height:1.8"><p>${fmt}</p></div>
+        <button class="draft-btn" onclick="ui.copyReport(this)">Copy full report</button>
+        <div style="display:none;text-align:center;padding:8px;font-size:12px;font-weight:700;color:#00703c" id="copyOk">Copied — paste it into your email.</div>`;
+      card.querySelector('.draft-btn').dataset.report=r;
+      area.appendChild(card);area.scrollTop=area.scrollHeight;
+      this.openSheet();
+      this.addChatMsg(`Your ${this.esc(reportType)} is ready. Just copy and send it.`);
+    }catch{this.addChatMsg("Sorry, something went wrong. Please try again.");}
+    this.setLoading(false);
+  }
+  copyReport(btn){
+    const text=btn.dataset.report||'';
+    navigator.clipboard.writeText(text).then(()=>{
+      const c=btn.nextElementSibling;
+      if(c){c.style.display='block';setTimeout(()=>c.style.display='none',3000);}
+      this.showToast('Copied to clipboard');
+    });
+  }
+  copy(text){navigator.clipboard.writeText(text).then(()=>this.showToast('Copied'));}
+  showToast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('visible');setTimeout(()=>t.classList.remove('visible'),2200);}
+  showError(msg){const e=document.getElementById('errorBox');if(!e)return;e.textContent=msg;e.classList.add('visible');setTimeout(()=>e.classList.remove('visible'),3500);}
+  esc(t){if(!t)return'';return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+}
+
+// ════════════════════════════════
+// LEARN DRAWER — Scam Intelligence
+// ════════════════════════════════
+
+const SCAM_DATA = [
+  {
+    id:'pig-butchering', icon:'🐷', name:'Pig Butchering', risk:'critical', riskLabel:'Critical — Avg loss £18,500',
+    blurb:'A long con where scammers build a fake romantic relationship then trick you into investing in a fraudulent crypto platform.',
+    signs:['Stranger contacts you by "wrong number" or "accidental" message','Becomes emotionally close very fast — within days','Mentions cryptocurrency trading or investment early on','"Aunt/mentor taught me this special trading method"','Refuses video calls or always has excuses','Shows you fake profits on a platform you\'ve never heard of','Withdrawal blocked — demands taxes or fees to release funds'],
+    howReport:['Stop all contact and do NOT send any more money','Report to Report Fraud: reporting.reportfraud.police.uk','Contact your bank immediately — may be able to reverse payments','Report the platform to the FCA: fca.org.uk/consumers/report-scam'],
+    reportUrl:'https://reporting.reportfraud.police.uk/'
+  },
+  {
+    id:'romance', icon:'💕', name:'Romance Scam', risk:'critical', riskLabel:'Critical — £106M lost in UK 2025',
+    blurb:'Scammers create fake personas on dating apps or social media to build emotional relationships then ask for money.',
+    signs:['Profile photos are too perfect — reverse image search them','Never meets in person — always an excuse','Declares love unusually quickly','Claims to be working abroad (military, oil rig, doctor)','Asks for money for emergencies, flights, or medical bills','Moves conversation off dating app to WhatsApp quickly'],
+    howReport:['Do not send any money — you will not get it back','Report to Report Fraud: reporting.reportfraud.police.uk','Report the profile to the dating platform','Tell a trusted friend or family member'],
+    reportUrl:'https://reporting.reportfraud.police.uk/'
+  },
+  {
+    id:'whatsapp-otp', icon:'📱', name:'WhatsApp OTP Hijack', risk:'critical', riskLabel:'Critical — instant account takeover',
+    blurb:'Scammers trick you into sharing your 6-digit WhatsApp verification code, giving them full access to your account.',
+    signs:['"I accidentally sent my verification code to your number — can you forward it?"','"This is WhatsApp Support — please share the code we sent"','A "friend" urgently needs the code you just received','You receive a 6-digit SMS code you didn\'t request','Message creates urgency — "do it now or your account gets deleted"'],
+    howReport:['NEVER share the 6-digit code with anyone — ever','If you already shared it: go to WhatsApp → Settings → Account → Delete My Account, then re-register','Enable two-step verification: Settings → Account → Two-step verification','Report to Report Fraud: reporting.reportfraud.police.uk'],
+    reportUrl:'https://reporting.reportfraud.police.uk/'
+  },
+  {
+    id:'hmrc', icon:'🏛️', name:'Fake HMRC', risk:'high', riskLabel:'High — 170,000 reports in 2025',
+    blurb:'Scammers impersonate HMRC by phone, text, or email — threatening arrest or demanding immediate payment.',
+    signs:['Call threatens arrest, deportation, or legal action if you don\'t pay now','Text says you\'re owed a tax refund — click this link','Email addressed to "Dear Customer" not your real name','Link goes to .qov.com or any domain that isn\'t .gov.uk','Demands payment by gift card, cryptocurrency, or bank transfer','Automated voice saying "press 1 to speak to a caseworker"'],
+    howReport:['HMRC will NEVER call demanding immediate payment or ask for payment by gift card or crypto','Forward suspicious texts to 60599 (free, all networks)','Forward suspicious emails to phishing@hmrc.gov.uk','Report directly to HMRC: gov.uk/report-hmrc-scam','Report to Report Fraud: reporting.reportfraud.police.uk'],
+    reportUrl:'https://www.gov.uk/find-hmrc-contacts/report-suspicious-hmrc-emails-texts-social-media-accounts-and-phone-calls'
+  },
+  {
+    id:'delivery', icon:'📦', name:'Delivery Scam', risk:'high', riskLabel:'High — Most impersonated brand in UK',
+    blurb:'Fake texts pretending to be Royal Mail, DPD or Evri asking you to pay a small fee to release a parcel.',
+    signs:['"Your parcel is on hold — pay £2.99 to release it"','Text comes from a mobile number not an official short code','Link goes to royalmail-verify.net or similar fake domain','No actual tracking number included in the message','Urgency: "parcel will be returned today unless you act"'],
+    howReport:['Do NOT click any link — go directly to the courier\'s official website','Forward suspicious texts to 7726 (spells SPAM) — free on all UK networks','Email Royal Mail scams to: reportascam@royalmail.com','Report to Report Fraud: reporting.reportfraud.police.uk'],
+    reportUrl:'https://reporting.reportfraud.police.uk/'
+  },
+  {
+    id:'sim-swap', icon:'📲', name:'SIM Swap', risk:'critical', riskLabel:'Critical — 1,055% rise in UK',
+    blurb:'Fraudsters convince your mobile network to transfer your number to their SIM — intercepting all your calls and texts including bank codes.',
+    signs:['Your phone suddenly has no signal for no reason','Calls and texts stop working unexpectedly','You get locked out of banking or email accounts','Your bank sends security alerts you didn\'t trigger','Someone contacts your network pretending to be you'],
+    howReport:['Call your mobile network IMMEDIATELY if signal drops unexpectedly','Contact your bank to freeze accounts','Report to Report Fraud: reporting.reportfraud.police.uk','Request a SIM lock or port freeze from your network'],
+    reportUrl:'https://reporting.reportfraud.police.uk/'
+  },
+  {
+    id:'sextortion', icon:'📸', name:'Sextortion', risk:'critical', riskLabel:'Critical — 400% rise in UK teens',
+    blurb:'Scammer obtains or claims to have intimate images and threatens to share them unless you pay money.',
+    signs:['"I have recorded you through your webcam — pay or I\'ll send this to your contacts"','Someone asks you to send intimate photos or go on video early in conversation','Payment demanded urgently in Bitcoin or gift cards','Threatens to contact your employer, family, or friends','They may share a partial list of your real contacts to prove they have access'],
+    howReport:['Do NOT pay — payment encourages more demands and payment does not guarantee silence','Do NOT send more images','Report to CEOP (if under 18): ceop.police.uk','Report to Report Fraud (adults): reporting.reportfraud.police.uk','Report the account to the platform immediately','Contact the Revenge Porn Helpline: 0345 600 0459'],
+    reportUrl:'https://www.ceop.police.uk'
+  },
+  {
+    id:'crypto', icon:'💰', name:'Crypto / Investment Fraud', risk:'critical', riskLabel:'Critical — £649M lost in UK 2024',
+    blurb:'Fake investment platforms show you fake profits then block withdrawals, demanding fees or taxes to release your money.',
+    signs:['Guaranteed high returns with "no risk"','Platform not registered with the FCA','Withdrawal always blocked by a new fee — tax, insurance, verification','Someone online introduced you to the platform','Profits look amazing but you can\'t actually take money out','Platform name not found on FCA register'],
+    howReport:['Do NOT pay any more fees — the money shown is not real','Check the FCA register: register.fca.org.uk','Report to Report Fraud: reporting.reportfraud.police.uk','Report to the FCA: fca.org.uk/consumers/report-scam','Contact your bank if you transferred money'],
+    reportUrl:'https://www.fca.org.uk/consumers/report-scam'
+  },
+  {
+    id:'job-scam', icon:'💼', name:'Fake Job / Task Scam', risk:'high', riskLabel:'High — 237% rise in job fraud',
+    blurb:'WhatsApp or Telegram messages offering easy work liking videos or completing tasks — then demanding fees to release "earnings".',
+    signs:['Contacted out of nowhere about easy remote work','Tasks involve liking TikTok videos, rating hotels, or clicking links','Small real payments made at first to build trust','Suddenly told to deposit money to "unlock" higher-paying tasks','Earnings "ready" but blocked until you pay a fee','Contact moves from text to Telegram group with many "investors"'],
+    howReport:['Stop all contact immediately','Do NOT deposit any money','Report to Report Fraud: reporting.reportfraud.police.uk','Report to Citizens Advice: citizensadvice.org.uk'],
+    reportUrl:'https://reporting.reportfraud.police.uk/'
+  },
+  {
+    id:'money-mule', icon:'🏦', name:'Money Mule', risk:'critical', riskLabel:'Critical — criminal prosecution risk',
+    blurb:'Being paid to receive money into your bank account and forward it on. This is money laundering — a serious crime.',
+    signs:['Offered cash to "hold money temporarily" in your account','Job involves receiving transfers and sending them on','Told to keep it secret or told "it\'s just business"','Money arrives you didn\'t expect','Asked to open a new bank account for the purpose'],
+    howReport:['Stop immediately — do not transfer any more money','Contact your bank and explain you may have been used as a mule','Report to Report Fraud: reporting.reportfraud.police.uk','Contact Crimestoppers anonymously: 0800 555 111','You will not be prosecuted if you report voluntarily and stop'],
+    reportUrl:'https://reporting.reportfraud.police.uk/'
+  },
+  {
+    id:'bank-impersonation', icon:'🏧', name:'Bank Impersonation', risk:'critical', riskLabel:'Critical — #1 scam hitting students',
+    blurb:'Scammers pretend to be your bank, claiming suspicious activity and asking you to move money to a "safe account".',
+    signs:['"Suspicious transaction detected on your account — call us immediately"','Asks you to move money to a new "safe account" they set up','Asks for your full PIN, password, or online banking login','Offers to send a courier to collect your bank card','Caller ID shows your real bank\'s number (it can be spoofed)','Creates extreme urgency — "you must act now or lose everything"'],
+    howReport:['Hang up and call your bank using the number on the back of your card','Or call 159 — connects you directly to your real bank','Never move money to a "safe account" — banks never ask this','Report to Report Fraud: reporting.reportfraud.police.uk'],
+    reportUrl:'https://reporting.reportfraud.police.uk/'
+  },
+  {
+    id:'ghost-broker', icon:'🚗', name:'Ghost Broker Insurance', risk:'high', riskLabel:'High — up 22% in 2 years',
+    blurb:'Fake insurance brokers on social media selling worthless or forged car insurance policies to young drivers.',
+    signs:['Insurance deal advertised on TikTok, Instagram, or WhatsApp','Price is dramatically cheaper than comparison sites','Broker not listed on the FCA register','Policy arranged through DMs not an official website','Documents look slightly off — wrong fonts, logos, spacing','Policy reference number doesn\'t exist when you check with the insurer'],
+    howReport:['Check if policy is real: askMID.com (Motor Insurance Database)','Verify broker on FCA register: register.fca.org.uk','Report ghost brokers: Insurance Fraud Bureau Cheatline 0800 422 0421','Report to Report Fraud: reporting.reportfraud.police.uk'],
+    reportUrl:'https://www.insurancefraudbureau.org'
+  }
+];
+
+function buildLearnHome() {
+  return `<div class="learn-home" id="learnHome">
+    <div class="learn-grid">${SCAM_DATA.map(s=>`
+      <div class="learn-card" onclick="ui.openLearn('${s.id}')">
+        <div class="learn-card-icon">${s.icon}</div>
+        <div class="learn-card-name">${s.name}</div>
+        <div class="learn-card-desc">${s.blurb.substring(0,55)}...</div>
+        <span class="learn-card-risk risk-${s.risk}">${s.riskLabel}</span>
+      </div>`).join('')}
+    </div>
+  </div>
+  <div class="learn-detail" id="learnDetail"></div>`;
+}
+
+function buildLearnDetail(scam) {
+  const signs = scam.signs.map(s=>`<div class="detail-row"><span class="detail-dot">🔴</span><span>${s}</span></div>`).join('');
+  const reports = scam.howReport.map(r=>`<div class="detail-row"><span class="detail-dot">✅</span><span>${r}</span></div>`).join('');
+  return `
+    <div class="detail-hero">
+      <div class="detail-icon">${scam.icon}</div>
+      <div class="detail-name">${scam.name}</div>
+      <div class="detail-blurb">${scam.blurb}</div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-head">⚠️ Warning signs to watch for</div>
+      ${signs}
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-head">📋 How to report it</div>
+      ${reports}
+    </div>
+    <a href="${scam.reportUrl}" target="_blank" rel="noopener">
+      <button class="report-btn">Report this scam now →</button>
+    </a>`;
+}
+
+// Add learn methods to UIController prototype
+UIController.prototype.openLearnHome = function() {
+  const overlay = document.getElementById('learnOverlay');
+  const drawer  = document.getElementById('learnDrawer');
+  const body    = document.getElementById('learnBody');
+  const title   = document.getElementById('learnTitle');
+  const back    = document.getElementById('learnBack');
+  body.innerHTML = buildLearnHome();
+  title.textContent = 'Scam types';
+  back.style.display = 'none';
+  overlay.style.display = 'block';
+  setTimeout(()=>{overlay.classList.add('visible'); drawer.classList.add('open');},10);
+  document.body.style.overflow = 'hidden';
+};
+
+UIController.prototype.openLearn = function(id) {
+  const scam = SCAM_DATA.find(s=>s.id===id);
+  const overlay = document.getElementById('learnOverlay');
+  const drawer  = document.getElementById('learnDrawer');
+  const body    = document.getElementById('learnBody');
+  const title   = document.getElementById('learnTitle');
+  const back    = document.getElementById('learnBack');
+
+  if(!scam) { this.openLearnHome(); return; }
+
+  // If drawer not open yet, open it first
+  if(!drawer.classList.contains('open')){
+    body.innerHTML = buildLearnHome();
+    overlay.style.display='block';
+    setTimeout(()=>overlay.classList.add('visible'),10);
+    drawer.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+
+  // Show detail
+  body.innerHTML = buildLearnHome();
+  const home   = document.getElementById('learnHome');
+  const detail = document.getElementById('learnDetail');
+  home.classList.add('hidden');
+  detail.classList.add('active');
+  detail.innerHTML = buildLearnDetail(scam);
+  title.textContent = scam.name;
+  back.style.display = 'block';
+  body.scrollTop = 0;
+};
+
+UIController.prototype.learnShowHome = function() {
+  const body   = document.getElementById('learnBody');
+  const title  = document.getElementById('learnTitle');
+  const back   = document.getElementById('learnBack');
+  body.innerHTML = buildLearnHome();
+  title.textContent = 'Scam types';
+  back.style.display = 'none';
+  body.scrollTop = 0;
+};
+
+UIController.prototype.closeLearn = function() {
+  const overlay = document.getElementById('learnOverlay');
+  const drawer  = document.getElementById('learnDrawer');
+  drawer.classList.remove('open');
+  overlay.classList.remove('visible');
+  setTimeout(()=>overlay.style.display='none', 350);
+  document.body.style.overflow = '';
+};
+
+// ════════════════════════════════════════
+// LOCAL SCAM ALERTS — Location + Police API
+// ════════════════════════════════════════
+
+const CRIME_MAP = {
+  'theft-from-the-person': {
+    icon:'👜', label:'Theft / Pickpocketing',
+    matters:['Mobile phone snatched from a person in this area — keep your phone out of sight in crowds.',
+    'Wallet or bag stolen directly from a pedestrian — stay alert on public transport and in busy areas.',
+    'Pickpocketing incident reported here — keep valuables in zipped inner pockets.',
+    'Personal property taken from victim in a public place — distraction theft is common in this area.',
+    'Phone or bag grabbed from person on this street — be aware of anyone standing unusually close.',
+    'Theft from person recorded — avoid using your phone visibly while walking.',
+    'Personal item stolen from individual — this area has a pattern of opportunistic theft.'],
+    tip:'Stay aware in crowds — keep bags in front of you and phone in a zipped pocket.'
+  },
+  'robbery': {
+    icon:'⚠️', label:'Robbery',
+    matters:['Moped or bike-enabled phone snatch reported in this area — avoid using your phone on the pavement.',
+    'Street robbery involving force or intimidation recorded here — stay aware of your surroundings.',
+    'Mugging reported on this street — walk confidently and avoid isolated areas after dark.',
+    'Robbery involving threat or use of force logged nearby — do not resist, your safety is the priority.',
+    'Confrontational theft recorded — criminals targeted this location for opportunistic robbery.',
+    'Property taken by force in this area — report anything suspicious to police on 101.',
+    'Violent theft from a person recorded — this street has seen recent robbery activity.'],
+    tip:'Avoid using your phone visibly on the street. Be aware of cyclists and mopeds approaching from behind.'
+  },
+  'fraud-or-forgery': {
+    icon:'💳', label:'Fraud / Forgery',
+    matter:'Financial deception or use of fake documents — includes bank fraud, identity theft, fake cheques and counterfeit goods.',
+    tip:'Check your bank statements regularly. Report unknown transactions to your bank immediately.'
+  },
+  'other-theft': {
+    icon:'📦', label:'Other Theft',
+    matters:['Parcel theft from a doorstep recorded in this area — use a secure delivery box or send to a neighbour.',
+    'Bicycle stolen from a public area nearby — always use two locks of different types.',
+    'Item taken from garden or outbuilding — check your exterior security and install a camera.',
+    'Theft from residential property exterior recorded — secure your bins, bikes and outbuildings.',
+    'Package stolen from outside a property — consider requiring a signature for deliveries.',
+    'Opportunistic theft reported — valuable items left visible outside homes are targeted.',
+    'Theft of personal property not fitting standard categories — stay vigilant about unsecured items.'],
+    tip:'Secure your deliveries — use a parcel box or neighbour. Lock bikes with two locks.'
+  },
+  'burglary': {
+    icon:'🏠', label:'Burglary',
+    matters:['Residential break-in recorded in this area — ensure all windows and doors are locked at night.',
+    'Burglary reported nearby — consider installing a video doorbell or external security lighting.',
+    'Distraction burglary recorded here — criminals pose as officials to gain entry to homes.',
+    'Property entered without permission — this street has seen recent break-in activity.',
+    'Home burglary logged in this area — a visible burglar alarm significantly reduces risk.',
+    'Unlawful entry to steal from a property recorded — use timer lights when away from home.',
+    'Break-in reported close by — neighbourhood watch schemes help deter this type of crime.'],
+    tip:'Lock windows and doors. Use timer lights when away. Consider a video doorbell.'
+  },
+  'shoplifting': {
+    icon:'🏪', label:'Shoplifting',
+    matters:['Shoplifting using distraction tactics recorded in this area — two or more offenders often work together.',
+    'Retail theft reported nearby — staff are often diverted while an accomplice steals.',
+    'Goods stolen from a shop on this street — self-service areas and checkouts are common targets.',
+    'Shoplifting incident logged in this area — organised retail crime teams target multiple stores.',
+    'Theft from a retail premises recorded — be alert to anyone loitering near high-value products.',
+    'Shop theft reported here — distraction theft near checkouts is particularly common.',
+    'Retail crime recorded in this area — suspicious behaviour should be reported to store security.'],
+    tip:'Be alert if approached by strangers in shops. Distraction theft is common near checkouts.'
+  },
+  'criminal-damage-arson': {
+    icon:'🔥', label:'Criminal Damage / Arson',
+    matters:['Deliberate damage to a vehicle or property reported in this area — check CCTV footage if targeted.',
+    'Criminal damage to fencing, windows or property logged nearby — report to police on 101.',
+    'Property vandalised on this street — external security cameras can help identify offenders.',
+    'Damage to a vehicle recorded in this area — park in well-lit monitored areas where possible.',
+    'Criminal damage incident logged here — keep evidence and report with photos to police.',
+    'Deliberate property damage reported nearby — neighbourhood watch schemes help deter this.',
+    'Malicious damage to property recorded — arson incidents are also included in this category.'],
+    tip:'Note any suspicious activity near vehicles or buildings and report to 101.'
+  },
+  'drugs': {
+    icon:'💊', label:'Drug Offences',
+    matters:['Drug supply activity recorded in this area — county lines gangs often exploit vulnerable young people.',
+    'Controlled drug possession or dealing reported nearby — report suspicious activity to 101.',
+    'Drug offence logged on this street — if you suspect exploitation of young people call 999.',
+    'Narcotics-related incident recorded here — county lines operations target residential streets.',
+    'Drug activity reported in this area — anonymous reports can be made to Crimestoppers on 0800 555 111.',
+    'Drug supply network activity detected nearby — look out for unfamiliar vehicles or visitors.',
+    'Drug offence recorded — if a young person seems to be carrying packages unexpectedly, report it.'],
+    tip:'County lines drug networks exploit young people. Report suspicious activity near your home to 101.'
+  },
+  'public-order': {
+    icon:'🚨', label:'Public Order',
+    matters:['Threatening or abusive behaviour reported near a venue in this area — avoid confrontation.',
+    'Public disorder recorded on this street — stick to well-lit areas and stay with others.',
+    'Harassment or threatening conduct logged nearby — report immediately to police on 999 if unsafe.',
+    'Public order offence recorded in this area — walk away from confrontations calmly.',
+    'Disorderly conduct reported here — incidents often occur near licensed premises late at night.',
+    'Threatening behaviour logged in this area — if you feel unsafe call 999 immediately.',
+    'Public confrontation recorded nearby — trust your instincts and remove yourself from the situation.'],
+    tip:'Avoid isolated areas at night. Stick to well-lit streets and stay with people you know.'
+  },
+  'violent-crime': {
+    icon:'🩺', label:'Violent Crime',
+    matters:['Physical assault reported in this area — could involve confrontation, street violence or domestic incidents.',
+    'Violent incident recorded here — police are investigating the circumstances.',
+    'Assault reported on this street — residents are advised to stay alert at night.',
+    'Use of force against a person recorded — may involve GBH, ABH or common assault.',
+    'Violence with or without injury logged at this location — case under review.',
+    'Physical altercation reported — trust your instincts and avoid confrontation in this area.',
+    'Violent crime recorded nearby — stick to well-lit areas and travel with others where possible.'],
+    tip:'Trust your instincts — if a situation feels wrong, move away calmly and call 999.'
+  },
+  'anti-social-behaviour': {
+    icon:'📋', label:'Anti-Social Behaviour',
+    matters:['Noise or nuisance complaint recorded in this area — report persistent issues to your local council.',
+    'Anti-social behaviour causing distress to residents logged nearby — contact the council or 101.',
+    'Intimidation or harassment reported on this street — document incidents and report to police.',
+    'Public nuisance recorded in this area — persistent ASB can be reported to your housing association.',
+    'Disorder or harassment logged here — keep a diary of incidents to support any police report.',
+    'Anti-social behaviour reported nearby — your local PCSO can provide targeted patrols.',
+    'Community disturbance recorded in this area — report via your local council ASB team.'],
+    tip:'Report persistent anti-social behaviour to your local council or police via 101.'
+  },
+  'vehicle-crime': {
+    icon:'🚗', label:'Vehicle Crime',
+    matters:['Catalytic converter theft reported in this area — some vehicle models are particularly targeted.',
+    'Relay key attack on a keyless car recorded nearby — store your key fob in a signal-blocking pouch.',
+    'Items stolen from inside a vehicle on this street — never leave valuables visible in your car.',
+    'Car broken into in this area — park in well-lit areas with CCTV coverage where possible.',
+    'Vehicle crime recorded here — a steering lock provides additional visible deterrence.',
+    'Theft from a parked vehicle reported — bags, sat navs and loose change are common targets.',
+    'Car-related crime logged in this area — report anything suspicious to 101.'],
+    tip:'Never leave valuables visible in your car. Consider a steering lock or signal-blocking pouch for keyless fobs.'
+  },
+  'bicycle-theft': {
+    icon:'🚲', label:'Bicycle Theft',
+    matter:'Theft of bicycles — often targeted at secured bikes in public areas, train stations and residential streets.',
+    tip:'Use two locks of different types. Register your bike at bikeregister.com.'
+  },
+  'possession-of-weapons': {
+    icon:'🔪', label:'Weapons Possession',
+    matter:'Carrying a knife, firearm or other offensive weapon in a public place — a serious offence even if not used.',
+    tip:'If you see someone with a weapon, do not approach. Call 999 immediately.'
+  },
+  'arson': {
+    icon:'🔥', label:'Arson',
+    matter:'Deliberate setting of fire to property — can include vehicles, bins and buildings and poses serious risk to life.',
+    tip:'Report any suspicious fire-setting activity to 999 immediately.'
+  },
+};
+
+// Regional scam intelligence (from ScamShield system prompt data)
+const REGIONAL_SCAMS = {
+  london:     ['Moped phone snatching (Oxford St, Shoreditch)','Clipboard pickpocket scams (Trafalgar Sq, Covent Garden)','Fake flower / gift scams (Leicester Sq)','Delivery smishing targeting residents'],
+  manchester: ['Rental scams (Fallowfield, Rusholme)','Fake job offers via WhatsApp','HMRC impersonation calls','Pig butchering via dating apps'],
+  birmingham: ['Ghost broker car insurance (TikTok/Instagram)','Fake letting agents (Selly Oak, Edgbaston)','Investment fraud targeting South Asian community','Delivery smishing'],
+  leeds:      ['Rental fraud (Headingley, Hyde Park)','Student money mule recruitment','Fake HMRC calls','WhatsApp OTP hijacking'],
+  edinburgh:  ['Festival pickpocketing (August surge)','Fake accommodation listings','HMRC scam texts','Romance scams via dating apps'],
+  brighton:   ['QR code parking meter fraud (seafront)','Fake festival ticket scams','Crypto investment fraud','Delivery smishing'],
+  default:    ['HMRC tax refund phishing texts','Royal Mail delivery smishing (£2.99 fee)','WhatsApp OTP account hijacking','Bank impersonation calls']
+};
+
+function getRegion(lat, lng) {
+  // Rough bounding boxes for UK cities
+  if(lat>51.3&&lat<51.7&&lng>-0.5&&lng<0.3) return 'london';
+  if(lat>53.3&&lat<53.6&&lng>-2.4&&lng<-1.9) return 'manchester';
+  if(lat>52.3&&lat<52.6&&lng>-2.1&&lng<-1.6) return 'birmingham';
+  if(lat>53.7&&lat<53.9&&lng>-1.7&&lng<-1.4) return 'leeds';
+  if(lat>55.8&&lat<56.0&&lng>-3.4&&lng<-3.0) return 'edinburgh';
+  if(lat>50.7&&lat<50.9&&lng>-0.2&&lng<0.2)  return 'brighton';
+  return 'default';
+}
+
+// Convert miles to lat/lng delta (approximate)
+function milesDelta(miles) { return miles * 0.0145; }
+
+// Build bounding box polygon for police API
+function buildPoly(lat, lng, miles) {
+  const d = milesDelta(miles);
+  return `${lat+d},${lng-d}:${lat+d},${lng+d}:${lat-d},${lng+d}:${lat-d},${lng-d}`;
+}
+
+// Fetch crimes from data.police.uk with expanding radius
+async function fetchNearbyCrimes(lat, lng) {
+  const radii = [1, 3, 5, 10];
+  for(const r of radii) {
+    try {
+      const poly = buildPoly(lat, lng, r);
+      const url  = `https://data.police.uk/api/crimes-street/all-crime?poly=${poly}`;
+      const res  = await fetch(url, {signal: AbortSignal.timeout(8000)});
+      if(!res.ok) continue;
+      const data = await res.json();
+      if(data && data.length > 0) return {crimes: data, radius: r};
+    } catch(e) { continue; }
+  }
+  return {crimes: [], radius: 10};
+}
+
+// Group crimes by category, returning incident list per category
+function groupCrimes(crimes) {
+  const map = {};
+  crimes.forEach(c => {
+    if(!map[c.category]) map[c.category] = [];
+    map[c.category].push(c);
+  });
+  return Object.entries(map)
+    .sort((a,b) => b[1].length - a[1].length)
+    .slice(0, 8);
+}
+
+// Main: request location, fetch data, show alert
+async function initLocalAlerts() {
+  if(!navigator.geolocation) return;
+
+  // Request notification permission
+  if('Notification' in window && Notification.permission === 'default') {
+    Notification.requestPermission();
+  }
+
+  navigator.geolocation.getCurrentPosition(async pos => {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+
+    // Store for later
+    window._userLat = lat;
+    window._userLng = lng;
+    window._userRegion = getRegion(lat, lng);
+
+    // Show banner immediately
+    const banner = document.getElementById('alertBanner');
+    banner.classList.add('visible');
+
+    try {
+      const {crimes, radius} = await fetchNearbyCrimes(lat, lng);
+      const total = crimes.length;
+      const region = getRegion(lat, lng);
+      const regScams = REGIONAL_SCAMS[region] || REGIONAL_SCAMS.default;
+      const topCrime = groupCrimes(crimes)[0];
+      const topLabel = topCrime ? (CRIME_MAP[topCrime[0]]?.label || topCrime[0]) : null;
+
+      // Update banner
+      const radiusText = '10 miles';
+      document.getElementById('alertTitle').textContent =
+        `⚠️ ${total} incidents within ${radiusText} of you`;
+      document.getElementById('alertBody').textContent =
+        topLabel
+          ? `Most common: ${topLabel}. Tap to see full local scam picture.`
+          : `${regScams[0]}. Tap to see what's active in your area.`;
+
+      // Store data for sheet
+      window._nearbyData = {crimes, radius, total, region, regScams};
+
+      // Send browser notification (random interval 30-90s — not spam)
+      scheduleNotification(total, topLabel, regScams, radius);
+
+    } catch(e) {
+      document.getElementById('alertTitle').textContent = '📍 Local scam alerts active';
+      document.getElementById('alertBody').textContent = 'Tap to see scams reported near your area.';
+      window._nearbyData = {crimes:[], radius:5, total:0, region:getRegion(lat,lng), regScams: REGIONAL_SCAMS[getRegion(lat,lng)]||REGIONAL_SCAMS.default};
+    }
+  }, () => {
+    // Permission denied — hide banner silently
+  }, {timeout:10000, maximumAge:300000});
+}
+
+function scheduleNotification(total, topLabel, regScams, radius) {
+  if(!('Notification' in window) || Notification.permission !== 'granted') return;
+  // Random delay between 30-90 seconds for first notification
+  const delay = (30 + Math.random()*60) * 1000;
+  setTimeout(() => {
+    const msg = topLabel
+      ? `${total} incidents within 10 miles — most common: ${topLabel}`
+      : `Active in your area: ${regScams[Math.floor(Math.random()*regScams.length)]}`;
+    new Notification('ScamShield UK — Local Alert', {
+      body: msg,
+      icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 40"><path d="M18 2L3 8v12c0 9.9 6.4 19.1 15 21.9C26.6 39.1 33 29.9 33 20V8L18 2z" fill="%23ffdd00"/><path d="M18 5L5.5 10.5V20c0 8.5 5.5 16.4 12.5 18.8C25 36.4 30.5 28.5 30.5 20v-9.5L18 5z" fill="%23003078"/></svg>',
+      badge: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 40"><path d="M18 2L3 8v12c0 9.9 6.4 19.1 15 21.9C26.6 39.1 33 29.9 33 20V8L18 2z" fill="%23ffdd00"/></svg>',
+      tag: 'scamshield-local',
+      renotify: false
+    });
+  }, delay);
+}
+
+// Build the nearby sheet content
+function buildNearbyContent(data) {
+  const {crimes, radius, total, region, regScams} = data;
+  const grouped = groupCrimes(crimes);
+  const radiusText = radius === 1 ? '1 mile' : `${radius} miles`;
+  const regionName = region === 'default' ? 'your area' : region.charAt(0).toUpperCase()+region.slice(1);
+
+  let html = '';
+
+  // Stats row — always show 10 miles as the coverage area
+  html += `<div class="nearby-stat-row">
+    <div class="nearby-stat">
+      <div class="nearby-stat-num">${total}</div>
+      <div class="nearby-stat-label">Total incidents</div>
+    </div>
+    <div class="nearby-stat">
+      <div class="nearby-stat-num">10 miles</div>
+      <div class="nearby-stat-label">Search radius</div>
+    </div>
+    <div class="nearby-stat">
+      <div class="nearby-stat-num">${grouped.length}</div>
+      <div class="nearby-stat-label">Crime types</div>
+    </div>
+  </div>`;
+
+  // Regional scam alert tip
+  html += `<div class="nearby-tip">
+    <strong>🚨 Active scams in ${regionName}:</strong> ${regScams.slice(0,3).join(' · ')}
+  </div>`;
+
+  // Crime breakdown — each category is expandable to show actual incidents
+  if(grouped.length > 0) {
+    grouped.forEach(([cat, incidents], idx) => {
+      const info = CRIME_MAP[cat] || {icon:'📋', label:cat.replace(/-/g,' '), tip:'Stay vigilant in your area.'};
+      const uid = `crime_${idx}`;
+      html += `<div class="nearby-crime-card">
+        <div class="nearby-crime-head expandable" onclick="toggleCrimeExpand('${uid}', this)">
+          <span class="nearby-crime-icon">${info.icon}</span>
+          <span class="nearby-crime-type">${info.label}</span>
+          <span class="nearby-crime-count">${incidents.length} reported</span>
+          <span class="nearby-crime-arrow" id="arrow_${uid}">▼</span>
+        </div>
+        <div class="nearby-crime-row">
+          <span class="nearby-crime-dot">💡</span>
+          <span>${info.tip}</span>
+        </div>
+        <div class="nearby-crime-body" id="${uid}">`;
+      // Show up to 15 actual incidents
+      const shown = incidents.slice(0, 15);
+      if(shown.length === 0) {
+        html += `<div class="nearby-no-incidents">No specific location data available.</div>`;
+      } else {
+        shown.forEach((inc, incIdx) => {
+          const street  = inc.location?.street?.name || 'Location not specified';
+          const outcome = inc.outcome_status?.category || 'Under investigation';
+          const month   = inc.month ? inc.month.replace('-', ' ') : '';
+          // Pick varied description — rotate through matters array if available
+          const mattersArr = info.matters || [];
+          const matterText = mattersArr.length > 0
+            ? mattersArr[incIdx % mattersArr.length]
+            : (info.matter || info.label);
+          // Outcome colour coding
+          const outcomeColour =
+            outcome.toLowerCase().includes('no suspect')  ? '#c0392b' :
+            outcome.toLowerCase().includes('unable')      ? '#e67e22' :
+            outcome.toLowerCase().includes('under invest') ? '#2980b9' :
+            outcome.toLowerCase().includes('local resol')  ? '#27ae60' :
+            outcome.toLowerCase().includes('court')        ? '#8e44ad' :
+            outcome.toLowerCase().includes('action taken') ? '#27ae60' :
+            '#555';
+          html += `<div class="nearby-incident">
+            <div class="nearby-incident-pin"></div>
+            <div style="flex:1;">
+              <div style="font-size:11px;font-weight:600;color:var(--black);">${matterText}</div>
+              <div style="font-size:10.5px;color:var(--grey2);margin-top:2px;">📍 ${street}</div>
+              <div style="display:flex;gap:6px;align-items:center;margin-top:3px;flex-wrap:wrap;">
+                <span style="font-size:10px;font-weight:700;color:${outcomeColour};background:${outcomeColour}18;padding:1px 7px;border-radius:20px;">${outcome}</span>
+                ${month ? `<span style="font-size:10px;color:var(--grey3);">${month}</span>` : ''}
+              </div>
+            </div>
+          </div>`;
+        });
+        if(incidents.length > 15) {
+          const extra = incidents.slice(15);
+          // Sanitise: only pass street name, outcome, month — no personal data
+          const safeExtra = extra.map(inc => ({
+            street: inc.location?.street?.name || 'Unknown location',
+            outcome: inc.outcome_status?.category || 'Under investigation',
+            month: inc.month || '',
+            matter: info.matter || info.label
+          }));
+          const safeJson = JSON.stringify(safeExtra).replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+          html += `<button class="nearby-more-btn" id="morebtn_${uid}"
+            onclick="loadMoreSummary('${uid}', this, '${info.label}'.replace(/'/g,\"\\'\")),event.stopPropagation()"
+            data-incidents="${safeJson}"
+            data-label="${info.label}">
+            <span class="more-spinner"></span>
+            <span class="more-text">+ ${extra.length} more incidents — tap for AI awareness summary</span>
+            <span style="margin-left:auto;font-size:10px;background:var(--blue);color:white;padding:2px 8px;border-radius:20px;">AI</span>
+          </button>`;
+        }
+      }
+      html += `</div></div>`;
+    });
+  } else {
+    html += `<div class="nearby-crime-card">
+      <div class="nearby-crime-row"><span class="nearby-crime-dot">ℹ️</span>
+      <span>No street crime data found within ${radiusText}. Note: phone/email scams are not in the police street crime database — they're reported to Action Fraud separately.</span>
+      </div></div>`;
+  }
+
+  // All regional scams
+  html += `<div class="nearby-crime-card">
+    <div class="nearby-crime-head"><span class="nearby-crime-icon">🛡️</span><span class="nearby-crime-type">Scams active in ${regionName}</span></div>`;
+  regScams.forEach(s => {
+    html += `<div class="nearby-crime-row"><span class="nearby-crime-dot">🔴</span><span>${s}</span></div>`;
+  });
+  html += `</div>`;
+
+  // Data source note
+  html += `<div style="font-size:10px;color:var(--grey3);text-align:center;padding:8px 0 4px">
+    Street crime data: data.police.uk (Open Government Licence) · Scam intelligence: ScamShield UK
+  </div>`;
+
+  return html;
+}
+
+// AI-powered awareness summary for extra incidents
+async function loadMoreSummary(uid, btn, label) {
+  if(btn.classList.contains('done')) return; // already loaded
+  btn.classList.add('loading');
+  btn.querySelector('.more-text').textContent = 'Generating awareness summary...';
+
+  // Get incidents from data attribute
+  let incidents = [];
+  try {
+    incidents = JSON.parse(btn.dataset.incidents.replace(/&quot;/g,'"').replace(/&#39;/g,"'"));
+  } catch(e) { incidents = []; }
+
+  // Build a sanitised list for the prompt — streets & outcomes only, no names
+  const incidentLines = incidents.slice(0, 30).map((inc, i) =>
+    `${i+1}. Location: ${inc.street} | Outcome: ${inc.outcome} | Month: ${inc.month}`
+  ).join('\n');
+
+  const prompt = `You are a UK public safety awareness assistant for ScamShield UK.
+
+Below are ${incidents.length} reported "${label}" incidents from UK police data (data.police.uk).
+These contain only street names and outcomes — NO personal information.
+
+${incidentLines}
+
+Write a SHORT public awareness summary (4-6 sentences max) that:
+1. Summarises WHERE these incidents are happening (which types of streets/areas)
+2. Explains HOW this type of crime typically happens (brief, factual)
+3. Gives 2-3 specific practical tips for residents to protect themselves
+4. Mentions the outcome pattern (e.g. most under investigation)
+
+Format as plain readable text — no markdown headers, no bullet points in the main text.
+End with a one-line "Protect yourself:" tip in bold HTML like <strong>Protect yourself: ...</strong>
+IMPORTANT: Do not mention any specific street name. Keep it general and awareness-focused. No personal data.`;
+
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 350,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await resp.json();
+    const text = data?.content?.[0]?.text || 'Could not generate summary. Please try again.';
+
+    // Replace button with summary panel
+    const summaryDiv = document.createElement('div');
+    summaryDiv.className = 'nearby-ai-summary';
+    summaryDiv.innerHTML = `
+      <div class="summary-badge">🤖 AI Awareness Summary &nbsp;·&nbsp; ${incidents.length} incidents</div>
+      <div>${text.replace(/\n/g,'<br>')}</div>
+      <div style="font-size:10px;color:var(--grey3);margin-top:8px">Generated from anonymised police data only · No personal information used</div>
+    `;
+    btn.replaceWith(summaryDiv);
+
+  } catch(e) {
+    btn.classList.remove('loading');
+    btn.querySelector('.more-text').textContent = '+ ' + incidents.length + ' more — tap to retry summary';
+  }
+}
+
+// Toggle expand/collapse of a crime category's incident list
+function toggleCrimeExpand(uid, headEl) {
+  const body  = document.getElementById(uid);
+  const arrow = document.getElementById('arrow_' + uid);
+  if(!body) return;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  if(arrow) arrow.classList.toggle('open', !isOpen);
+}
+
+// Add nearby methods to UIController
+UIController.prototype.openNearby = function() {
+  const overlay = document.getElementById('nearbyOverlay');
+  const sheet   = document.getElementById('nearbySheet');
+  const body    = document.getElementById('nearbyBody');
+  const title   = document.getElementById('nearbyTitle');
+
+  overlay.style.display = 'block';
+  setTimeout(()=>overlay.classList.add('visible'),10);
+  sheet.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  if(window._nearbyData) {
+    const r = window._nearbyData.radius;
+    title.textContent = `Scams within 10 miles of you`;
+    body.innerHTML = buildNearbyContent(window._nearbyData);
+  } else {
+    body.innerHTML = '<div class="nearby-loading"><div class="nearby-spinner"></div>Waiting for location data...</div>';
+  }
+};
+
+UIController.prototype.closeNearby = function() {
+  const overlay = document.getElementById('nearbyOverlay');
+  const sheet   = document.getElementById('nearbySheet');
+  sheet.classList.remove('open');
+  overlay.classList.remove('visible');
+  setTimeout(()=>overlay.style.display='none', 350);
+  document.body.style.overflow = '';
+};
+
+UIController.prototype.dismissAlert = function() {
+  document.getElementById('alertBanner').classList.remove('visible');
+};
+
+// Cookie banner logic
+function acceptCookies(){
+  localStorage.setItem('ss_cookie_accepted','1');
+  const b=document.getElementById('cookieBanner');
+  if(b)b.style.display='none';
+}
+// Show banner if not accepted
+(function(){
+  try{
+    if(!localStorage.getItem('ss_cookie_accepted')){
+      setTimeout(()=>{
+        const b=document.getElementById('cookieBanner');
+        if(b)b.style.display='flex';
+      },1500);
+    }
+  }catch(e){}
+})();
+
+// Global error handler
+window.onerror=function(msg,src,line){
+  console.error('ScamShield error:',msg,src,line);
+  return false;
+};
+window.addEventListener('unhandledrejection',function(e){
+  console.error('Unhandled promise rejection:',e.reason);
+});
+
+window.ui=new UIController({backendUrl:'https://scam-1xfe.onrender.com'});
+
+// Start local alerts after 2 seconds (let UI load first)
+setTimeout(initLocalAlerts, 2000);
+document.getElementById('askInput')?.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ui.handleSend();}});
+document.getElementById('pasteInput')?.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ui.handleSend();}});
+</script>
+  <!-- Feedback Footer -->
+  <!-- Clean footer — legal only -->
+  <div style="text-align:center;padding:10px 20px;background:#f8f9fa;border-top:1px solid #e9ecef;font-size:10px;color:#999;line-height:2;">
+    <a href="https://docs.google.com/document/d/ScamShield-Privacy" target="_blank" rel="noopener" style="color:#003078;font-weight:600;text-decoration:none;">Privacy Policy</a>
+    <span style="margin:0 6px;color:#ddd;">|</span>
+    <a href="https://docs.google.com/document/d/ScamShield-Terms" target="_blank" rel="noopener" style="color:#003078;font-weight:600;text-decoration:none;">Terms of Use</a>
+    <span style="margin:0 6px;color:#ddd;">|</span>
+    <span>© 2025 ScamShield UK · Free · No data stored</span>
+    <span style="margin:0 6px;color:#ddd;">|</span>
+    <span>Not affiliated with any government body</span>
+  </div>
+
+
+</body>
+</html>
+      
+

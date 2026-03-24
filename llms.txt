@@ -1,0 +1,34 @@
+# ScamShield UK
+
+> Free AI-powered scam detection tool for UK consumers. No account required.
+
+ScamShield UK helps people in the United Kingdom identify and report scams. Users can paste suspicious messages from WhatsApp, email, or text, upload screenshots for OCR analysis, investigate phone numbers, email addresses, URLs, and company names, and get instant threat intelligence reports.
+
+## Features
+
+- AI scam message detection with 50+ coded fraud patterns
+- Screenshot and PDF OCR text extraction
+- Phone number, email, URL, and company investigation
+- Official UK report preparation for Action Fraud, FCA, ICO, Ofcom, CEOP
+- Local crime alerts based on user location
+- Educational database covering 30+ scam types
+- Completely free, no account needed, no data stored
+
+## Scam Types Covered
+
+Pig butchering, romance scams, WhatsApp OTP fraud, fake HMRC calls, delivery scams, SIM swap attacks, cryptocurrency fraud, fake job offers, elder fraud, bank impersonation, doorstep scams, gaming scams, investment fraud, phishing, vishing, smishing, advance fee fraud, pension scams, ticket scams, holiday scams, and more.
+
+## UK Reporting Channels
+
+- Action Fraud (reporting.reportfraud.police.uk) — National fraud reporting
+- FCA (Financial Conduct Authority) — Financial scams
+- ICO (Information Commissioner's Office) — Data breaches
+- Ofcom — Nuisance calls and texts
+- CEOP — Child exploitation
+- Citizens Advice — Consumer protection
+- Trading Standards — Business fraud
+
+## Contact
+
+- Website: https://scamshield.org.uk
+- Privacy: https://scamshield.org.uk/privacy
