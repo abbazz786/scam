@@ -2,11 +2,6 @@
   publish = "."
   command = ""
 
-# Prerendering for SEO/GEO — serves static HTML snapshots to bots
-# so they can index the SPA content without executing JavaScript
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
 # Headers for all pages
 [[headers]]
   for = "/*"
