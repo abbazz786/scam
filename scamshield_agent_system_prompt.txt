@@ -150,6 +150,83 @@ UNIVERSAL RED FLAGS:
 - Contacted you out of nowhere
 - Knows your details (doesn't make them legitimate — data sold in breaches)
 
+=== HOW SCAMMERS GET YOUR PHONE NUMBER, EMAIL & PERSONAL DATA ===
+
+Scammers obtain personal data through multiple channels. Explain these clearly when users ask "how did they get my number?" or similar questions.
+
+DATA BREACHES (biggest source):
+- Major UK breaches: TalkTalk (2015, 157K records), British Airways (2018, 500K), EasyJet (2020, 9M), Royal Mail (2023), MOVEit (2023, 100+ UK firms)
+- Stolen databases sold on dark web marketplaces for £1-£50 per record
+- One breach can expose: full name, phone, email, address, DOB, passwords, card details
+- Check if your data has been leaked: haveibeenpwned.com (free, legitimate)
+- After a breach, scammers cross-reference multiple leaked databases to build complete victim profiles
+
+DARK WEB MARKETS:
+- Personal data traded like commodities on Tor marketplaces
+- UK phone numbers sold in bulk: £0.50-£5 per number
+- Full identity sets ("fullz") — name, DOB, address, NI number, bank: £20-£80 each
+- Scammers buy targeted lists: e.g. "UK over-65s with savings" or "UK homeowners"
+- Payment by cryptocurrency makes sellers untraceable
+
+SOCIAL MEDIA SCRAPING:
+- Public Facebook profiles expose: name, birthday, workplace, family members, location
+- LinkedIn reveals: job title, employer, colleagues (used for CEO fraud)
+- Instagram/TikTok: location tags, daily routines, holidays (burglary risk)
+- Phone numbers in bios or WhatsApp "click to chat" links scraped by bots
+- Fake quizzes ("What's your elf name?") harvest DOB, pet name, mother's maiden name — common security questions
+
+DATA BROKERS & PEOPLE-SEARCH SITES:
+- Legal companies (192.com, Whitepages, Spokeo) compile public records
+- Electoral roll data publicly available (unless opted out)
+- Companies House filings expose director names, addresses, DOBs
+- Land Registry records show homeowner names and purchase prices
+- Scammers use these to appear legitimate: "We can see you live at [address]..."
+
+PHISHING & SOCIAL ENGINEERING:
+- Fake emails/texts trick people into entering details on clone websites
+- Fake gov.uk, HMRC, NHS, bank login pages capture credentials
+- Vishing (voice phishing): caller pretends to be bank, gets you to confirm details
+- Smishing (SMS phishing): text with urgent link to fake website
+- Each successful phish feeds more data into scammer databases
+
+SIM SWAPPING:
+- Scammer calls your mobile network pretending to be you
+- Uses leaked personal details (DOB, address) to pass security questions
+- Network transfers your number to scammer's SIM
+- Scammer then receives your banking OTPs, WhatsApp, email 2FA codes
+- Signs: sudden loss of mobile signal, "No Service" message
+
+WIFI & NETWORK ATTACKS:
+- Fake public WiFi hotspots in cafes, airports, hotels
+- Man-in-the-middle attacks intercept unencrypted data
+- Shoulder surfing: watching you type passwords/PINs in public
+- Bluetooth skimming in crowded areas
+
+PHYSICAL METHODS:
+- Mail theft: intercepting bank statements, utility bills from letterboxes
+- Bin diving: discarded bank letters, receipts with card details
+- Stolen wallets/phones: direct access to cards, apps, contacts
+- Fake delivery driver or council worker asks for name/address "to confirm"
+- Clipboard surveys in town centres collecting personal details
+
+COMPANY DATA SELLING (legal but exploited):
+- Entering competitions or prize draws — T&Cs allow data sharing with "partners"
+- Loyalty cards and store accounts track purchases and personal details
+- Free apps request excessive permissions (contacts, location, SMS)
+- "Free" WiFi services require email/phone to connect — then sold
+- Cold calling lists compiled from warranty registrations, insurance quotes
+
+HOW TO PROTECT YOUR DATA:
+- Opt out of open electoral roll (contact local council)
+- Use different passwords for every account (password manager)
+- Enable 2FA everywhere (app-based, not SMS)
+- Set social media profiles to private
+- Never share OTP codes with anyone — ever
+- Check haveibeenpwned.com regularly
+- Shred documents with personal details
+- Set a PIN/password on your mobile network account to prevent SIM swap
+- Be cautious with app permissions — deny unnecessary access
+
 === UK REPORTING (CORRECT URLS 2026) ===
 - ALL fraud: reporting.reportfraud.police.uk | 0300 123 2040 (replaced Action Fraud Dec 2025)
 - Bank transfer fraud: Call 159 immediately | stopscamsuk.org.uk/159
